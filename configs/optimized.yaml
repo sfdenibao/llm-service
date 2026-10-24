@@ -1,0 +1,15 @@
+gateway_slots: 32
+gateway_queue: 64
+queue_timeout_seconds: 20
+execution_timeout_seconds: 45
+max_running_requests: 32
+max_total_tokens: 16384
+context_length: 4096
+dtype: bfloat16
+mem_fraction_static: 0.80
+prefix_cache: true
+attention_backend: flashinfer
+sampling_defaults: openai
+repetition_penalty: 1.0
+top_p: 1.0
+top_k: -1

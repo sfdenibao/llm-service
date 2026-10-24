@@ -1,0 +1,9 @@
+* text=auto
+*.sh text eol=lf
+*.py text eol=lf
+*.yml text eol=lf
+*.md text eol=lf
+tools/upstream/* -text
+tools/public-*/* -text
+docs/taskbook-2026-10-24.md -text
+

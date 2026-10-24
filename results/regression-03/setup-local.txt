@@ -1,0 +1,6 @@
+Ready: http://127.0.0.1:49606/healthz; mode=contract-test; gateway_pid=41436
+Ready: http://127.0.0.1:49606/healthz; mode=contract-test; gateway_pid=41848
+Ready: http://127.0.0.1:49606/healthz; mode=contract-test; gateway_pid=29988
+Ready: http://127.0.0.1:49606/healthz; mode=contract-test; gateway_pid=42204
+Already ready; existing processes and ledger preserved
+Ready: http://127.0.0.1:49606/healthz; mode=contract-test; gateway_pid=40508

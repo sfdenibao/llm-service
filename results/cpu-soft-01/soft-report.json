@@ -1,0 +1,257 @@
+{
+  "schema": "llm-soft-check/1",
+  "project": "project-2",
+  "mode": "soft",
+  "commit_sha": null,
+  "repository": null,
+  "suite": "cpu-contract",
+  "official_score": false,
+  "gpu_used": false,
+  "model_backend": "controlled_cpu_fixture",
+  "started_at": "2026-10-24T09:34:47.967070+00:00",
+  "finished_at": "2026-10-24T09:34:48.576752+00:00",
+  "checks": [
+    {
+      "id": "fixture",
+      "method": "GET",
+      "path": "/__fixture/state",
+      "expected": "Controlled CPU fixture available and configured",
+      "status": "pass",
+      "code": "contract_satisfied",
+      "evidence": {
+        "backend": "controlled_cpu_fixture"
+      }
+    },
+    {
+      "id": "health",
+      "method": "GET",
+      "path": "/healthz",
+      "expected": "Public ready health response",
+      "status": "pass",
+      "code": "contract_satisfied",
+      "evidence": {
+        "ready": true
+      }
+    },
+    {
+      "id": "auth",
+      "method": "GET",
+      "path": "/v1/models, /info, /v1/usage",
+      "expected": "Unauthenticated requests denied",
+      "status": "pass",
+      "code": "contract_satisfied",
+      "evidence": {
+        "routes_denied": 3
+      }
+    },
+    {
+      "id": "models",
+      "method": "GET",
+      "path": "/v1/models",
+      "expected": "Configured model advertised",
+      "status": "pass",
+      "code": "contract_satisfied",
+      "evidence": {
+        "model_matches": true
+      }
+    },
+    {
+      "id": "info",
+      "method": "GET",
+      "path": "/info",
+      "expected": "Contract/model/revision/profile identity",
+      "status": "pass",
+      "code": "contract_satisfied",
+      "evidence": {
+        "identity_matches": true,
+        "gpu_deployment_verified": false
+      }
+    },
+    {
+      "id": "metrics",
+      "method": "GET",
+      "path": "/metrics",
+      "expected": "Authenticated nonnegative integer gauges and abort counter",
+      "status": "pass",
+      "code": "contract_satisfied",
+      "evidence": {
+        "schema_valid": true,
+        "unauthenticated_denied": true,
+        "cancellation_verified": false
+      }
+    },
+    {
+      "id": "agent_request_validation",
+      "method": "POST",
+      "path": "/agent/run",
+      "expected": "Route/auth/malformed-payload validation only; no Agent reasoning or output test",
+      "status": "pass",
+      "code": "contract_satisfied",
+      "evidence": {
+        "unauthenticated_denied": true,
+        "malformed_payload_rejected": true,
+        "fixture_calls": 0,
+        "agent_reasoning_or_output_tested": false
+      }
+    },
+    {
+      "id": "nonstream",
+      "method": "POST",
+      "path": "/v1/chat/completions",
+      "expected": "Fixture content, finish and 100/50 usage",
+      "status": "pass",
+      "code": "contract_satisfied",
+      "evidence": {
+        "fixture_calls": 1,
+        "prompt_tokens": 100,
+        "completion_tokens": 50,
+        "stream": false,
+        "latency_measured": false
+      }
+    },
+    {
+      "id": "stream",
+      "method": "POST",
+      "path": "/v1/chat/completions",
+      "expected": "SSE content, finish, usage and DONE",
+      "status": "pass",
+      "code": "contract_satisfied",
+      "evidence": {
+        "fixture_calls": 1,
+        "prompt_tokens": 100,
+        "completion_tokens": 50,
+        "stream": true,
+        "latency_measured": false
+      }
+    },
+    {
+      "id": "console",
+      "method": "GET",
+      "path": "/console",
+      "expected": "Non-secret HTML shell (UI behavior not checked)",
+      "status": "pass",
+      "code": "contract_satisfied",
+      "evidence": {
+        "html_available": true,
+        "interactive_ui_tested": false
+      }
+    },
+    {
+      "id": "pricing",
+      "method": "PUT",
+      "path": "/admin/pricing",
+      "expected": "Model price version with integer 2/6 rates",
+      "status": "pass",
+      "code": "contract_satisfied",
+      "evidence": {
+        "input_price": 2,
+        "output_price": 6
+      }
+    },
+    {
+      "id": "tenant",
+      "method": "POST",
+      "path": "/admin/tenants",
+      "expected": "Create isolated synthetic tenant",
+      "status": "pass",
+      "code": "contract_satisfied",
+      "evidence": {
+        "created": true
+      }
+    },
+    {
+      "id": "issue",
+      "method": "POST",
+      "path": "/admin/tenants/{tenant_id}/keys",
+      "expected": "Issue one-time ordinary key",
+      "status": "pass",
+      "code": "contract_satisfied",
+      "evidence": {
+        "created": true,
+        "raw_key_retained_in_report": false
+      }
+    },
+    {
+      "id": "billing",
+      "method": "GET",
+      "path": "/v1/usage",
+      "expected": "Two real gateway transactions total 1000 microUSD",
+      "status": "pass",
+      "code": "contract_satisfied",
+      "evidence": {
+        "requests": 2,
+        "total_micro_usd": 1000
+      }
+    },
+    {
+      "id": "admin_isolation",
+      "method": "MULTI",
+      "path": "/admin/*",
+      "expected": "Ordinary key denied all seven management writes without mutation",
+      "status": "pass",
+      "code": "contract_satisfied",
+      "evidence": {
+        "denied_write_routes": 7,
+        "management_state_unchanged": true
+      }
+    },
+    {
+      "id": "rotate",
+      "method": "POST",
+      "path": "/admin/keys/{key_id}/rotate",
+      "expected": "Revoke old key and accept replacement",
+      "status": "pass",
+      "code": "contract_satisfied",
+      "evidence": {
+        "old_key_http": 401,
+        "new_key_works": true
+      }
+    },
+    {
+      "id": "revoke",
+      "method": "POST",
+      "path": "/admin/keys/{key_id}/revoke",
+      "expected": "Revoke replacement key",
+      "status": "pass",
+      "code": "contract_satisfied",
+      "evidence": {
+        "revoked_key_http": 401
+      }
+    },
+    {
+      "id": "disable",
+      "method": "PATCH",
+      "path": "/admin/tenants/{tenant_id}",
+      "expected": "Disable synthetic tenant",
+      "status": "pass",
+      "code": "contract_satisfied",
+      "evidence": {
+        "disabled_key_http": 403,
+        "disabled_status_persisted": true
+      }
+    }
+  ],
+  "summary": {
+    "pass": 18,
+    "missing": 0,
+    "invalid": 0,
+    "blocked": 0
+  },
+  "passed": true,
+  "not_tested": [
+    "GPU deployment",
+    "model quality",
+    "performance or SLO",
+    "Agent model reasoning or output",
+    "full 15-case credential audit",
+    "crash recovery",
+    "persistent raw-key storage",
+    "interactive console UI"
+  ],
+  "limitations": [
+    "Runs after setup --contract-test inside an isolated CPU sandbox; never executes setup itself.",
+    "Fixture observation checks gateway integration, not GPU attestation or official grading."
+  ],
+  "execution_environment": "local-windows-cpu",
+  "github_actions_run": false
+}

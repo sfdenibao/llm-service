@@ -1,0 +1,100 @@
+{
+  "schema": "llm-local-regression/1",
+  "suite": "CPU HTTP integration",
+  "commit_sha": null,
+  "execution_environment": "win32",
+  "started_at": "2026-10-24T09:40:28.845841+00:00",
+  "finished_at": "2026-10-24T09:41:00.562497+00:00",
+  "tests_run": 16,
+  "passed": true,
+  "checks": [
+    {
+      "test_id": "tests.test_integration.GatewayTests.test_01_billing_stream_and_nonstream",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_integration.GatewayTests.test_02_two_tenants_four_keys_isolation",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_integration.GatewayTests.test_03_key_lifecycle_storage_and_admin_denial",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_integration.GatewayTests.test_04_idempotency_twenty_concurrent",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_integration.GatewayTests.test_05_atomic_reservation_twenty_concurrent",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_integration.GatewayTests.test_06_shared_token_rpm_and_concurrency_limits",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_integration.GatewayTests.test_07_price_versions_credit_and_summary",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_integration.GatewayTests.test_08_sse_signal_gate_utf8_and_coalesced_events",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_integration.GatewayTests.test_09_cancel_releases_slot_and_aborts",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_integration.GatewayTests.test_10_missing_usage_and_missing_done_are_errors",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_integration.GatewayTests.test_11_queue_bounds_timeout_and_recovery",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_integration.GatewayTests.test_12_restart_unknown_usage_releases_with_audit",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_integration.GatewayTests.test_13_restart_after_usage_settles_exactly_once",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_integration.GatewayTests.test_14_agent_two_calls_parent_child_and_idempotency",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_integration.GatewayTests.test_15_idempotent_setup_and_stop_preserve_fixture",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_integration.GatewayTests.test_16_health_dependency_and_input_validation",
+      "passed": true,
+      "actual": "All assertions passed"
+    }
+  ],
+  "official_score": false,
+  "not_tested": [
+    "Real GPU inference",
+    "Linux SIGKILL when running on Windows",
+    "GitHub Actions",
+    "Browser console",
+    "Performance SLO"
+  ]
+}

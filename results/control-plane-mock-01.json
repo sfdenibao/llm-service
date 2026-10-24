@@ -1,0 +1,102 @@
+{
+  "schema": "credential-service-test/1",
+  "suite": "mock",
+  "commit_sha": null,
+  "started_at": "2026-10-24T09:52:37.192936+00:00",
+  "finished_at": "2026-10-24T09:52:38.294952+00:00",
+  "checks": [
+    {
+      "test_id": "isolation",
+      "expected": "Two users, two keys each; separate bills; ordinary keys denied admin",
+      "actual": {
+        "tenant_request_counts": [
+          2,
+          2
+        ],
+        "cross_tenant_denied": true
+      },
+      "passed": true,
+      "evidence": {
+        "transport": "HTTP",
+        "suite": "mock"
+      }
+    },
+    {
+      "test_id": "billing",
+      "expected": "Stream and nonstream use actual engine usage; exact integer settlement",
+      "actual": {
+        "bills": 2,
+        "cost_micro_usd": [
+          500,
+          500
+        ],
+        "usage_without_client_request": true
+      },
+      "passed": true,
+      "evidence": {
+        "transport": "HTTP",
+        "suite": "mock"
+      }
+    },
+    {
+      "test_id": "idempotency",
+      "expected": "20 retries create one generation and one bill; changed body conflicts",
+      "actual": {
+        "attempts": 20,
+        "successful_generation": 1,
+        "new_ledger_rows": 1
+      },
+      "passed": true,
+      "evidence": {
+        "transport": "HTTP",
+        "suite": "mock"
+      }
+    },
+    {
+      "test_id": "key_lifecycle",
+      "expected": "Rotate and revoke take effect; no plaintext in key listing",
+      "actual": {
+        "rotated": true,
+        "old_and_revoked_rejected": true,
+        "key_listing_masked": true
+      },
+      "passed": true,
+      "evidence": {
+        "transport": "HTTP",
+        "suite": "mock"
+      }
+    },
+    {
+      "test_id": "pricing_credits",
+      "expected": "Versioned prices and idempotent balance adjustment",
+      "actual": {
+        "immutable_prices": true,
+        "credits_idempotent": true
+      },
+      "passed": true,
+      "evidence": {
+        "transport": "HTTP",
+        "suite": "mock"
+      }
+    }
+  ],
+  "skipped": [
+    {
+      "test_id": "raw_key_disk_scan",
+      "reason": "Requires the controlled local fault-injection suite scripts/run_tests.py"
+    },
+    {
+      "test_id": "signal_gated_reservation",
+      "reason": "Requires the controlled local fault-injection suite scripts/run_tests.py"
+    },
+    {
+      "test_id": "cancel_and_crash_recovery",
+      "reason": "Requires the controlled local fault-injection suite scripts/run_tests.py"
+    },
+    {
+      "test_id": "shared_quota_limits",
+      "reason": "Requires the controlled local fault-injection suite scripts/run_tests.py"
+    }
+  ],
+  "official_score": false
+}

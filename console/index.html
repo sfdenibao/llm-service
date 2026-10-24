@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>模型服务 · 管理台</title><link rel="stylesheet" href="/console/style.css"><script defer src="/console/app.js"></script></head>
+<body>
+<main id="login" class="login">
+  <div class="wordmark">LLM / SERVICE</div><span class="tag">实验账本</span>
+  <h1>模型服务管理台</h1><p>管理用户、调用凭据与模型用量。</p>
+  <form id="login-form"><label for="admin-key">管理员密钥</label><input id="admin-key" type="password" autocomplete="off" required placeholder="输入 ADMIN_API_KEY"><button type="submit">进入管理台 →</button></form>
+  <p class="muted">密钥仅保留在当前页面内存，刷新后需要重新输入。实验余额不代表真实资金。</p>
+  <p id="login-error" role="alert"></p>
+</main>
+<div id="workspace" hidden>
+  <aside><div class="wordmark">LLM /<br>SERVICE</div><span class="tag">实验账本</span>
+    <nav aria-label="管理功能"><button data-view="tenants" class="active">用户与密钥</button><button data-view="usage">用量账本</button><button data-view="pricing">模型定价</button><button data-view="audit">操作审计</button></nav>
+    <div class="aside-bottom"><span id="health">检查服务中</span><button id="logout" class="quiet">退出管理台</button></div>
+  </aside>
+  <main class="content"><header><div><p class="eyebrow">CONTROL PLANE</p><h1 id="view-title">用户与密钥</h1></div><button id="refresh" class="secondary">刷新数据</button></header>
+    <p id="notice" role="status" aria-live="polite"></p>
+    <section id="view-tenants"><div class="section-title"><h2>用户</h2><button id="new-tenant">创建用户</button></div><div id="tenant-table" class="table-wrap"></div><div id="tenant-detail" hidden><div class="section-title"><h2 id="detail-title"></h2><div class="actions"><button id="edit-quota" class="secondary">编辑额度</button><button id="add-credit" class="secondary">调整余额</button><button id="toggle-tenant" class="secondary"></button><button id="new-key">签发密钥</button></div></div><div id="key-table" class="table-wrap"></div></div></section>
+    <section id="view-usage" hidden><div class="toolbar"><label for="usage-tenant">查看用户</label><select id="usage-tenant"><option value="">请选择用户</option></select></div><div id="usage-summary" class="summary"></div><p class="muted">金额以 micro-USD 精确记账；未知用量保留状态，不按 0 token 冒充精确结算。</p><div id="usage-table" class="table-wrap"></div><button id="more-usage" class="secondary" hidden>加载更多账目</button></section>
+    <section id="view-pricing" hidden><h2>输入与输出分别计费</h2><p>更新产生新价格版本。历史账目保留调用时的单价。</p><form id="price-form" class="form-panel"><label>模型<input id="price-model" readonly></label><div class="two-columns"><label>输入单价 / micro-USD 每 token<input id="input-price" type="number" min="0" max="1000000" required></label><label>输出单价 / micro-USD 每 token<input id="output-price" type="number" min="0" max="1000000" required></label></div><p id="price-version" class="mono muted"></p><button type="submit">保存新价格版本</button></form></section>
+    <section id="view-audit" hidden><p class="muted">创建、轮换、撤销、余额调整与恢复事件。记录不包含完整密钥。</p><div id="audit-table" class="table-wrap"></div><button id="more-audit" class="secondary" hidden>加载更多审计</button></section>
+    <footer>实验账本 · 仅记录本服务模型调用；与 Daytona 租用费用无关。</footer>
+  </main>
+</div>
+<dialog id="edit-dialog"><form id="edit-form"><div class="section-title"><h2 id="dialog-title"></h2><button type="button" id="close-dialog" class="quiet" aria-label="关闭">×</button></div><div id="dialog-fields"></div><p id="dialog-error" role="alert"></p><button type="submit" id="dialog-submit">保存</button></form></dialog>
+<dialog id="secret-dialog"><h2>请立即保存这把密钥</h2><p>完整密钥只在本次显示。关闭后只能查看前缀和尾号。</p><textarea id="issued-secret" readonly aria-label="新签发的 API Key"></textarea><div class="actions"><button id="copy-secret">复制密钥</button><button id="close-secret" class="secondary">已保存，关闭</button></div><p id="copy-status" role="status"></p></dialog>
+</body></html>

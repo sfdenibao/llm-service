@@ -1,0 +1,91 @@
+{
+  "schema": "llm-project-preparation/1",
+  "checked_at": "2026-10-24T09:10:16.242287+00:00",
+  "platform": "Windows",
+  "python": "3.12.10",
+  "branch": "codex/llm-service",
+  "commit_sha": null,
+  "remote_names": [],
+  "preparation_checks": [
+    {
+      "check": "sha256:llm-soft.yml",
+      "passed": true,
+      "expected": "6b0a537c5af8b85af76e4ac0622ba0c4649883844997244966e8db97c1ba043d",
+      "actual": "6b0a537c5af8b85af76e4ac0622ba0c4649883844997244966e8db97c1ba043d"
+    },
+    {
+      "check": "sha256:soft_runner.py",
+      "passed": true,
+      "expected": "ed9f4f45e2e5cba23bf4c67d58be9ce10e69576e8bdd36904c442788354676cb",
+      "actual": "ed9f4f45e2e5cba23bf4c67d58be9ce10e69576e8bdd36904c442788354676cb"
+    },
+    {
+      "check": "sha256:soft_check.py",
+      "passed": true,
+      "expected": "43878383b810358a5dbd8a796c94acd3f6cb39fc8665929a2d5354f079eb65db",
+      "actual": "43878383b810358a5dbd8a796c94acd3f6cb39fc8665929a2d5354f079eb65db"
+    },
+    {
+      "check": "sha256:credential_fixture.py",
+      "passed": true,
+      "expected": "ef860b68237f946d2394f00e48eb2f8d3c17bded84861542232cefbeed66d19c",
+      "actual": "ef860b68237f946d2394f00e48eb2f8d3c17bded84861542232cefbeed66d19c"
+    },
+    {
+      "check": "sha256:acceptance.live.json",
+      "passed": true,
+      "expected": "d5cd2fdc90056e710cf741ac1eec4c5b042ea3818d505e4a3975697f1df9241f",
+      "actual": "d5cd2fdc90056e710cf741ac1eec4c5b042ea3818d505e4a3975697f1df9241f"
+    },
+    {
+      "check": "workflow_byte_equality",
+      "passed": true
+    },
+    {
+      "check": "taskbook_vs_downloaded_acceptance",
+      "passed": true,
+      "version": "daytona-4090-v5-confirmed-5e2971c9",
+      "network_refreshed_by_this_script": false
+    }
+  ],
+  "preparation_status": "PASS",
+  "deliverable_presence": {
+    "checked": 23,
+    "missing": [
+      "setup.sh",
+      "requirements.lock",
+      ".env.example",
+      "configs/baseline.yaml",
+      "configs/optimized.yaml",
+      "configs/pricing.json",
+      "server/app.py",
+      "server/engine.py",
+      "server/admission.py",
+      "server/metrics.py",
+      "server/supervisor.py",
+      "control_plane",
+      "console",
+      "migrations",
+      "scripts/check_control_plane.py",
+      "agent",
+      "benchmarks",
+      "experiments/run.sh",
+      "experiments/kv.py",
+      "experiments/prefix.py",
+      "experiments/attention.py",
+      "tests",
+      "docs/performance.md"
+    ],
+    "content_or_behavior_verified": false
+  },
+  "service_status": "NOT_IMPLEMENTED",
+  "cpu_interfaces": "NOT_TESTED",
+  "github_actions": "NOT_TESTED",
+  "gpu_deployment": "NOT_TESTED",
+  "official_score": false,
+  "limitations": [
+    "File presence is not implementation correctness.",
+    "Resource hashes verify this downloaded batch, not current network state.",
+    "No downloaded code, model inference, service or workflow is executed."
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "label": "实验账本，不是真实收费",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "input_micro_usd_per_token": 2,
+  "output_micro_usd_per_token": 6
+}
