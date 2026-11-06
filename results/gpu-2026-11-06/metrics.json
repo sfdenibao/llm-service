@@ -1,0 +1,23 @@
+{
+  "active": 0,
+  "queued": 0,
+  "counters": {
+    "completed": 0,
+    "rejected": 0,
+    "cancelled": 0,
+    "timed_out": 0,
+    "failed": 0,
+    "abort_acknowledged": 0,
+    "abort_failed": 0
+  },
+  "rejection_reasons": {},
+  "uptime_seconds": 46.02436291333288,
+  "gpu_memory": {
+    "current_mib": 16880,
+    "peak_observed_mib": 16880,
+    "scope": "owned processes",
+    "source": "nvidia-smi",
+    "observed": true
+  },
+  "recent_requests": []
+}

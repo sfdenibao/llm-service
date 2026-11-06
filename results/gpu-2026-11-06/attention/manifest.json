@@ -1,0 +1,28 @@
+{
+  "case": "attention",
+  "time": "2026-11-06T12:34:21.397622+00:00",
+  "commit": "837ca04e52fe800f974cf46f44b7602c87012bb6",
+  "model": "synthetic-QKV",
+  "revision": null,
+  "gpu": "NVIDIA GeForce RTX 4090, GPU-3a9c7ff4-50a1-fec4-ce3c-1e0515dd2aff, 580.178.04, 23028 MiB",
+  "software": {
+    "torch": "2.9.1",
+    "transformers": "4.57.1",
+    "sglang": "0.5.9"
+  },
+  "cuda": "12.8",
+  "complete": true,
+  "parameters": {
+    "warmup": 5,
+    "groups": 3,
+    "iterations": 10,
+    "dtype": "bfloat16",
+    "causal": true,
+    "dropout": 0,
+    "lengths": [
+      128,
+      512,
+      1024
+    ]
+  }
+}

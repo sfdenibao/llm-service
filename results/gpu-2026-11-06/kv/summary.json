@@ -1,0 +1,20 @@
+{
+  "layers": 28,
+  "KV_heads": 2,
+  "head_dim": 128,
+  "dtype_bytes": 4,
+  "KV_bytes_per_token": 57344,
+  "measurements": [
+    {
+      "length": 128,
+      "KV_bytes_one_request": 9175040,
+      "KV_bytes_eight_requests": 73400320
+    },
+    {
+      "length": 512,
+      "KV_bytes_one_request": 31195136,
+      "KV_bytes_eight_requests": 249561088
+    }
+  ],
+  "numerical_passed": true
+}

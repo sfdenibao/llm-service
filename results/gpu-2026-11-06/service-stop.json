@@ -1,0 +1,7 @@
+{
+  "time": "2026-11-06T12:53:08.080986+00:00",
+  "manifest_owned_processes": [],
+  "gateway_pid_file_exists": false,
+  "gpu_snapshot": "1 MiB, 0 %",
+  "scope": "Project processes stopped; cloud practice machine still allocated until ended on platform"
+}

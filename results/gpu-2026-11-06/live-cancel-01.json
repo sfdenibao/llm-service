@@ -1,0 +1,428 @@
+{
+  "schema": "llm-live-cancel-probe/1",
+  "started_at": "2026-11-06T12:26:55.095552+00:00",
+  "complete": true,
+  "official_score": false,
+  "gpu_task_release_proven": false,
+  "checks": [
+    {
+      "test_id": "live_service",
+      "expected": "Declared live SGLang service",
+      "actual": {
+        "model_id": "Qwen/Qwen2.5-7B-Instruct",
+        "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+        "profile": "optimized",
+        "engine": "sglang",
+        "mode": "live"
+      },
+      "passed": true
+    },
+    {
+      "test_id": "idle_precondition",
+      "expected": "No concurrent workload or unresolved reservations",
+      "actual": {
+        "gauges": {
+          "active": 0,
+          "queued": 0
+        },
+        "reserved_micro_usd": 0,
+        "reserved_tokens": 0
+      },
+      "passed": true
+    },
+    {
+      "test_id": "client_disconnect",
+      "expected": "Close the stream immediately after nonempty content, before finish/DONE",
+      "actual": {
+        "request_id": "req_3d26ad5131f34be7babfdd68b739e3d0",
+        "first_content_received": true,
+        "disconnect_before_finish": true,
+        "ttft_ms": 54.335,
+        "connection_closed_at": "2026-11-06T12:26:55.226279+00:00"
+      },
+      "passed": true
+    },
+    {
+      "test_id": "cancel_convergence",
+      "expected": "Within 60 seconds: cancelled/interrupted terminal bill, released reservations, active=queued=0",
+      "actual": {
+        "ledger": {
+          "request_id": "req_3d26ad5131f34be7babfdd68b739e3d0",
+          "status": "interrupted",
+          "usage_state": "unknown_released",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_micro_usd": null,
+          "reserved_micro_usd": 0,
+          "reserved_tokens": 0,
+          "pricing_version": "price_27eb266725db48d29569eb067348bf1a",
+          "error_code": "recovered_after_interruption"
+        },
+        "gauges": {
+          "active": 0,
+          "queued": 0
+        },
+        "elapsed_seconds": 5.081
+      },
+      "passed": true
+    },
+    {
+      "test_id": "interrupted_billing",
+      "expected": "Unknown usage stays null, or exact usage contains nonnegative integers",
+      "actual": {
+        "ledger": {
+          "request_id": "req_3d26ad5131f34be7babfdd68b739e3d0",
+          "status": "interrupted",
+          "usage_state": "unknown_released",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_micro_usd": null,
+          "reserved_micro_usd": 0,
+          "reserved_tokens": 0,
+          "pricing_version": "price_27eb266725db48d29569eb067348bf1a",
+          "error_code": "recovered_after_interruption"
+        },
+        "boundary": "Actual interrupted token counts/cost are unknown; released reservation is not a zero-cost measurement. Audit entry not checked by this ordinary key."
+      },
+      "passed": true
+    },
+    {
+      "test_id": "recovery_request",
+      "expected": "A subsequent small request succeeds with OK and one completed bill",
+      "actual": {
+        "request_id": "req_f93fab399a4742779bb6b9432ca4b58c",
+        "http_status": 200,
+        "answer_matches": true,
+        "ledger": {
+          "request_id": "req_f93fab399a4742779bb6b9432ca4b58c",
+          "status": "completed",
+          "usage_state": "exact",
+          "input_tokens": 33,
+          "output_tokens": 2,
+          "cost_micro_usd": 78,
+          "reserved_micro_usd": 0,
+          "reserved_tokens": 0,
+          "pricing_version": "price_27eb266725db48d29569eb067348bf1a",
+          "error_code": null
+        }
+      },
+      "passed": true
+    },
+    {
+      "test_id": "recovery_billing",
+      "expected": "Returned token usage, single ledger row, balance/cost/token deltas agree; idle with no reservations",
+      "actual": {
+        "returned_usage": {
+          "prompt_tokens": 33,
+          "completion_tokens": 2
+        },
+        "ledger": {
+          "request_id": "req_f93fab399a4742779bb6b9432ca4b58c",
+          "status": "completed",
+          "usage_state": "exact",
+          "input_tokens": 33,
+          "output_tokens": 2,
+          "cost_micro_usd": 78,
+          "reserved_micro_usd": 0,
+          "reserved_tokens": 0,
+          "pricing_version": "price_27eb266725db48d29569eb067348bf1a",
+          "error_code": null
+        },
+        "summary_before": {
+          "request_count": 6,
+          "input_tokens": 165,
+          "output_tokens": 8,
+          "cost_micro_usd": 378,
+          "cancelled_count": 0,
+          "failed_count": 2,
+          "unknown_usage_count": 2,
+          "balance_micro_usd": 999999999622,
+          "reserved_micro_usd": 0,
+          "used_tokens": 173,
+          "reserved_tokens": 0
+        },
+        "summary_after": {
+          "request_count": 7,
+          "input_tokens": 198,
+          "output_tokens": 10,
+          "cost_micro_usd": 456,
+          "cancelled_count": 0,
+          "failed_count": 2,
+          "unknown_usage_count": 2,
+          "balance_micro_usd": 999999999544,
+          "reserved_micro_usd": 0,
+          "used_tokens": 208,
+          "reserved_tokens": 0
+        },
+        "gauges": {
+          "active": 0,
+          "queued": 0
+        }
+      },
+      "passed": true
+    }
+  ],
+  "limitations": [
+    "Run while this service and tenant are idle.",
+    "HTTP cancellation, ledger convergence and subsequent inference are observed.",
+    "No engine scheduler inspection or GPU kernel/memory-release proof.",
+    "Pricing formula and audit entries are not inspected with an ordinary API key."
+  ],
+  "base_url": "http://127.0.0.1:8000",
+  "phase": "finished",
+  "service": {
+    "model_id": "Qwen/Qwen2.5-7B-Instruct",
+    "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "profile": "optimized",
+    "engine": "sglang",
+    "mode": "live"
+  },
+  "stream": {
+    "request_id": "req_3d26ad5131f34be7babfdd68b739e3d0",
+    "first_content_received": true,
+    "disconnect_before_finish": true,
+    "ttft_ms": 54.335,
+    "connection_closed_at": "2026-11-06T12:26:55.226279+00:00"
+  },
+  "poll_samples": [
+    {
+      "elapsed_seconds": 0.013,
+      "gauges": {
+        "active": 1,
+        "queued": 0
+      },
+      "ledger": {
+        "request_id": "req_3d26ad5131f34be7babfdd68b739e3d0",
+        "status": "pending_reconciliation",
+        "usage_state": "unknown",
+        "input_tokens": null,
+        "output_tokens": null,
+        "cost_micro_usd": null,
+        "reserved_micro_usd": 12404,
+        "reserved_tokens": 2106,
+        "pricing_version": "price_27eb266725db48d29569eb067348bf1a",
+        "error_code": "client_disconnected"
+      },
+      "reserved_micro_usd": 12404,
+      "reserved_tokens": 2106
+    },
+    {
+      "elapsed_seconds": 0.519,
+      "gauges": {
+        "active": 0,
+        "queued": 0
+      },
+      "ledger": {
+        "request_id": "req_3d26ad5131f34be7babfdd68b739e3d0",
+        "status": "pending_reconciliation",
+        "usage_state": "unknown",
+        "input_tokens": null,
+        "output_tokens": null,
+        "cost_micro_usd": null,
+        "reserved_micro_usd": 12404,
+        "reserved_tokens": 2106,
+        "pricing_version": "price_27eb266725db48d29569eb067348bf1a",
+        "error_code": "client_disconnected"
+      },
+      "reserved_micro_usd": 12404,
+      "reserved_tokens": 2106
+    },
+    {
+      "elapsed_seconds": 1.025,
+      "gauges": {
+        "active": 0,
+        "queued": 0
+      },
+      "ledger": {
+        "request_id": "req_3d26ad5131f34be7babfdd68b739e3d0",
+        "status": "pending_reconciliation",
+        "usage_state": "unknown",
+        "input_tokens": null,
+        "output_tokens": null,
+        "cost_micro_usd": null,
+        "reserved_micro_usd": 12404,
+        "reserved_tokens": 2106,
+        "pricing_version": "price_27eb266725db48d29569eb067348bf1a",
+        "error_code": "client_disconnected"
+      },
+      "reserved_micro_usd": 12404,
+      "reserved_tokens": 2106
+    },
+    {
+      "elapsed_seconds": 1.531,
+      "gauges": {
+        "active": 0,
+        "queued": 0
+      },
+      "ledger": {
+        "request_id": "req_3d26ad5131f34be7babfdd68b739e3d0",
+        "status": "pending_reconciliation",
+        "usage_state": "unknown",
+        "input_tokens": null,
+        "output_tokens": null,
+        "cost_micro_usd": null,
+        "reserved_micro_usd": 12404,
+        "reserved_tokens": 2106,
+        "pricing_version": "price_27eb266725db48d29569eb067348bf1a",
+        "error_code": "client_disconnected"
+      },
+      "reserved_micro_usd": 12404,
+      "reserved_tokens": 2106
+    },
+    {
+      "elapsed_seconds": 2.036,
+      "gauges": {
+        "active": 0,
+        "queued": 0
+      },
+      "ledger": {
+        "request_id": "req_3d26ad5131f34be7babfdd68b739e3d0",
+        "status": "pending_reconciliation",
+        "usage_state": "unknown",
+        "input_tokens": null,
+        "output_tokens": null,
+        "cost_micro_usd": null,
+        "reserved_micro_usd": 12404,
+        "reserved_tokens": 2106,
+        "pricing_version": "price_27eb266725db48d29569eb067348bf1a",
+        "error_code": "client_disconnected"
+      },
+      "reserved_micro_usd": 12404,
+      "reserved_tokens": 2106
+    },
+    {
+      "elapsed_seconds": 2.542,
+      "gauges": {
+        "active": 0,
+        "queued": 0
+      },
+      "ledger": {
+        "request_id": "req_3d26ad5131f34be7babfdd68b739e3d0",
+        "status": "pending_reconciliation",
+        "usage_state": "unknown",
+        "input_tokens": null,
+        "output_tokens": null,
+        "cost_micro_usd": null,
+        "reserved_micro_usd": 12404,
+        "reserved_tokens": 2106,
+        "pricing_version": "price_27eb266725db48d29569eb067348bf1a",
+        "error_code": "client_disconnected"
+      },
+      "reserved_micro_usd": 12404,
+      "reserved_tokens": 2106
+    },
+    {
+      "elapsed_seconds": 3.049,
+      "gauges": {
+        "active": 0,
+        "queued": 0
+      },
+      "ledger": {
+        "request_id": "req_3d26ad5131f34be7babfdd68b739e3d0",
+        "status": "pending_reconciliation",
+        "usage_state": "unknown",
+        "input_tokens": null,
+        "output_tokens": null,
+        "cost_micro_usd": null,
+        "reserved_micro_usd": 12404,
+        "reserved_tokens": 2106,
+        "pricing_version": "price_27eb266725db48d29569eb067348bf1a",
+        "error_code": "client_disconnected"
+      },
+      "reserved_micro_usd": 12404,
+      "reserved_tokens": 2106
+    },
+    {
+      "elapsed_seconds": 3.555,
+      "gauges": {
+        "active": 0,
+        "queued": 0
+      },
+      "ledger": {
+        "request_id": "req_3d26ad5131f34be7babfdd68b739e3d0",
+        "status": "pending_reconciliation",
+        "usage_state": "unknown",
+        "input_tokens": null,
+        "output_tokens": null,
+        "cost_micro_usd": null,
+        "reserved_micro_usd": 12404,
+        "reserved_tokens": 2106,
+        "pricing_version": "price_27eb266725db48d29569eb067348bf1a",
+        "error_code": "client_disconnected"
+      },
+      "reserved_micro_usd": 12404,
+      "reserved_tokens": 2106
+    },
+    {
+      "elapsed_seconds": 4.061,
+      "gauges": {
+        "active": 0,
+        "queued": 0
+      },
+      "ledger": {
+        "request_id": "req_3d26ad5131f34be7babfdd68b739e3d0",
+        "status": "pending_reconciliation",
+        "usage_state": "unknown",
+        "input_tokens": null,
+        "output_tokens": null,
+        "cost_micro_usd": null,
+        "reserved_micro_usd": 12404,
+        "reserved_tokens": 2106,
+        "pricing_version": "price_27eb266725db48d29569eb067348bf1a",
+        "error_code": "client_disconnected"
+      },
+      "reserved_micro_usd": 12404,
+      "reserved_tokens": 2106
+    },
+    {
+      "elapsed_seconds": 4.569,
+      "gauges": {
+        "active": 0,
+        "queued": 0
+      },
+      "ledger": {
+        "request_id": "req_3d26ad5131f34be7babfdd68b739e3d0",
+        "status": "pending_reconciliation",
+        "usage_state": "unknown",
+        "input_tokens": null,
+        "output_tokens": null,
+        "cost_micro_usd": null,
+        "reserved_micro_usd": 12404,
+        "reserved_tokens": 2106,
+        "pricing_version": "price_27eb266725db48d29569eb067348bf1a",
+        "error_code": "client_disconnected"
+      },
+      "reserved_micro_usd": 12404,
+      "reserved_tokens": 2106
+    },
+    {
+      "elapsed_seconds": 5.081,
+      "gauges": {
+        "active": 0,
+        "queued": 0
+      },
+      "ledger": {
+        "request_id": "req_3d26ad5131f34be7babfdd68b739e3d0",
+        "status": "interrupted",
+        "usage_state": "unknown_released",
+        "input_tokens": null,
+        "output_tokens": null,
+        "cost_micro_usd": null,
+        "reserved_micro_usd": 0,
+        "reserved_tokens": 0,
+        "pricing_version": "price_27eb266725db48d29569eb067348bf1a",
+        "error_code": "recovered_after_interruption"
+      },
+      "reserved_micro_usd": 0,
+      "reserved_tokens": 0
+    }
+  ],
+  "abort_observation": {
+    "acknowledged_delta": 2,
+    "failed_delta": 0,
+    "gpu_task_release_proven": false,
+    "meaning": "Abort ACK only confirms the engine HTTP endpoint acknowledged a request; no engine scheduler or GPU trace was inspected."
+  },
+  "finished_at": "2026-11-06T12:27:00.394380+00:00",
+  "passed": true
+}

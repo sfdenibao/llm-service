@@ -1,0 +1,340 @@
+{
+  "official_score": false,
+  "independent_script": true,
+  "tested_commit": "837ca04e52fe800f974cf46f44b7602c87012bb6",
+  "profiles": {
+    "baseline": {
+      "rows": 384,
+      "ok": 333,
+      "quality_rechecked": 333,
+      "failed": 51,
+      "failure_codes": {
+        "http_504": 51
+      }
+    },
+    "optimized": {
+      "rows": 384,
+      "ok": 384,
+      "quality_rechecked": 384,
+      "failed": 0,
+      "failure_codes": {}
+    }
+  },
+  "threshold_checks": [
+    {
+      "workload": "short",
+      "concurrency": 8,
+      "metric": "output_tokens_per_second",
+      "actual": 263.78023418671216,
+      "threshold": 71,
+      "passed": true
+    },
+    {
+      "workload": "short",
+      "concurrency": 8,
+      "metric": "quality_goodput",
+      "actual": 14.654457454817344,
+      "threshold": 3.67,
+      "passed": true
+    },
+    {
+      "workload": "short",
+      "concurrency": 8,
+      "metric": "slo_attainment",
+      "actual": 1.0,
+      "threshold": 0.95,
+      "passed": true
+    },
+    {
+      "workload": "short",
+      "concurrency": 8,
+      "metric": "success_rate",
+      "actual": 1.0,
+      "threshold": 0.99,
+      "passed": true
+    },
+    {
+      "workload": "short",
+      "concurrency": 8,
+      "metric": "quality_rate",
+      "actual": 1.0,
+      "threshold": 0.99,
+      "passed": true
+    },
+    {
+      "workload": "short",
+      "concurrency": 8,
+      "metric": "ttft_p95_ms",
+      "actual": 220.8958026021719,
+      "threshold": 1780,
+      "passed": true
+    },
+    {
+      "workload": "short",
+      "concurrency": 8,
+      "metric": "tpot_p95_ms",
+      "actual": 20.822674242986572,
+      "threshold": 35,
+      "passed": true
+    },
+    {
+      "workload": "short",
+      "concurrency": 8,
+      "metric": "e2e_p95_ms",
+      "actual": 571.8076638877392,
+      "threshold": 2350,
+      "passed": true
+    },
+    {
+      "workload": "short",
+      "concurrency": 16,
+      "metric": "output_tokens_per_second",
+      "actual": 392.4021186904823,
+      "threshold": 128,
+      "passed": true
+    },
+    {
+      "workload": "short",
+      "concurrency": 16,
+      "metric": "quality_goodput",
+      "actual": 21.67468549728786,
+      "threshold": 6.63,
+      "passed": true
+    },
+    {
+      "workload": "short",
+      "concurrency": 16,
+      "metric": "slo_attainment",
+      "actual": 1.0,
+      "threshold": 0.95,
+      "passed": true
+    },
+    {
+      "workload": "short",
+      "concurrency": 16,
+      "metric": "success_rate",
+      "actual": 1.0,
+      "threshold": 0.99,
+      "passed": true
+    },
+    {
+      "workload": "short",
+      "concurrency": 16,
+      "metric": "quality_rate",
+      "actual": 1.0,
+      "threshold": 0.99,
+      "passed": true
+    },
+    {
+      "workload": "short",
+      "concurrency": 16,
+      "metric": "ttft_p95_ms",
+      "actual": 247.7793749421835,
+      "threshold": 1830,
+      "passed": true
+    },
+    {
+      "workload": "short",
+      "concurrency": 16,
+      "metric": "tpot_p95_ms",
+      "actual": 24.162443613426554,
+      "threshold": 40,
+      "passed": true
+    },
+    {
+      "workload": "short",
+      "concurrency": 16,
+      "metric": "e2e_p95_ms",
+      "actual": 746.8794342130423,
+      "threshold": 2600,
+      "passed": true
+    },
+    {
+      "workload": "long",
+      "concurrency": 8,
+      "metric": "output_tokens_per_second",
+      "actual": 405.1529396492782,
+      "threshold": 254,
+      "passed": true
+    },
+    {
+      "workload": "long",
+      "concurrency": 8,
+      "metric": "quality_goodput",
+      "actual": 1.618857995768364,
+      "threshold": 0.95,
+      "passed": true
+    },
+    {
+      "workload": "long",
+      "concurrency": 8,
+      "metric": "slo_attainment",
+      "actual": 1.0,
+      "threshold": 0.95,
+      "passed": true
+    },
+    {
+      "workload": "long",
+      "concurrency": 8,
+      "metric": "success_rate",
+      "actual": 1.0,
+      "threshold": 0.99,
+      "passed": true
+    },
+    {
+      "workload": "long",
+      "concurrency": 8,
+      "metric": "quality_rate",
+      "actual": 1.0,
+      "threshold": 0.99,
+      "passed": true
+    },
+    {
+      "workload": "long",
+      "concurrency": 8,
+      "metric": "ttft_p95_ms",
+      "actual": 293.29960886389017,
+      "threshold": 1870,
+      "passed": true
+    },
+    {
+      "workload": "long",
+      "concurrency": 8,
+      "metric": "tpot_p95_ms",
+      "actual": 18.96116454303863,
+      "threshold": 29,
+      "passed": true
+    },
+    {
+      "workload": "long",
+      "concurrency": 8,
+      "metric": "e2e_p95_ms",
+      "actual": 4983.276155777276,
+      "threshold": 8900,
+      "passed": true
+    },
+    {
+      "workload": "long",
+      "concurrency": 16,
+      "metric": "output_tokens_per_second",
+      "actual": 752.5386119748154,
+      "threshold": 485,
+      "passed": true
+    },
+    {
+      "workload": "long",
+      "concurrency": 16,
+      "metric": "quality_goodput",
+      "actual": 3.0066466934236002,
+      "threshold": 1.81,
+      "passed": true
+    },
+    {
+      "workload": "long",
+      "concurrency": 16,
+      "metric": "slo_attainment",
+      "actual": 1.0,
+      "threshold": 0.95,
+      "passed": true
+    },
+    {
+      "workload": "long",
+      "concurrency": 16,
+      "metric": "success_rate",
+      "actual": 1.0,
+      "threshold": 0.99,
+      "passed": true
+    },
+    {
+      "workload": "long",
+      "concurrency": 16,
+      "metric": "quality_rate",
+      "actual": 1.0,
+      "threshold": 0.99,
+      "passed": true
+    },
+    {
+      "workload": "long",
+      "concurrency": 16,
+      "metric": "ttft_p95_ms",
+      "actual": 464.54771887511015,
+      "threshold": 2070,
+      "passed": true
+    },
+    {
+      "workload": "long",
+      "concurrency": 16,
+      "metric": "tpot_p95_ms",
+      "actual": 19.73906248368747,
+      "threshold": 30,
+      "passed": true
+    },
+    {
+      "workload": "long",
+      "concurrency": 16,
+      "metric": "e2e_p95_ms",
+      "actual": 5315.111231058836,
+      "threshold": 9350,
+      "passed": true
+    }
+  ],
+  "mechanisms": {
+    "kv": {
+      "rows": 12,
+      "manifest_complete": true,
+      "commit": "837ca04e52fe800f974cf46f44b7602c87012bb6",
+      "max_abs_error": 5.53131103515625e-05,
+      "top1_agreement_min": 1.0,
+      "cache_speedups": {
+        "128": 1.2990803623005143,
+        "512": 2.500861821503665
+      }
+    },
+    "attention": {
+      "rows": 18,
+      "manifest_complete": true,
+      "commit": "837ca04e52fe800f974cf46f44b7602c87012bb6",
+      "max_abs_error": 0.0078125,
+      "profiler_traces_valid": 6,
+      "flash_speedups": {
+        "128": 8.805417434040246,
+        "512": 6.700688851865089,
+        "1024": 9.950730614513624
+      }
+    },
+    "prefix": {
+      "rows": 96,
+      "manifest_complete": true,
+      "commit": "837ca04e52fe800f974cf46f44b7602c87012bb6",
+      "successful_outputs": 96,
+      "hot_shared_cached_tokens_range": [
+        515,
+        515
+      ],
+      "flush_receipts_passed": 12
+    }
+  },
+  "same_seed": 1093552657,
+  "identical_input_file_pairs": 24,
+  "baseline_timeout_evidence": {
+    "http_504": 51,
+    "long_c8": 18,
+    "long_c16": 33,
+    "e2e_ms_range": [
+      20032.767422497272,
+      20168.024293147027
+    ],
+    "timed_out_counter": 51,
+    "abort_acknowledged_counter": 0,
+    "gateway_slots": 1,
+    "queue_timeout_seconds": 20,
+    "conclusion": "Consistent with queue timeout before engine admission; raw benchmark retains HTTP status, not per-request server error_code."
+  },
+  "existing_final_report_current": true,
+  "passed": true,
+  "limitations": [
+    "Token counts are checked for recorded client provenance, not freshly retokenized.",
+    "Group window duration comes from benchmark summaries; raw data does not retain absolute timestamps.",
+    "Practice evidence only; no official score and no GPU-memory-release proof."
+  ]
+}

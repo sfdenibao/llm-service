@@ -1,0 +1,6 @@
+{
+  "commit": "e891241e1fa690d18e8ab57a2bbbf2309b1ca520",
+  "updated_at": "2026-11-06T12:21:50.540611+00:00",
+  "purpose": "GPU runtime with committed native build prerequisite and PATH fixes",
+  "cold_install": false
+}

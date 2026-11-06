@@ -1,0 +1,261 @@
+/tmp/tmpjntaiwa0/cuda_utils.c:6:10: fatal error: Python.h: No such file or directory
+    6 | #include <Python.h>
+      |          ^~~~~~~~~~
+compilation terminated.
+/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/layers/attention/fla/utils.py:212: UserWarning: Triton is not supported on current platform, roll back to CPU.
+  warnings.warn(
+/tmp/tmpajpw2tjq/cuda_utils.c:6:10: fatal error: Python.h: No such file or directory
+    6 | #include <Python.h>
+      |          ^~~~~~~~~~
+compilation terminated.
+/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/layers/attention/fla/utils.py:212: UserWarning: Triton is not supported on current platform, roll back to CPU.
+  warnings.warn(
+/tmp/tmphcz6gy5q/cuda_utils.c:6:10: fatal error: Python.h: No such file or directory
+    6 | #include <Python.h>
+      |          ^~~~~~~~~~
+compilation terminated.
+/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/layers/attention/fla/utils.py:212: UserWarning: Triton is not supported on current platform, roll back to CPU.
+  warnings.warn(
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+/tmp/tmp86a2t3yx/cuda_utils.c:6:10: fatal error: Python.h: No such file or directory
+    6 | #include <Python.h>
+      |          ^~~~~~~~~~
+compilation terminated.
+/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/layers/attention/fla/utils.py:212: UserWarning: Triton is not supported on current platform, roll back to CPU.
+  warnings.warn(
+[2026-11-06 12:16:44] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+[2026-11-06 12:16:44] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+[2026-11-06 12:16:44] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/transformers/__init__.py)
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:02,  1.29it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:02<00:02,  1.23s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02<00:00,  1.07it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:04<00:00,  1.01s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:04<00:00,  1.00s/it]
+
+  0%|          | 0/7 [00:00<?, ?it/s]Capturing batches (bs=24 avail_mem=5.69 GB):   0%|          | 0/7 [00:00<?, ?it/s]/tmp/tmpp81vjgsd/cuda_utils.c:6:10: fatal error: Python.h: No such file or directory
+    6 | #include <Python.h>
+      |          ^~~~~~~~~~
+compilation terminated.
+Capturing batches (bs=24 avail_mem=5.69 GB):   0%|          | 0/7 [00:00<?, ?it/s]
+[2026-11-06 12:16:49] Scheduler hit an exception: Traceback (most recent call last):
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/managers/scheduler.py", line 3130, in run_scheduler_process
+    scheduler = Scheduler(
+                ^^^^^^^^^^
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/managers/scheduler.py", line 368, in __init__
+    self.init_model_worker()
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/managers/scheduler.py", line 564, in init_model_worker
+    self.init_tp_model_worker()
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/managers/scheduler.py", line 522, in init_tp_model_worker
+    self.tp_worker = TpModelWorker(
+                     ^^^^^^^^^^^^^^
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/managers/tp_worker.py", line 247, in __init__
+    self._init_model_runner()
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/managers/tp_worker.py", line 330, in _init_model_runner
+    self._model_runner = ModelRunner(
+                         ^^^^^^^^^^^^
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/model_executor/model_runner.py", line 413, in __init__
+    self.initialize(min_per_gpu_memory)
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/model_executor/model_runner.py", line 609, in initialize
+    self.init_device_graphs()
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/model_executor/model_runner.py", line 2156, in init_device_graphs
+    self.graph_runner = graph_runners[self.device](self)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/model_executor/cuda_graph_runner.py", line 370, in __init__
+    self.capture()
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/model_executor/cuda_graph_runner.py", line 526, in capture
+    _capture_one_stream()
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/model_executor/cuda_graph_runner.py", line 513, in _capture_one_stream
+    ) = self.capture_one_batch_size(bs, forward, stream_idx)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/model_executor/cuda_graph_runner.py", line 689, in capture_one_batch_size
+    attn_backend.init_forward_metadata_capture_cuda_graph(
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/layers/attention/flashinfer_backend.py", line 573, in init_forward_metadata_capture_cuda_graph
+    self.indices_updater_decode.update(
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/layers/attention/flashinfer_backend.py", line 970, in update_single_wrapper
+    self.call_begin_forward(
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/layers/attention/flashinfer_backend.py", line 1094, in call_begin_forward
+    create_flashinfer_kv_indices_triton[(bs,)](
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/triton/runtime/jit.py", line 419, in <lambda>
+    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/triton/runtime/jit.py", line 713, in run
+    device = driver.active.get_current_device()
+             ^^^^^^^^^^^^^
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/triton/runtime/driver.py", line 28, in active
+    self._active = self.default
+                   ^^^^^^^^^^^^
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/triton/runtime/driver.py", line 22, in default
+    self._default = _create_driver()
+                    ^^^^^^^^^^^^^^^^
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/triton/runtime/driver.py", line 10, in _create_driver
+    return active_drivers[0]()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/triton/backends/nvidia/driver.py", line 719, in __init__
+    self.utils = CudaUtils()  # TODO: make static
+                 ^^^^^^^^^^^
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/triton/backends/nvidia/driver.py", line 63, in __init__
+    mod = compile_module_from_src(
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/triton/runtime/build.py", line 89, in compile_module_from_src
+    so = _build(name, src_path, tmpdir, library_dirs or [], include_dirs or [], libraries or [], ccflags or [])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/triton/runtime/build.py", line 51, in _build
+    subprocess.check_call(cc_cmd, stdout=subprocess.DEVNULL)
+  File "/usr/lib/python3.12/subprocess.py", line 413, in check_call
+    raise CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command '['/usr/bin/gcc', '/tmp/tmpp81vjgsd/cuda_utils.c', '-O3', '-shared', '-fPIC', '-Wno-psabi', '-o', '/tmp/tmpp81vjgsd/cuda_utils.cpython-312-x86_64-linux-gnu.so', '-lcuda', '-L/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/triton/backends/nvidia/lib', '-L/usr/lib/x86_64-linux-gnu', '-I/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/triton/backends/nvidia/include', '-I/tmp/tmpp81vjgsd', '-I/usr/include/python3.12']' returned non-zero exit status 1.
+
+[2026-11-06 12:16:49] Received sigquit from a child process. It usually means the child failed.
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[2026-11-06 12:18:14] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+[2026-11-06 12:18:14] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+[2026-11-06 12:18:14] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/transformers/__init__.py)
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:01,  2.61it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:00<00:01,  1.97it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01<00:00,  1.87it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.84it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.91it/s]
+
+  0%|          | 0/7 [00:00<?, ?it/s]Capturing batches (bs=24 avail_mem=5.69 GB):   0%|          | 0/7 [00:00<?, ?it/s]Capturing batches (bs=24 avail_mem=5.69 GB):   0%|          | 0/7 [00:00<?, ?it/s]
+[2026-11-06 12:18:18] Scheduler hit an exception: Traceback (most recent call last):
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/managers/scheduler.py", line 3130, in run_scheduler_process
+    scheduler = Scheduler(
+                ^^^^^^^^^^
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/managers/scheduler.py", line 368, in __init__
+    self.init_model_worker()
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/managers/scheduler.py", line 564, in init_model_worker
+    self.init_tp_model_worker()
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/managers/scheduler.py", line 522, in init_tp_model_worker
+    self.tp_worker = TpModelWorker(
+                     ^^^^^^^^^^^^^^
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/managers/tp_worker.py", line 247, in __init__
+    self._init_model_runner()
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/managers/tp_worker.py", line 330, in _init_model_runner
+    self._model_runner = ModelRunner(
+                         ^^^^^^^^^^^^
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/model_executor/model_runner.py", line 413, in __init__
+    self.initialize(min_per_gpu_memory)
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/model_executor/model_runner.py", line 609, in initialize
+    self.init_device_graphs()
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/model_executor/model_runner.py", line 2156, in init_device_graphs
+    self.graph_runner = graph_runners[self.device](self)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/model_executor/cuda_graph_runner.py", line 370, in __init__
+    self.capture()
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/model_executor/cuda_graph_runner.py", line 526, in capture
+    _capture_one_stream()
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/model_executor/cuda_graph_runner.py", line 513, in _capture_one_stream
+    ) = self.capture_one_batch_size(bs, forward, stream_idx)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/model_executor/cuda_graph_runner.py", line 689, in capture_one_batch_size
+    attn_backend.init_forward_metadata_capture_cuda_graph(
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/layers/attention/flashinfer_backend.py", line 573, in init_forward_metadata_capture_cuda_graph
+    self.indices_updater_decode.update(
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/layers/attention/flashinfer_backend.py", line 970, in update_single_wrapper
+    self.call_begin_forward(
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/layers/attention/flashinfer_backend.py", line 1151, in call_begin_forward
+    wrapper.begin_forward(
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/flashinfer/decode.py", line 1051, in plan
+    self._cached_module = get_batch_prefill_module(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/flashinfer/prefill.py", line 404, in get_batch_prefill_module
+    module = gen_batch_prefill_module(backend, *args).build_and_load()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/flashinfer/jit/core.py", line 317, in build_and_load
+    self.build(verbose, need_lock=False)
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/flashinfer/jit/core.py", line 303, in build
+    run_ninja(self.build_dir, self.ninja_path, verbose)
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/flashinfer/jit/cpp_ext.py", line 328, in run_ninja
+    subprocess.run(
+  File "/usr/lib/python3.12/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.12/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'ninja'
+
+[2026-11-06 12:18:18] Received sigquit from a child process. It usually means the child failed.
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[2026-11-06 12:19:11] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+[2026-11-06 12:19:11] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+[2026-11-06 12:19:11] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/transformers/__init__.py)
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:01,  2.23it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01<00:01,  1.84it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01<00:00,  1.82it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.82it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.85it/s]
+
+  0%|          | 0/7 [00:00<?, ?it/s]Capturing batches (bs=24 avail_mem=5.69 GB):   0%|          | 0/7 [00:00<?, ?it/s]Capturing batches (bs=24 avail_mem=5.69 GB):  14%|█▍        | 1/7 [00:38<03:52, 38.75s/it]Capturing batches (bs=16 avail_mem=5.63 GB):  14%|█▍        | 1/7 [00:38<03:52, 38.75s/it]Capturing batches (bs=16 avail_mem=5.63 GB):  29%|██▊       | 2/7 [00:38<01:20, 16.03s/it]Capturing batches (bs=12 avail_mem=5.61 GB):  29%|██▊       | 2/7 [00:38<01:20, 16.03s/it]Capturing batches (bs=8 avail_mem=5.61 GB):  29%|██▊       | 2/7 [00:38<01:20, 16.03s/it] Capturing batches (bs=8 avail_mem=5.61 GB):  57%|█████▋    | 4/7 [00:38<00:18,  6.01s/it]Capturing batches (bs=4 avail_mem=5.58 GB):  57%|█████▋    | 4/7 [00:38<00:18,  6.01s/it]Capturing batches (bs=2 avail_mem=5.58 GB):  57%|█████▋    | 4/7 [00:39<00:18,  6.01s/it]Capturing batches (bs=2 avail_mem=5.58 GB):  86%|████████▌ | 6/7 [00:39<00:03,  3.20s/it]Capturing batches (bs=1 avail_mem=5.56 GB):  86%|████████▌ | 6/7 [00:39<00:03,  3.20s/it]Capturing batches (bs=1 avail_mem=5.56 GB): 100%|██████████| 7/7 [00:39<00:00,  5.59s/it]
+[2026-11-06 12:21:19] SIGTERM received. signum=None frame=None. Draining requests and shutting down...
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[2026-11-06 12:21:37] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+[2026-11-06 12:21:37] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+[2026-11-06 12:21:37] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/transformers/__init__.py)
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:01,  2.66it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:00<00:00,  2.06it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01<00:00,  1.94it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.90it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.97it/s]
+
+  0%|          | 0/7 [00:00<?, ?it/s]Capturing batches (bs=24 avail_mem=5.69 GB):   0%|          | 0/7 [00:00<?, ?it/s]Capturing batches (bs=24 avail_mem=5.69 GB):  14%|█▍        | 1/7 [00:00<00:03,  1.53it/s]Capturing batches (bs=16 avail_mem=5.63 GB):  14%|█▍        | 1/7 [00:00<00:03,  1.53it/s]Capturing batches (bs=16 avail_mem=5.63 GB):  29%|██▊       | 2/7 [00:00<00:01,  3.00it/s]Capturing batches (bs=12 avail_mem=5.61 GB):  29%|██▊       | 2/7 [00:00<00:01,  3.00it/s]Capturing batches (bs=8 avail_mem=5.61 GB):  29%|██▊       | 2/7 [00:00<00:01,  3.00it/s] Capturing batches (bs=8 avail_mem=5.61 GB):  57%|█████▋    | 4/7 [00:00<00:00,  6.25it/s]Capturing batches (bs=4 avail_mem=5.58 GB):  57%|█████▋    | 4/7 [00:00<00:00,  6.25it/s]Capturing batches (bs=2 avail_mem=5.58 GB):  57%|█████▋    | 4/7 [00:00<00:00,  6.25it/s]Capturing batches (bs=2 avail_mem=5.58 GB):  86%|████████▌ | 6/7 [00:00<00:00,  9.01it/s]Capturing batches (bs=1 avail_mem=5.56 GB):  86%|████████▌ | 6/7 [00:00<00:00,  9.01it/s]Capturing batches (bs=1 avail_mem=5.56 GB): 100%|██████████| 7/7 [00:01<00:00,  6.66it/s]
+[2026-11-06 12:25:37] SIGTERM received. signum=None frame=None. Draining requests and shutting down...
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[2026-11-06 12:25:53] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+[2026-11-06 12:25:53] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+[2026-11-06 12:25:53] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/transformers/__init__.py)
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:01,  2.42it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01<00:01,  1.78it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01<00:00,  1.72it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.76it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.79it/s]
+
+  0%|          | 0/7 [00:00<?, ?it/s]Capturing batches (bs=24 avail_mem=5.69 GB):   0%|          | 0/7 [00:00<?, ?it/s]Capturing batches (bs=24 avail_mem=5.69 GB):  14%|█▍        | 1/7 [00:00<00:04,  1.48it/s]Capturing batches (bs=16 avail_mem=5.63 GB):  14%|█▍        | 1/7 [00:00<00:04,  1.48it/s]Capturing batches (bs=16 avail_mem=5.63 GB):  29%|██▊       | 2/7 [00:00<00:01,  2.93it/s]Capturing batches (bs=12 avail_mem=5.61 GB):  29%|██▊       | 2/7 [00:00<00:01,  2.93it/s]Capturing batches (bs=8 avail_mem=5.61 GB):  29%|██▊       | 2/7 [00:00<00:01,  2.93it/s] Capturing batches (bs=8 avail_mem=5.61 GB):  57%|█████▋    | 4/7 [00:00<00:00,  6.12it/s]Capturing batches (bs=4 avail_mem=5.58 GB):  57%|█████▋    | 4/7 [00:00<00:00,  6.12it/s]Capturing batches (bs=2 avail_mem=5.58 GB):  57%|█████▋    | 4/7 [00:00<00:00,  6.12it/s]Capturing batches (bs=2 avail_mem=5.58 GB):  86%|████████▌ | 6/7 [00:01<00:00,  8.86it/s]Capturing batches (bs=1 avail_mem=5.56 GB):  86%|████████▌ | 6/7 [00:01<00:00,  8.86it/s]Capturing batches (bs=1 avail_mem=5.56 GB): 100%|██████████| 7/7 [00:01<00:00,  6.52it/s]
+[2026-11-06 12:34:22] SIGTERM received. signum=None frame=None. Draining requests and shutting down...
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[2026-11-06 12:37:12] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+[2026-11-06 12:37:12] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+[2026-11-06 12:37:12] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/transformers/__init__.py)
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:01,  2.60it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01<00:01,  1.84it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01<00:00,  1.73it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.71it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.77it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s]Capturing batches (bs=1 avail_mem=6.41 GB):   0%|          | 0/1 [00:00<?, ?it/s]Capturing batches (bs=1 avail_mem=6.41 GB): 100%|██████████| 1/1 [00:00<00:00,  1.34it/s]Capturing batches (bs=1 avail_mem=6.41 GB): 100%|██████████| 1/1 [00:00<00:00,  1.34it/s]
+[2026-11-06 12:42:01] Endpoint '/get_server_info' is deprecated and will be removed in a future version. Please use '/server_info' instead.
+[2026-11-06 12:52:24] SIGTERM received. signum=None frame=None. Draining requests and shutting down...
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[2026-11-06 12:52:46] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+[2026-11-06 12:52:46] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+[2026-11-06 12:52:46] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/transformers/__init__.py)
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:01,  2.48it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01<00:01,  1.85it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01<00:00,  1.76it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.72it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.79it/s]
+
+  0%|          | 0/7 [00:00<?, ?it/s]Capturing batches (bs=24 avail_mem=5.69 GB):   0%|          | 0/7 [00:00<?, ?it/s]Capturing batches (bs=24 avail_mem=5.69 GB):  14%|█▍        | 1/7 [00:00<00:04,  1.36it/s]Capturing batches (bs=16 avail_mem=5.63 GB):  14%|█▍        | 1/7 [00:00<00:04,  1.36it/s]Capturing batches (bs=16 avail_mem=5.63 GB):  29%|██▊       | 2/7 [00:00<00:01,  2.57it/s]Capturing batches (bs=12 avail_mem=5.61 GB):  29%|██▊       | 2/7 [00:00<00:01,  2.57it/s]Capturing batches (bs=8 avail_mem=5.61 GB):  29%|██▊       | 2/7 [00:00<00:01,  2.57it/s] Capturing batches (bs=8 avail_mem=5.61 GB):  57%|█████▋    | 4/7 [00:01<00:00,  5.24it/s]Capturing batches (bs=4 avail_mem=5.58 GB):  57%|█████▋    | 4/7 [00:01<00:00,  5.24it/s]Capturing batches (bs=2 avail_mem=5.58 GB):  57%|█████▋    | 4/7 [00:01<00:00,  5.24it/s]Capturing batches (bs=2 avail_mem=5.58 GB):  86%|████████▌ | 6/7 [00:01<00:00,  7.50it/s]Capturing batches (bs=1 avail_mem=5.56 GB):  86%|████████▌ | 6/7 [00:01<00:00,  7.50it/s]Capturing batches (bs=1 avail_mem=5.56 GB): 100%|██████████| 7/7 [00:01<00:00,  5.59it/s]
+[2026-11-06 12:53:02] Endpoint '/get_server_info' is deprecated and will be removed in a future version. Please use '/server_info' instead.

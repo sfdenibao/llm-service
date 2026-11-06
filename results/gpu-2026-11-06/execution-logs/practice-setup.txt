@@ -1,0 +1,796 @@
+NVIDIA GeForce RTX 4090
+Looking in links: /opt/llm-cache/wheels
+Collecting aiohappyeyeballs==2.7.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 4))
+  Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl.metadata (5.9 kB)
+Collecting aiohttp==3.14.5 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 5))
+  Downloading aiohttp-3.14.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.3 kB)
+Collecting aiosignal==1.4.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 6))
+  Downloading aiosignal-1.4.0-py3-none-any.whl.metadata (3.7 kB)
+Collecting airportsdata==20260905 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 7))
+  Downloading airportsdata-20260905-py3-none-any.whl.metadata (8.2 kB)
+Collecting annotated-types==0.7.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 8))
+  Downloading annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+Collecting anthropic==1.15.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 9))
+  Downloading anthropic-1.15.0-py3-none-any.whl.metadata (5.8 kB)
+Collecting anyio==4.10.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 10))
+  Downloading anyio-4.10.0-py3-none-any.whl.metadata (4.0 kB)
+Collecting apache-tvm-ffi==0.1.14.post1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 11))
+  Downloading apache_tvm_ffi-0.1.14.post1-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (6.2 kB)
+Collecting asttokens==3.0.2 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 12))
+  Downloading asttokens-3.0.2-py3-none-any.whl.metadata (5.7 kB)
+Collecting attrs==26.1.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 13))
+  Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+Collecting blobfile==3.0.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 14))
+  Downloading blobfile-3.0.0-py3-none-any.whl.metadata (15 kB)
+Collecting build==1.6.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 15))
+  Downloading build-1.6.1-py3-none-any.whl.metadata (5.6 kB)
+Collecting certifi==2025.8.3 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 16))
+  Downloading certifi-2025.8.3-py3-none-any.whl.metadata (2.4 kB)
+Collecting cffi==2.1.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 17))
+  Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.5 kB)
+Collecting charset-normalizer==3.5.2 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 18))
+  Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.4/46.4 kB 5.7 MB/s eta 0:00:00
+Collecting click==8.2.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 19))
+  Downloading click-8.2.1-py3-none-any.whl.metadata (2.5 kB)
+Collecting cloudpickle==3.1.2 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 20))
+  Downloading cloudpickle-3.1.2-py3-none-any.whl.metadata (7.1 kB)
+Collecting compressed-tensors==0.15.0.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 21))
+  Downloading compressed_tensors-0.15.0.1-py3-none-any.whl.metadata (4.7 kB)
+Collecting contourpy==1.3.2 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 22))
+  Downloading contourpy-1.3.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.5 kB)
+Collecting cryptography==50.0.2 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 23))
+  Downloading cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (4.4 kB)
+Collecting cuda-bindings==12.9.10 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 24))
+  Downloading cuda_bindings-12.9.10-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (2.6 kB)
+Collecting cuda-pathfinder==1.8.3 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 25))
+  Downloading cuda_pathfinder-1.8.3-py3-none-any.whl.metadata (1.9 kB)
+Collecting cuda-python==12.9.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 26))
+  Downloading cuda_python-12.9.0-py3-none-any.whl.metadata (4.6 kB)
+Collecting cycler==0.12.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 27))
+  Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting datasets==5.0.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 28))
+  Downloading datasets-5.0.1-py3-none-any.whl.metadata (23 kB)
+Collecting decord2==3.4.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 29))
+  Downloading decord2-3.4.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (879 bytes)
+Collecting dill==0.4.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 30))
+  Downloading dill-0.4.1-py3-none-any.whl.metadata (10 kB)
+Collecting diskcache==5.6.3 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 31))
+  Downloading diskcache-5.6.3-py3-none-any.whl.metadata (20 kB)
+Collecting distro==1.9.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 32))
+  Downloading distro-1.9.0-py3-none-any.whl.metadata (6.8 kB)
+Collecting docstring-parser==0.18.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 33))
+  Downloading docstring_parser-0.18.0-py3-none-any.whl.metadata (3.5 kB)
+Collecting einops==0.8.2 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 34))
+  Downloading einops-0.8.2-py3-none-any.whl.metadata (13 kB)
+Collecting executing==2.3.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 35))
+  Downloading executing-2.3.0-py3-none-any.whl.metadata (9.1 kB)
+Collecting fastapi==0.116.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 36))
+  Downloading fastapi-0.116.1-py3-none-any.whl.metadata (28 kB)
+Collecting filelock==4.2.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 37))
+  Downloading filelock-4.2.1-py3-none-any.whl.metadata (2.0 kB)
+Collecting flashinfer-cubin==0.6.3 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 38))
+  Downloading flashinfer_cubin-0.6.3-py3-none-any.whl.metadata (1.3 kB)
+Collecting flashinfer-python==0.6.3 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 39))
+  Downloading flashinfer_python-0.6.3-py3-none-any.whl.metadata (10 kB)
+Collecting fonttools==4.65.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 40))
+  Downloading fonttools-4.65.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (125 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 125.0/125.0 kB 16.0 MB/s eta 0:00:00
+Collecting frozenlist==1.8.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 41))
+  Downloading frozenlist-1.8.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (20 kB)
+Collecting fsspec==2026.6.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 42))
+  Downloading fsspec-2026.6.0-py3-none-any.whl.metadata (10 kB)
+Collecting gguf==0.19.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 43))
+  Downloading gguf-0.19.0-py3-none-any.whl.metadata (4.1 kB)
+Collecting grpcio==1.84.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 44))
+  Downloading grpcio-1.84.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (3.8 kB)
+Collecting grpcio-health-checking==1.84.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 45))
+  Downloading grpcio_health_checking-1.84.0-py3-none-any.whl.metadata (1.2 kB)
+Collecting grpcio-reflection==1.84.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 46))
+  Downloading grpcio_reflection-1.84.0-py3-none-any.whl.metadata (1.2 kB)
+Collecting h11==0.16.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 47))
+  Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting hf-transfer==0.1.9 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 48))
+  Downloading hf_transfer-0.1.9-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.7 kB)
+Collecting hf-xet==1.7.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 49))
+  Downloading hf_xet-1.7.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (4.9 kB)
+Collecting httpcore==1.0.9 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 50))
+  Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+Collecting httpcore2==2.13.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 51))
+  Downloading httpcore2-2.13.1-py3-none-any.whl.metadata (26 kB)
+Collecting httpx==0.28.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 52))
+  Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+Collecting httpx2==2.13.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 53))
+  Downloading httpx2-2.13.1-py3-none-any.whl.metadata (9.8 kB)
+Collecting huggingface-hub==0.36.2 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 54))
+  Downloading huggingface_hub-0.36.2-py3-none-any.whl.metadata (15 kB)
+Collecting idna==3.20 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 55))
+  Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+Collecting interegular==0.3.3 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 56))
+  Downloading interegular-0.3.3-py37-none-any.whl.metadata (3.0 kB)
+Collecting ipython==9.17.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 57))
+  Downloading ipython-9.17.1-py3-none-any.whl.metadata (4.6 kB)
+Collecting ipython-pygments-lexers==1.1.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 58))
+  Downloading ipython_pygments_lexers-1.1.1-py3-none-any.whl.metadata (1.1 kB)
+Collecting jedi==0.20.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 59))
+  Downloading jedi-0.20.1-py2.py3-none-any.whl.metadata (23 kB)
+Collecting jinja2==3.1.6 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 60))
+  Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting jiter==0.17.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 61))
+  Downloading jiter-0.17.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.2 kB)
+Collecting jsonschema==4.26.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 62))
+  Downloading jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)
+Collecting jsonschema-specifications==2025.9.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 63))
+  Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+Collecting kiwisolver==1.5.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 64))
+  Downloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.2 kB)
+Collecting lark==1.3.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 65))
+  Downloading lark-1.3.1-py3-none-any.whl.metadata (1.8 kB)
+Collecting llguidance==0.7.30 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 66))
+  Downloading llguidance-0.7.30-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (10 kB)
+Collecting loguru==0.7.3 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 67))
+  Downloading loguru-0.7.3-py3-none-any.whl.metadata (22 kB)
+Collecting lxml==6.1.3 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 68))
+  Downloading lxml-6.1.3-cp312-cp312-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl.metadata (3.3 kB)
+Collecting markupsafe==3.0.4 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 69))
+  Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+Collecting matplotlib==3.10.5 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 70))
+  Downloading matplotlib-3.10.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (11 kB)
+Collecting matplotlib-inline==0.2.2 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 71))
+  Downloading matplotlib_inline-0.2.2-py3-none-any.whl.metadata (2.4 kB)
+Collecting modelscope==1.40.2 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 72))
+  Downloading modelscope-1.40.2-py3-none-any.whl.metadata (43 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 43.6/43.6 kB 11.8 MB/s eta 0:00:00
+Collecting modelscope-hub==0.4.6 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 73))
+  Downloading modelscope_hub-0.4.6-py3-none-any.whl.metadata (47 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 47.9/47.9 kB 12.4 MB/s eta 0:00:00
+Collecting mpmath==1.3.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 74))
+  Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+Collecting msgspec==0.22.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 75))
+  Downloading msgspec-0.22.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (6.0 kB)
+Collecting multidict==7.1.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 76))
+  Downloading multidict-7.1.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (6.2 kB)
+Collecting multiprocess==0.70.19 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 77))
+  Downloading multiprocess-0.70.19-py312-none-any.whl.metadata (7.5 kB)
+Collecting nest-asyncio==1.6.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 78))
+  Downloading nest_asyncio-1.6.0-py3-none-any.whl.metadata (2.8 kB)
+Collecting networkx==3.7 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 79))
+  Downloading networkx-3.7-py3-none-any.whl.metadata (6.7 kB)
+Collecting ninja==1.13.2 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 80))
+  Downloading ninja-1.13.2-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.4 kB)
+Collecting numpy==2.2.6 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 81))
+  Downloading numpy-2.2.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (62 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.0/62.0 kB 15.4 MB/s eta 0:00:00
+Collecting nvidia-cublas-cu12==12.8.4.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 82))
+  Downloading nvidia_cublas_cu12-12.8.4.1-py3-none-manylinux_2_27_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cuda-cupti-cu12==12.8.90 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 83))
+  Downloading nvidia_cuda_cupti_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cuda-nvrtc-cu12==12.8.93 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 84))
+  Downloading nvidia_cuda_nvrtc_cu12-12.8.93-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cuda-runtime-cu12==12.8.90 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 85))
+  Downloading nvidia_cuda_runtime_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cudnn-cu12==9.10.2.21 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 86))
+  Downloading nvidia_cudnn_cu12-9.10.2.21-py3-none-manylinux_2_27_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cudnn-frontend==1.28.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 87))
+  Downloading nvidia_cudnn_frontend-1.28.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (17 kB)
+Collecting nvidia-cufft-cu12==11.3.3.83 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 88))
+  Downloading nvidia_cufft_cu12-11.3.3.83-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cufile-cu12==1.13.1.3 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 89))
+  Downloading nvidia_cufile_cu12-1.13.1.3-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-curand-cu12==10.3.9.90 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 90))
+  Downloading nvidia_curand_cu12-10.3.9.90-py3-none-manylinux_2_27_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cusolver-cu12==11.7.3.90 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 91))
+  Downloading nvidia_cusolver_cu12-11.7.3.90-py3-none-manylinux_2_27_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cusparse-cu12==12.5.8.93 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 92))
+  Downloading nvidia_cusparse_cu12-12.5.8.93-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cusparselt-cu12==0.7.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 93))
+  Downloading nvidia_cusparselt_cu12-0.7.1-py3-none-manylinux2014_x86_64.whl.metadata (7.0 kB)
+Collecting nvidia-cutlass-dsl==4.3.5 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 94))
+  Downloading nvidia_cutlass_dsl-4.3.5-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (2.6 kB)
+Collecting nvidia-ml-py==13.615.71 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 95))
+  Downloading nvidia_ml_py-13.615.71-py3-none-any.whl.metadata (9.7 kB)
+Collecting nvidia-nccl-cu12==2.27.5 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 96))
+  Downloading nvidia_nccl_cu12-2.27.5-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.0 kB)
+Collecting nvidia-nvjitlink-cu12==12.8.93 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 97))
+  Downloading nvidia_nvjitlink_cu12-12.8.93-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-nvshmem-cu12==3.3.20 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 98))
+  Downloading nvidia_nvshmem_cu12-3.3.20-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.1 kB)
+Collecting nvidia-nvtx-cu12==12.8.90 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 99))
+  Downloading nvidia_nvtx_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.8 kB)
+Collecting openai==2.6.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 100))
+  Downloading openai-2.6.1-py3-none-any.whl.metadata (29 kB)
+Collecting openai-harmony==0.0.4 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 101))
+  Downloading openai_harmony-0.0.4-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (8.0 kB)
+Collecting opentelemetry-api==1.45.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 102))
+  Downloading opentelemetry_api-1.45.1-py3-none-any.whl.metadata (1.4 kB)
+Collecting orjson==3.13.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 103))
+  Downloading orjson-3.13.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (42 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.2/42.2 kB 9.4 MB/s eta 0:00:00
+Collecting outlines==0.1.11 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 104))
+  Downloading outlines-0.1.11-py3-none-any.whl.metadata (17 kB)
+Collecting outlines-core==0.1.26 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 105))
+  Downloading outlines_core-0.1.26-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.8 kB)
+Collecting packaging==26.3 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 106))
+  Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Collecting pandas==3.0.6 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 107))
+  Downloading pandas-3.0.6-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (79 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 79.5/79.5 kB 18.4 MB/s eta 0:00:00
+Collecting parso==0.8.7 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 108))
+  Downloading parso-0.8.7-py2.py3-none-any.whl.metadata (8.2 kB)
+Collecting partial-json-parser==0.2.1.1.post7 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 109))
+  Downloading partial_json_parser-0.2.1.1.post7-py3-none-any.whl.metadata (6.1 kB)
+Collecting pexpect==4.9.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 110))
+  Downloading pexpect-4.9.0-py2.py3-none-any.whl.metadata (2.5 kB)
+Collecting pillow==12.3.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 111))
+  Downloading pillow-12.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+Requirement already satisfied: pip==24.0 in ./.venv-gpu/lib/python3.12/site-packages (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 112)) (24.0)
+Collecting prometheus-client==0.26.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 113))
+  Downloading prometheus_client-0.26.0-py3-none-any.whl.metadata (2.1 kB)
+Collecting prompt-toolkit==3.0.53 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 114))
+  Downloading prompt_toolkit-3.0.53-py3-none-any.whl.metadata (6.4 kB)
+Collecting propcache==0.5.4 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 115))
+  Downloading propcache-0.5.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (25 kB)
+Collecting protobuf==7.36.2 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 116))
+  Downloading protobuf-7.36.2-cp310-abi3-manylinux2014_x86_64.whl.metadata (595 bytes)
+Collecting psutil==7.2.2 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 117))
+  Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl.metadata (22 kB)
+Collecting ptyprocess==0.7.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 118))
+  Downloading ptyprocess-0.7.0-py2.py3-none-any.whl.metadata (1.3 kB)
+Collecting pure-eval==0.2.4 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 119))
+  Downloading pure_eval-0.2.4-py3-none-any.whl.metadata (6.4 kB)
+Collecting py-spy==0.4.2 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 120))
+  Downloading py_spy-0.4.2-py2.py3-none-manylinux_2_5_x86_64.manylinux1_x86_64.whl.metadata (510 bytes)
+Collecting pyarrow==26.0.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 121))
+  Downloading pyarrow-26.0.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (3.0 kB)
+Collecting pybase64==1.5.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 122))
+  Downloading pybase64-1.5.1-cp312-cp312-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl.metadata (11 kB)
+Collecting pycountry==26.2.16 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 123))
+  Downloading pycountry-26.2.16-py3-none-any.whl.metadata (12 kB)
+Collecting pycparser==3.11 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 124))
+  Downloading pycparser-3.11-py3-none-any.whl.metadata (8.2 kB)
+Collecting pycryptodomex==3.24.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 125))
+  Downloading pycryptodomex-3.24.1-cp37-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (3.4 kB)
+Collecting pydantic==2.11.7 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 126))
+  Downloading pydantic-2.11.7-py3-none-any.whl.metadata (67 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 68.0/68.0 kB 14.1 MB/s eta 0:00:00
+Collecting pydantic-core==2.33.2 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 127))
+  Downloading pydantic_core-2.33.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.8 kB)
+Collecting pygments==2.21.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 128))
+  Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+Collecting pyparsing==3.3.3 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 129))
+  Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+Collecting pyproject-hooks==1.3.3 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 130))
+  Downloading pyproject_hooks-1.3.3-py3-none-any.whl.metadata (1.3 kB)
+Collecting python-dateutil==2.9.0.post0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 131))
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting python-multipart==0.0.32 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 132))
+  Downloading python_multipart-0.0.32-py3-none-any.whl.metadata (2.1 kB)
+Collecting pyyaml==6.0.2 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 133))
+  Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+Collecting pyzmq==27.2.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 134))
+  Downloading pyzmq-27.2.0-cp312-abi3-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+Collecting quack-kernels==0.2.4 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 135))
+  Downloading quack_kernels-0.2.4-py3-none-any.whl.metadata (368 bytes)
+Collecting referencing==0.37.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 136))
+  Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+Collecting regex==2026.9.29 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 137))
+  Downloading regex-2026.9.29-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.6/40.6 kB 8.1 MB/s eta 0:00:00
+Collecting requests==2.34.2 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 138))
+  Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+Collecting rpds-py==2026.9.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 139))
+  Downloading rpds_py-2026.9.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+Collecting safetensors==0.8.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 140))
+  Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.2 kB)
+Collecting scipy==1.18.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 141))
+  Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.4/62.4 kB 13.4 MB/s eta 0:00:00
+Collecting sentencepiece==0.2.2 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 142))
+  Downloading sentencepiece-0.2.2-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (33 kB)
+Collecting setproctitle==1.3.8 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 143))
+  Downloading setproctitle-1.3.8-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (10 kB)
+Collecting setuptools==84.0.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 144))
+  Downloading setuptools-84.0.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting sgl-kernel==0.3.21 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 145))
+  Downloading sgl_kernel-0.3.21-cp310-abi3-manylinux2014_x86_64.whl.metadata (18 kB)
+Collecting sglang==0.5.9 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 146))
+  Downloading sglang-0.5.9-py3-none-any.whl.metadata (27 kB)
+Collecting six==1.17.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 147))
+  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting smg-grpc-proto==0.4.27 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 148))
+  Downloading smg_grpc_proto-0.4.27-py3-none-any.whl.metadata (3.3 kB)
+Collecting sniffio==1.3.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 149))
+  Downloading sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+Collecting soundfile==0.13.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 150))
+  Downloading soundfile-0.13.1-py2.py3-none-manylinux_2_28_x86_64.whl.metadata (16 kB)
+Collecting stack-data==0.6.3 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 151))
+  Downloading stack_data-0.6.3-py3-none-any.whl.metadata (18 kB)
+Collecting starlette==0.47.2 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 152))
+  Downloading starlette-0.47.2-py3-none-any.whl.metadata (6.2 kB)
+Collecting sympy==1.14.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 153))
+  Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+Collecting tabulate==0.10.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 154))
+  Downloading tabulate-0.10.0-py3-none-any.whl.metadata (40 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.8/40.8 kB 10.6 MB/s eta 0:00:00
+Collecting tiktoken==0.14.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 155))
+  Downloading tiktoken-0.14.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (6.7 kB)
+Collecting timm==1.0.16 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 156))
+  Downloading timm-1.0.16-py3-none-any.whl.metadata (57 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.6/57.6 kB 15.1 MB/s eta 0:00:00
+Collecting tokenizers==0.22.2 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 157))
+  Downloading tokenizers-0.22.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.3 kB)
+Collecting torch==2.9.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 158))
+  Downloading torch-2.9.1-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (30 kB)
+Collecting torch-c-dlpack-ext==0.1.5 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 159))
+  Downloading torch_c_dlpack_ext-0.1.5-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (14 kB)
+Collecting torch-memory-saver==0.0.9 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 160))
+  Downloading torch_memory_saver-0.0.9-cp39-abi3-manylinux2014_x86_64.whl.metadata (108 bytes)
+Collecting torchao==0.9.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 161))
+  Downloading torchao-0.9.0-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl.metadata (14 kB)
+Collecting torchaudio==2.9.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 162))
+  Downloading torchaudio-2.9.1-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (6.9 kB)
+Collecting torchcodec==0.8.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 163))
+  Downloading torchcodec-0.8.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (9.5 kB)
+Collecting torchvision==0.24.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 164))
+  Downloading torchvision-0.24.1-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (5.9 kB)
+Collecting tqdm==4.70.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 165))
+  Downloading tqdm-4.70.1-py3-none-any.whl.metadata (57 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.4/57.4 kB 15.4 MB/s eta 0:00:00
+Collecting traitlets==5.16.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 166))
+  Downloading traitlets-5.16.1-py3-none-any.whl.metadata (10 kB)
+Collecting transformers==4.57.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 167))
+  Downloading transformers-4.57.1-py3-none-any.whl.metadata (43 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.0/44.0 kB 11.6 MB/s eta 0:00:00
+Collecting triton==3.5.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 168))
+  Downloading triton-3.5.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (1.7 kB)
+Collecting truststore==0.10.5 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 169))
+  Downloading truststore-0.10.5-py3-none-any.whl.metadata (4.5 kB)
+Collecting typing-extensions==4.14.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 170))
+  Downloading typing_extensions-4.14.1-py3-none-any.whl.metadata (3.0 kB)
+Collecting typing-inspection==0.4.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 171))
+  Downloading typing_inspection-0.4.1-py3-none-any.whl.metadata (2.6 kB)
+Collecting urllib3==2.8.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 172))
+  Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+Collecting uvicorn==0.35.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 173))
+  Downloading uvicorn-0.35.0-py3-none-any.whl.metadata (6.5 kB)
+Collecting uvloop==0.23.0 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 174))
+  Downloading uvloop-0.23.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (5.1 kB)
+Collecting wcwidth==0.9.2 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 175))
+  Downloading wcwidth-0.9.2-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (23 kB)
+Collecting xgrammar==0.1.27 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 176))
+  Downloading xgrammar-0.1.27-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.8 kB)
+Collecting xxhash==4.0.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 177))
+  Downloading xxhash-4.0.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (17 kB)
+Collecting yarl==1.25.1 (from -r /home/daytona/llm-service/requirements-native-linux-py312.lock (line 178))
+  Downloading yarl-1.25.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (111 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 111.6/111.6 kB 26.2 MB/s eta 0:00:00
+Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl (15 kB)
+Downloading aiohttp-3.14.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 96.2 MB/s eta 0:00:00
+Downloading aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+Downloading airportsdata-20260905-py3-none-any.whl (931 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 931.2/931.2 kB 124.2 MB/s eta 0:00:00
+Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+Downloading anthropic-1.15.0-py3-none-any.whl (2.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 154.0 MB/s eta 0:00:00
+Downloading anyio-4.10.0-py3-none-any.whl (107 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 107.2/107.2 kB 29.1 MB/s eta 0:00:00
+Downloading apache_tvm_ffi-0.1.14.post1-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (3.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 25.4 MB/s eta 0:00:00
+Downloading asttokens-3.0.2-py3-none-any.whl (28 kB)
+Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 67.5/67.5 kB 18.4 MB/s eta 0:00:00
+Downloading blobfile-3.0.0-py3-none-any.whl (75 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 75.4/75.4 kB 22.3 MB/s eta 0:00:00
+Downloading build-1.6.1-py3-none-any.whl (31 kB)
+Downloading certifi-2025.8.3-py3-none-any.whl (161 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 161.2/161.2 kB 44.9 MB/s eta 0:00:00
+Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (221 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 221.8/221.8 kB 59.2 MB/s eta 0:00:00
+Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (257 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 257.6/257.6 kB 66.5 MB/s eta 0:00:00
+Downloading click-8.2.1-py3-none-any.whl (102 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 102.2/102.2 kB 29.7 MB/s eta 0:00:00
+Downloading cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+Downloading compressed_tensors-0.15.0.1-py3-none-any.whl (194 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 194.3/194.3 kB 51.2 MB/s eta 0:00:00
+Downloading contourpy-1.3.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (323 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 323.7/323.7 kB 63.6 MB/s eta 0:00:00
+Downloading cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl (4.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.8/4.8 MB 182.2 MB/s eta 0:00:00
+Downloading cuda_bindings-12.9.10-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (7.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.6/7.6 MB 189.4 MB/s eta 0:00:00
+Downloading cuda_pathfinder-1.8.3-py3-none-any.whl (62 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.6/62.6 kB 17.2 MB/s eta 0:00:00
+Downloading cuda_python-12.9.0-py3-none-any.whl (7.5 kB)
+Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Downloading datasets-5.0.1-py3-none-any.whl (559 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 559.1/559.1 kB 104.0 MB/s eta 0:00:00
+Downloading decord2-3.4.0-cp312-cp312-manylinux_2_28_x86_64.whl (26.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 26.6/26.6 MB 37.7 MB/s eta 0:00:00
+Downloading dill-0.4.1-py3-none-any.whl (120 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 120.0/120.0 kB 30.1 MB/s eta 0:00:00
+Downloading diskcache-5.6.3-py3-none-any.whl (45 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.5/45.5 kB 10.6 MB/s eta 0:00:00
+Downloading distro-1.9.0-py3-none-any.whl (20 kB)
+Downloading docstring_parser-0.18.0-py3-none-any.whl (22 kB)
+Downloading einops-0.8.2-py3-none-any.whl (65 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 65.6/65.6 kB 18.9 MB/s eta 0:00:00
+Downloading executing-2.3.0-py3-none-any.whl (29 kB)
+Downloading fastapi-0.116.1-py3-none-any.whl (95 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 95.6/95.6 kB 24.9 MB/s eta 0:00:00
+Downloading filelock-4.2.1-py3-none-any.whl (162 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 162.5/162.5 kB 44.3 MB/s eta 0:00:00
+Downloading flashinfer_cubin-0.6.3-py3-none-any.whl (150.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 150.7/150.7 MB 10.7 MB/s eta 0:00:00
+Downloading flashinfer_python-0.6.3-py3-none-any.whl (7.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.6/7.6 MB 34.6 MB/s eta 0:00:00
+Downloading fonttools-4.65.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 43.3 MB/s eta 0:00:00
+Downloading frozenlist-1.8.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (242 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 242.4/242.4 kB 57.8 MB/s eta 0:00:00
+Downloading fsspec-2026.6.0-py3-none-any.whl (203 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 203.9/203.9 kB 49.0 MB/s eta 0:00:00
+Downloading gguf-0.19.0-py3-none-any.whl (118 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 118.5/118.5 kB 30.9 MB/s eta 0:00:00
+Downloading grpcio-1.84.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (7.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.2/7.2 MB 141.7 MB/s eta 0:00:00
+Downloading grpcio_health_checking-1.84.0-py3-none-any.whl (19 kB)
+Downloading grpcio_reflection-1.84.0-py3-none-any.whl (22 kB)
+Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+Downloading hf_transfer-0.1.9-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.6/3.6 MB 157.7 MB/s eta 0:00:00
+Downloading hf_xet-1.7.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 175.2 MB/s eta 0:00:00
+Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.8/78.8 kB 21.8 MB/s eta 0:00:00
+Downloading httpcore2-2.13.1-py3-none-any.whl (83 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 83.4/83.4 kB 20.8 MB/s eta 0:00:00
+Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.5/73.5 kB 21.1 MB/s eta 0:00:00
+Downloading httpx2-2.13.1-py3-none-any.whl (95 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 95.6/95.6 kB 27.1 MB/s eta 0:00:00
+Downloading huggingface_hub-0.36.2-py3-none-any.whl (566 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 566.4/566.4 kB 96.9 MB/s eta 0:00:00
+Downloading idna-3.20-py3-none-any.whl (69 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 69.6/69.6 kB 18.5 MB/s eta 0:00:00
+Downloading interegular-0.3.3-py37-none-any.whl (23 kB)
+Downloading ipython-9.17.1-py3-none-any.whl (639 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 639.0/639.0 kB 110.7 MB/s eta 0:00:00
+Downloading ipython_pygments_lexers-1.1.1-py3-none-any.whl (8.1 kB)
+Downloading jedi-0.20.1-py2.py3-none-any.whl (4.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.9/4.9 MB 200.1 MB/s eta 0:00:00
+Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 kB 37.7 MB/s eta 0:00:00
+Downloading jiter-0.17.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (345 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 345.0/345.0 kB 80.0 MB/s eta 0:00:00
+Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 90.6/90.6 kB 24.2 MB/s eta 0:00:00
+Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+Downloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 151.6 MB/s eta 0:00:00
+Downloading lark-1.3.1-py3-none-any.whl (113 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 113.2/113.2 kB 27.1 MB/s eta 0:00:00
+Downloading llguidance-0.7.30-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (15.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.0/15.0 MB 86.9 MB/s eta 0:00:00
+Downloading loguru-0.7.3-py3-none-any.whl (61 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.6/61.6 kB 16.0 MB/s eta 0:00:00
+Downloading lxml-6.1.3-cp312-cp312-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (5.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 205.1 MB/s eta 0:00:00
+Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+Downloading matplotlib-3.10.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (8.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.7/8.7 MB 140.6 MB/s eta 0:00:00
+Downloading matplotlib_inline-0.2.2-py3-none-any.whl (9.5 kB)
+Downloading modelscope-1.40.2-py3-none-any.whl (6.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.1/6.1 MB 176.3 MB/s eta 0:00:00
+Downloading modelscope_hub-0.4.6-py3-none-any.whl (237 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 237.2/237.2 kB 57.4 MB/s eta 0:00:00
+Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 103.5 MB/s eta 0:00:00
+Downloading msgspec-0.22.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (230 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 230.4/230.4 kB 59.5 MB/s eta 0:00:00
+Downloading multidict-7.1.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (483 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 483.0/483.0 kB 91.1 MB/s eta 0:00:00
+Downloading multiprocess-0.70.19-py312-none-any.whl (150 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 150.3/150.3 kB 40.4 MB/s eta 0:00:00
+Downloading nest_asyncio-1.6.0-py3-none-any.whl (5.2 kB)
+Downloading networkx-3.7-py3-none-any.whl (2.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 177.9 MB/s eta 0:00:00
+Downloading ninja-1.13.2-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (183 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 183.4/183.4 kB 50.1 MB/s eta 0:00:00
+Downloading numpy-2.2.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.5/16.5 MB 186.9 MB/s eta 0:00:00
+Downloading nvidia_cublas_cu12-12.8.4.1-py3-none-manylinux_2_27_x86_64.whl (594.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 594.3/594.3 MB 23.8 MB/s eta 0:00:00
+Downloading nvidia_cuda_cupti_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (10.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.2/10.2 MB 195.2 MB/s eta 0:00:00
+Downloading nvidia_cuda_nvrtc_cu12-12.8.93-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (88.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 88.0/88.0 MB 99.3 MB/s eta 0:00:00
+Downloading nvidia_cuda_runtime_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (954 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 954.8/954.8 kB 131.5 MB/s eta 0:00:00
+Downloading nvidia_cudnn_cu12-9.10.2.21-py3-none-manylinux_2_27_x86_64.whl (706.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 706.8/706.8 MB 20.5 MB/s eta 0:00:00
+Downloading nvidia_cudnn_frontend-1.28.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (5.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.7/5.7 MB 140.9 MB/s eta 0:00:00
+Downloading nvidia_cufft_cu12-11.3.3.83-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (193.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 193.1/193.1 MB 57.8 MB/s eta 0:00:00
+Downloading nvidia_cufile_cu12-1.13.1.3-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 145.5 MB/s eta 0:00:00
+Downloading nvidia_curand_cu12-10.3.9.90-py3-none-manylinux_2_27_x86_64.whl (63.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.6/63.6 MB 119.9 MB/s eta 0:00:00
+Downloading nvidia_cusolver_cu12-11.7.3.90-py3-none-manylinux_2_27_x86_64.whl (267.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 267.5/267.5 MB 47.0 MB/s eta 0:00:00
+Downloading nvidia_cusparse_cu12-12.5.8.93-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (288.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 288.2/288.2 MB 44.0 MB/s eta 0:00:00
+Downloading nvidia_cusparselt_cu12-0.7.1-py3-none-manylinux2014_x86_64.whl (287.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 287.2/287.2 MB 25.4 MB/s eta 0:00:00
+Downloading nvidia_cutlass_dsl-4.3.5-cp312-cp312-manylinux_2_28_x86_64.whl (58.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 58.6/58.6 MB 15.7 MB/s eta 0:00:00
+Downloading nvidia_ml_py-13.615.71-py3-none-any.whl (58 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 58.1/58.1 kB 13.9 MB/s eta 0:00:00
+Downloading nvidia_nccl_cu12-2.27.5-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (322.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 322.3/322.3 MB 24.6 MB/s eta 0:00:00
+Downloading nvidia_nvjitlink_cu12-12.8.93-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (39.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 39.3/39.3 MB 143.2 MB/s eta 0:00:00
+Downloading nvidia_nvshmem_cu12-3.3.20-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (124.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 124.7/124.7 MB 76.6 MB/s eta 0:00:00
+Downloading nvidia_nvtx_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (89 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 90.0/90.0 kB 22.4 MB/s eta 0:00:00
+Downloading openai-2.6.1-py3-none-any.whl (1.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.0/1.0 MB 110.1 MB/s eta 0:00:00
+Downloading openai_harmony-0.0.4-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 133.4 MB/s eta 0:00:00
+Downloading opentelemetry_api-1.45.1-py3-none-any.whl (60 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.3/60.3 kB 16.2 MB/s eta 0:00:00
+Downloading orjson-3.13.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (130 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 130.6/130.6 kB 34.9 MB/s eta 0:00:00
+Downloading outlines-0.1.11-py3-none-any.whl (87 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 87.6/87.6 kB 24.2 MB/s eta 0:00:00
+Downloading outlines_core-0.1.26-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (343 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 343.2/343.2 kB 77.8 MB/s eta 0:00:00
+Downloading packaging-26.3-py3-none-any.whl (129 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 130.0/130.0 kB 33.7 MB/s eta 0:00:00
+Downloading pandas-3.0.6-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (10.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.8/10.8 MB 162.3 MB/s eta 0:00:00
+Downloading parso-0.8.7-py2.py3-none-any.whl (107 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 107.0/107.0 kB 29.8 MB/s eta 0:00:00
+Downloading partial_json_parser-0.2.1.1.post7-py3-none-any.whl (10 kB)
+Downloading pexpect-4.9.0-py2.py3-none-any.whl (63 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.8/63.8 kB 16.6 MB/s eta 0:00:00
+Downloading pillow-12.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.9/6.9 MB 71.5 MB/s eta 0:00:00
+Downloading prometheus_client-0.26.0-py3-none-any.whl (64 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.5/64.5 kB 18.7 MB/s eta 0:00:00
+Downloading prompt_toolkit-3.0.53-py3-none-any.whl (392 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 392.3/392.3 kB 87.3 MB/s eta 0:00:00
+Downloading propcache-0.5.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (250 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 250.4/250.4 kB 63.0 MB/s eta 0:00:00
+Downloading protobuf-7.36.2-cp310-abi3-manylinux2014_x86_64.whl (343 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 343.2/343.2 kB 59.4 MB/s eta 0:00:00
+Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 155.6/155.6 kB 42.3 MB/s eta 0:00:00
+Downloading ptyprocess-0.7.0-py2.py3-none-any.whl (13 kB)
+Downloading pure_eval-0.2.4-py3-none-any.whl (11 kB)
+Downloading py_spy-0.4.2-py2.py3-none-manylinux_2_5_x86_64.manylinux1_x86_64.whl (2.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.9/2.9 MB 159.4 MB/s eta 0:00:00
+Downloading pyarrow-26.0.0-cp312-cp312-manylinux_2_28_x86_64.whl (53.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 53.9/53.9 MB 116.3 MB/s eta 0:00:00
+Downloading pybase64-1.5.1-cp312-cp312-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl (94 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 94.7/94.7 kB 24.2 MB/s eta 0:00:00
+Downloading pycountry-26.2.16-py3-none-any.whl (8.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.0/8.0 MB 170.8 MB/s eta 0:00:00
+Downloading pycparser-3.11-py3-none-any.whl (51 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 51.2/51.2 kB 12.8 MB/s eta 0:00:00
+Downloading pycryptodomex-3.24.1-cp37-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 146.4 MB/s eta 0:00:00
+Downloading pydantic-2.11.7-py3-none-any.whl (444 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 444.8/444.8 kB 96.8 MB/s eta 0:00:00
+Downloading pydantic_core-2.33.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 173.7 MB/s eta 0:00:00
+Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 156.9 MB/s eta 0:00:00
+Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 126.4/126.4 kB 36.1 MB/s eta 0:00:00
+Downloading pyproject_hooks-1.3.3-py3-none-any.whl (10 kB)
+Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 229.9/229.9 kB 45.2 MB/s eta 0:00:00
+Downloading python_multipart-0.0.32-py3-none-any.whl (30 kB)
+Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (767 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 767.5/767.5 kB 128.3 MB/s eta 0:00:00
+Downloading pyzmq-27.2.0-cp312-abi3-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (872 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 872.3/872.3 kB 138.1 MB/s eta 0:00:00
+Downloading quack_kernels-0.2.4-py3-none-any.whl (153 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 153.7/153.7 kB 42.8 MB/s eta 0:00:00
+Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+Downloading regex-2026.9.29-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.8/807.8 kB 101.1 MB/s eta 0:00:00
+Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.1/73.1 kB 21.8 MB/s eta 0:00:00
+Downloading rpds_py-2026.9.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (371 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 371.3/371.3 kB 88.4 MB/s eta 0:00:00
+Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (516 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 516.0/516.0 kB 102.2 MB/s eta 0:00:00
+Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 157.1 MB/s eta 0:00:00
+Downloading sentencepiece-0.2.2-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (1.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 146.2 MB/s eta 0:00:00
+Downloading setproctitle-1.3.8-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (32 kB)
+Downloading setuptools-84.0.0-py3-none-any.whl (818 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 818.2/818.2 kB 130.8 MB/s eta 0:00:00
+Downloading sgl_kernel-0.3.21-cp310-abi3-manylinux2014_x86_64.whl (535.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 535.6/535.6 MB 10.3 MB/s eta 0:00:00
+Downloading sglang-0.5.9-py3-none-any.whl (5.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 10.0 MB/s eta 0:00:00
+Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+Downloading smg_grpc_proto-0.4.27-py3-none-any.whl (109 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 109.7/109.7 kB 30.7 MB/s eta 0:00:00
+Downloading sniffio-1.3.1-py3-none-any.whl (10 kB)
+Downloading soundfile-0.13.1-py2.py3-none-manylinux_2_28_x86_64.whl (1.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 149.3 MB/s eta 0:00:00
+Downloading stack_data-0.6.3-py3-none-any.whl (24 kB)
+Downloading starlette-0.47.2-py3-none-any.whl (72 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.0/73.0 kB 20.8 MB/s eta 0:00:00
+Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 195.7 MB/s eta 0:00:00
+Downloading tabulate-0.10.0-py3-none-any.whl (39 kB)
+Downloading tiktoken-0.14.0-cp312-cp312-manylinux_2_28_x86_64.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 139.2 MB/s eta 0:00:00
+Downloading timm-1.0.16-py3-none-any.whl (2.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.5/2.5 MB 153.8 MB/s eta 0:00:00
+Downloading tokenizers-0.22.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 181.9 MB/s eta 0:00:00
+Downloading torch-2.9.1-cp312-cp312-manylinux_2_28_x86_64.whl (899.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 899.7/899.7 MB 12.7 MB/s eta 0:00:00
+Downloading torch_c_dlpack_ext-0.1.5-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (897 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 897.8/897.8 kB 117.7 MB/s eta 0:00:00
+Downloading torch_memory_saver-0.0.9-cp39-abi3-manylinux2014_x86_64.whl (488 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 488.7/488.7 kB 86.1 MB/s eta 0:00:00
+Downloading torchao-0.9.0-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl (5.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.7/5.7 MB 40.0 MB/s eta 0:00:00
+Downloading torchaudio-2.9.1-cp312-cp312-manylinux_2_28_x86_64.whl (2.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 160.2 MB/s eta 0:00:00
+Downloading torchcodec-0.8.0-cp312-cp312-manylinux_2_28_x86_64.whl (1.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 134.3 MB/s eta 0:00:00
+Downloading torchvision-0.24.1-cp312-cp312-manylinux_2_28_x86_64.whl (8.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.0/8.0 MB 145.9 MB/s eta 0:00:00
+Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 80.2/80.2 kB 19.0 MB/s eta 0:00:00
+Downloading traitlets-5.16.1-py3-none-any.whl (86 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 86.2/86.2 kB 22.8 MB/s eta 0:00:00
+Downloading transformers-4.57.1-py3-none-any.whl (12.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.0/12.0 MB 168.2 MB/s eta 0:00:00
+Downloading triton-3.5.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (170.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 170.5/170.5 MB 62.7 MB/s eta 0:00:00
+Downloading truststore-0.10.5-py3-none-any.whl (19 kB)
+Downloading typing_extensions-4.14.1-py3-none-any.whl (43 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 43.9/43.9 kB 11.2 MB/s eta 0:00:00
+Downloading typing_inspection-0.4.1-py3-none-any.whl (14 kB)
+Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 135.7/135.7 kB 37.6 MB/s eta 0:00:00
+Downloading uvicorn-0.35.0-py3-none-any.whl (66 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 66.4/66.4 kB 19.8 MB/s eta 0:00:00
+Downloading uvloop-0.23.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (4.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 175.7 MB/s eta 0:00:00
+Downloading wcwidth-0.9.2-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (769 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 769.8/769.8 kB 118.8 MB/s eta 0:00:00
+Downloading xgrammar-0.1.27-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (8.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.9/8.9 MB 21.7 MB/s eta 0:00:00
+Downloading xxhash-4.0.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (261 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 261.8/261.8 kB 63.4 MB/s eta 0:00:00
+Downloading yarl-1.25.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (117 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 117.0/117.0 kB 30.7 MB/s eta 0:00:00
+Installing collected packages: torchao, py-spy, pure-eval, ptyprocess, nvidia-ml-py, nvidia-cusparselt-cu12, mpmath, xxhash, wcwidth, uvloop, urllib3, typing-extensions, truststore, triton, traitlets, tqdm, torchcodec, torch-memory-saver, tabulate, sympy, sniffio, six, sgl-kernel, setuptools, setproctitle, sentencepiece, safetensors, rpds-py, regex, pyzmq, pyyaml, python-multipart, pyproject-hooks, pyparsing, pygments, pycryptodomex, pycparser, pycountry, pybase64, pyarrow, psutil, protobuf, propcache, prometheus-client, pillow, pexpect, partial-json-parser, parso, packaging, orjson, nvidia-nvtx-cu12, nvidia-nvshmem-cu12, nvidia-nvjitlink-cu12, nvidia-nccl-cu12, nvidia-curand-cu12, nvidia-cufile-cu12, nvidia-cudnn-frontend, nvidia-cuda-runtime-cu12, nvidia-cuda-nvrtc-cu12, nvidia-cuda-cupti-cu12, nvidia-cublas-cu12, numpy, ninja, networkx, nest-asyncio, multidict, msgspec, markupsafe, lxml, loguru, llguidance, lark, kiwisolver, jiter, interegular, idna, hf-xet, hf-transfer, h11, fsspec, frozenlist, fonttools, flashinfer-cubin, filelock, executing, einops, docstring-parser, distro, diskcache, dill, cycler, cuda-pathfinder, cloudpickle, click, charset-normalizer, certifi, attrs, asttokens, annotated-types, airportsdata, aiohappyeyeballs, yarl, uvicorn, typing-inspection, stack-data, scipy, requests, referencing, python-dateutil, pydantic-core, prompt-toolkit, opentelemetry-api, nvidia-cusparse-cu12, nvidia-cufft-cu12, nvidia-cudnn-cu12, multiprocess, matplotlib-inline, jinja2, jedi, ipython-pygments-lexers, httpcore2, httpcore, grpcio, decord2, cuda-bindings, contourpy, cffi, build, blobfile, apache-tvm-ffi, anyio, aiosignal, tiktoken, starlette, soundfile, smg-grpc-proto, pydantic, pandas, nvidia-cusolver-cu12, matplotlib, jsonschema-specifications, ipython, huggingface-hub, httpx2, httpx, grpcio-reflection, grpcio-health-checking, gguf, cuda-python, cryptography, aiohttp, torch, tokenizers, openai-harmony, openai, nvidia-cutlass-dsl, modelscope-hub, jsonschema, fastapi, anthropic, transformers, torchvision, torchaudio, torch-c-dlpack-ext, outlines-core, modelscope, flashinfer-python, datasets, xgrammar, timm, quack-kernels, outlines, compressed-tensors, sglang
+Successfully installed aiohappyeyeballs-2.7.1 aiohttp-3.14.5 aiosignal-1.4.0 airportsdata-20260905 annotated-types-0.7.0 anthropic-1.15.0 anyio-4.10.0 apache-tvm-ffi-0.1.14.post1 asttokens-3.0.2 attrs-26.1.0 blobfile-3.0.0 build-1.6.1 certifi-2025.8.3 cffi-2.1.1 charset-normalizer-3.5.2 click-8.2.1 cloudpickle-3.1.2 compressed-tensors-0.15.0.1 contourpy-1.3.2 cryptography-50.0.2 cuda-bindings-12.9.10 cuda-pathfinder-1.8.3 cuda-python-12.9.0 cycler-0.12.1 datasets-5.0.1 decord2-3.4.0 dill-0.4.1 diskcache-5.6.3 distro-1.9.0 docstring-parser-0.18.0 einops-0.8.2 executing-2.3.0 fastapi-0.116.1 filelock-4.2.1 flashinfer-cubin-0.6.3 flashinfer-python-0.6.3 fonttools-4.65.0 frozenlist-1.8.0 fsspec-2026.6.0 gguf-0.19.0 grpcio-1.84.0 grpcio-health-checking-1.84.0 grpcio-reflection-1.84.0 h11-0.16.0 hf-transfer-0.1.9 hf-xet-1.7.0 httpcore-1.0.9 httpcore2-2.13.1 httpx-0.28.1 httpx2-2.13.1 huggingface-hub-0.36.2 idna-3.20 interegular-0.3.3 ipython-9.17.1 ipython-pygments-lexers-1.1.1 jedi-0.20.1 jinja2-3.1.6 jiter-0.17.0 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 kiwisolver-1.5.1 lark-1.3.1 llguidance-0.7.30 loguru-0.7.3 lxml-6.1.3 markupsafe-3.0.4 matplotlib-3.10.5 matplotlib-inline-0.2.2 modelscope-1.40.2 modelscope-hub-0.4.6 mpmath-1.3.0 msgspec-0.22.0 multidict-7.1.0 multiprocess-0.70.19 nest-asyncio-1.6.0 networkx-3.7 ninja-1.13.2 numpy-2.2.6 nvidia-cublas-cu12-12.8.4.1 nvidia-cuda-cupti-cu12-12.8.90 nvidia-cuda-nvrtc-cu12-12.8.93 nvidia-cuda-runtime-cu12-12.8.90 nvidia-cudnn-cu12-9.10.2.21 nvidia-cudnn-frontend-1.28.0 nvidia-cufft-cu12-11.3.3.83 nvidia-cufile-cu12-1.13.1.3 nvidia-curand-cu12-10.3.9.90 nvidia-cusolver-cu12-11.7.3.90 nvidia-cusparse-cu12-12.5.8.93 nvidia-cusparselt-cu12-0.7.1 nvidia-cutlass-dsl-4.3.5 nvidia-ml-py-13.615.71 nvidia-nccl-cu12-2.27.5 nvidia-nvjitlink-cu12-12.8.93 nvidia-nvshmem-cu12-3.3.20 nvidia-nvtx-cu12-12.8.90 openai-2.6.1 openai-harmony-0.0.4 opentelemetry-api-1.45.1 orjson-3.13.0 outlines-0.1.11 outlines-core-0.1.26 packaging-26.3 pandas-3.0.6 parso-0.8.7 partial-json-parser-0.2.1.1.post7 pexpect-4.9.0 pillow-12.3.0 prometheus-client-0.26.0 prompt-toolkit-3.0.53 propcache-0.5.4 protobuf-7.36.2 psutil-7.2.2 ptyprocess-0.7.0 pure-eval-0.2.4 py-spy-0.4.2 pyarrow-26.0.0 pybase64-1.5.1 pycountry-26.2.16 pycparser-3.11 pycryptodomex-3.24.1 pydantic-2.11.7 pydantic-core-2.33.2 pygments-2.21.0 pyparsing-3.3.3 pyproject-hooks-1.3.3 python-dateutil-2.9.0.post0 python-multipart-0.0.32 pyyaml-6.0.2 pyzmq-27.2.0 quack-kernels-0.2.4 referencing-0.37.0 regex-2026.9.29 requests-2.34.2 rpds-py-2026.9.1 safetensors-0.8.0 scipy-1.18.1 sentencepiece-0.2.2 setproctitle-1.3.8 setuptools-84.0.0 sgl-kernel-0.3.21 sglang-0.5.9 six-1.17.0 smg-grpc-proto-0.4.27 sniffio-1.3.1 soundfile-0.13.1 stack-data-0.6.3 starlette-0.47.2 sympy-1.14.0 tabulate-0.10.0 tiktoken-0.14.0 timm-1.0.16 tokenizers-0.22.2 torch-2.9.1 torch-c-dlpack-ext-0.1.5 torch-memory-saver-0.0.9 torchao-0.9.0 torchaudio-2.9.1 torchcodec-0.8.0 torchvision-0.24.1 tqdm-4.70.1 traitlets-5.16.1 transformers-4.57.1 triton-3.5.1 truststore-0.10.5 typing-extensions-4.14.1 typing-inspection-0.4.1 urllib3-2.8.0 uvicorn-0.35.0 uvloop-0.23.0 wcwidth-0.9.2 xgrammar-0.1.27 xxhash-4.0.1 yarl-1.25.1
+No broken requirements found.
+Looking in links: /opt/llm-cache/wheels
+Ignoring colorama: markers 'sys_platform == "win32"' don't match your environment
+Collecting fastapi==0.116.1 (from -r /home/daytona/llm-service/requirements.lock (line 4))
+  Using cached fastapi-0.116.1-py3-none-any.whl.metadata (28 kB)
+Collecting starlette==0.47.2 (from -r /home/daytona/llm-service/requirements.lock (line 5))
+  Using cached starlette-0.47.2-py3-none-any.whl.metadata (6.2 kB)
+Collecting pydantic==2.11.7 (from -r /home/daytona/llm-service/requirements.lock (line 6))
+  Using cached pydantic-2.11.7-py3-none-any.whl.metadata (67 kB)
+Collecting pydantic_core==2.33.2 (from -r /home/daytona/llm-service/requirements.lock (line 7))
+  Using cached pydantic_core-2.33.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.8 kB)
+Collecting annotated-types==0.7.0 (from -r /home/daytona/llm-service/requirements.lock (line 8))
+  Using cached annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+Collecting typing-inspection==0.4.1 (from -r /home/daytona/llm-service/requirements.lock (line 9))
+  Using cached typing_inspection-0.4.1-py3-none-any.whl.metadata (2.6 kB)
+Collecting typing_extensions==4.14.1 (from -r /home/daytona/llm-service/requirements.lock (line 10))
+  Using cached typing_extensions-4.14.1-py3-none-any.whl.metadata (3.0 kB)
+Collecting uvicorn==0.35.0 (from -r /home/daytona/llm-service/requirements.lock (line 11))
+  Using cached uvicorn-0.35.0-py3-none-any.whl.metadata (6.5 kB)
+Collecting click==8.2.1 (from -r /home/daytona/llm-service/requirements.lock (line 12))
+  Using cached click-8.2.1-py3-none-any.whl.metadata (2.5 kB)
+Collecting httpx==0.28.1 (from -r /home/daytona/llm-service/requirements.lock (line 13))
+  Using cached httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+Collecting httpcore==1.0.9 (from -r /home/daytona/llm-service/requirements.lock (line 14))
+  Using cached httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+Collecting h11==0.16.0 (from -r /home/daytona/llm-service/requirements.lock (line 15))
+  Using cached h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting anyio==4.10.0 (from -r /home/daytona/llm-service/requirements.lock (line 16))
+  Using cached anyio-4.10.0-py3-none-any.whl.metadata (4.0 kB)
+Collecting sniffio==1.3.1 (from -r /home/daytona/llm-service/requirements.lock (line 17))
+  Using cached sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+Collecting idna==3.20 (from -r /home/daytona/llm-service/requirements.lock (line 18))
+  Using cached idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+Collecting certifi==2025.8.3 (from -r /home/daytona/llm-service/requirements.lock (line 19))
+  Using cached certifi-2025.8.3-py3-none-any.whl.metadata (2.4 kB)
+Collecting PyYAML==6.0.2 (from -r /home/daytona/llm-service/requirements.lock (line 20))
+  Using cached PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+Collecting psutil==7.2.2 (from -r /home/daytona/llm-service/requirements.lock (line 22))
+  Using cached psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl.metadata (22 kB)
+Collecting transformers==4.51.3 (from -r /home/daytona/llm-service/requirements-benchmark.lock (line 3))
+  Downloading transformers-4.51.3-py3-none-any.whl.metadata (38 kB)
+Collecting tokenizers==0.21.4 (from -r /home/daytona/llm-service/requirements-benchmark.lock (line 4))
+  Downloading tokenizers-0.21.4-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.7 kB)
+Collecting jinja2==3.1.6 (from -r /home/daytona/llm-service/requirements-benchmark.lock (line 5))
+  Using cached jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting markupsafe==3.0.4 (from -r /home/daytona/llm-service/requirements-benchmark.lock (line 6))
+  Using cached markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+Collecting huggingface-hub==0.36.2 (from -r /home/daytona/llm-service/requirements-benchmark.lock (line 7))
+  Using cached huggingface_hub-0.36.2-py3-none-any.whl.metadata (15 kB)
+Collecting hf-xet==1.7.0 (from -r /home/daytona/llm-service/requirements-benchmark.lock (line 8))
+  Using cached hf_xet-1.7.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (4.9 kB)
+Collecting filelock==4.2.1 (from -r /home/daytona/llm-service/requirements-benchmark.lock (line 9))
+  Using cached filelock-4.2.1-py3-none-any.whl.metadata (2.0 kB)
+Collecting fsspec==2026.6.0 (from -r /home/daytona/llm-service/requirements-benchmark.lock (line 10))
+  Using cached fsspec-2026.6.0-py3-none-any.whl.metadata (10 kB)
+Collecting numpy==2.2.6 (from -r /home/daytona/llm-service/requirements-benchmark.lock (line 11))
+  Using cached numpy-2.2.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (62 kB)
+Collecting packaging==26.3 (from -r /home/daytona/llm-service/requirements-benchmark.lock (line 12))
+  Using cached packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Collecting regex==2026.9.29 (from -r /home/daytona/llm-service/requirements-benchmark.lock (line 13))
+  Using cached regex-2026.9.29-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)
+Collecting requests==2.34.2 (from -r /home/daytona/llm-service/requirements-benchmark.lock (line 14))
+  Using cached requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+Collecting charset-normalizer==3.5.2 (from -r /home/daytona/llm-service/requirements-benchmark.lock (line 15))
+  Using cached charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+Collecting urllib3==2.8.0 (from -r /home/daytona/llm-service/requirements-benchmark.lock (line 16))
+  Using cached urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+Collecting safetensors==0.8.0 (from -r /home/daytona/llm-service/requirements-benchmark.lock (line 17))
+  Using cached safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.2 kB)
+Collecting tqdm==4.70.1 (from -r /home/daytona/llm-service/requirements-benchmark.lock (line 18))
+  Using cached tqdm-4.70.1-py3-none-any.whl.metadata (57 kB)
+Using cached fastapi-0.116.1-py3-none-any.whl (95 kB)
+Using cached starlette-0.47.2-py3-none-any.whl (72 kB)
+Using cached pydantic-2.11.7-py3-none-any.whl (444 kB)
+Using cached pydantic_core-2.33.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB)
+Using cached annotated_types-0.7.0-py3-none-any.whl (13 kB)
+Using cached typing_inspection-0.4.1-py3-none-any.whl (14 kB)
+Using cached typing_extensions-4.14.1-py3-none-any.whl (43 kB)
+Using cached uvicorn-0.35.0-py3-none-any.whl (66 kB)
+Using cached click-8.2.1-py3-none-any.whl (102 kB)
+Using cached httpx-0.28.1-py3-none-any.whl (73 kB)
+Using cached httpcore-1.0.9-py3-none-any.whl (78 kB)
+Using cached h11-0.16.0-py3-none-any.whl (37 kB)
+Using cached anyio-4.10.0-py3-none-any.whl (107 kB)
+Using cached sniffio-1.3.1-py3-none-any.whl (10 kB)
+Using cached idna-3.20-py3-none-any.whl (69 kB)
+Using cached certifi-2025.8.3-py3-none-any.whl (161 kB)
+Using cached PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (767 kB)
+Using cached psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
+Downloading transformers-4.51.3-py3-none-any.whl (10.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.4/10.4 MB 42.9 MB/s eta 0:00:00
+Downloading tokenizers-0.21.4-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.1/3.1 MB 97.6 MB/s eta 0:00:00
+Using cached jinja2-3.1.6-py3-none-any.whl (134 kB)
+Using cached markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+Using cached huggingface_hub-0.36.2-py3-none-any.whl (566 kB)
+Using cached hf_xet-1.7.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.2 MB)
+Using cached filelock-4.2.1-py3-none-any.whl (162 kB)
+Using cached fsspec-2026.6.0-py3-none-any.whl (203 kB)
+Using cached numpy-2.2.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.5 MB)
+Using cached packaging-26.3-py3-none-any.whl (129 kB)
+Using cached regex-2026.9.29-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+Using cached requests-2.34.2-py3-none-any.whl (73 kB)
+Using cached charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (257 kB)
+Using cached urllib3-2.8.0-py3-none-any.whl (135 kB)
+Using cached safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (516 kB)
+Using cached tqdm-4.70.1-py3-none-any.whl (80 kB)
+Installing collected packages: urllib3, typing_extensions, tqdm, sniffio, safetensors, regex, PyYAML, psutil, packaging, numpy, markupsafe, idna, hf-xet, h11, fsspec, filelock, click, charset-normalizer, certifi, annotated-types, uvicorn, typing-inspection, requests, pydantic_core, jinja2, httpcore, anyio, starlette, pydantic, huggingface-hub, httpx, tokenizers, fastapi, transformers
+Successfully installed PyYAML-6.0.2 annotated-types-0.7.0 anyio-4.10.0 certifi-2025.8.3 charset-normalizer-3.5.2 click-8.2.1 fastapi-0.116.1 filelock-4.2.1 fsspec-2026.6.0 h11-0.16.0 hf-xet-1.7.0 httpcore-1.0.9 httpx-0.28.1 huggingface-hub-0.36.2 idna-3.20 jinja2-3.1.6 markupsafe-3.0.4 numpy-2.2.6 packaging-26.3 psutil-7.2.2 pydantic-2.11.7 pydantic_core-2.33.2 regex-2026.9.29 requests-2.34.2 safetensors-0.8.0 sniffio-1.3.1 starlette-0.47.2 tokenizers-0.21.4 tqdm-4.70.1 transformers-4.51.3 typing-inspection-0.4.1 typing_extensions-4.14.1 urllib3-2.8.0 uvicorn-0.35.0
+No broken requirements found.
+Fetching 14 files:   0%|          | 0/14 [00:00<?, ?it/s]Fetching 14 files:  57%|█████▋    | 8/14 [00:00<00:00,  9.85it/s]Fetching 14 files:  71%|███████▏  | 10/14 [00:20<00:08,  2.00s/it]Fetching 14 files:  79%|███████▊  | 11/14 [00:26<00:07,  2.44s/it]Fetching 14 files:  86%|████████▌ | 12/14 [00:27<00:04,  2.32s/it]Fetching 14 files:  93%|█████████▎| 13/14 [00:35<00:02,  2.72s/it]Fetching 14 files: 100%|██████████| 14/14 [00:36<00:00,  2.59s/it]Fetching 14 files: 100%|██████████| 14/14 [00:36<00:00,  2.59s/it]
+Fetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]Fetching 10 files:  80%|████████  | 8/10 [00:00<00:00, 26.64it/s]Fetching 10 files: 100%|██████████| 10/10 [00:08<00:00,  1.14it/s]
+Setup failed: Owned service exited; inspect its local log

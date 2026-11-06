@@ -6,4 +6,7 @@
 tools/upstream/* -text
 tools/public-*/* -text
 docs/taskbook-2026-10-24.md -text
+# Preserve downloaded evidence byte-for-byte across Windows/Linux checkouts.
+results/gpu-2026-11-06/** -text
+results/github-actions-837ca04/** -text
 

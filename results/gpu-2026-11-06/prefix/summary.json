@@ -1,0 +1,125 @@
+{
+  "groups": [
+    {
+      "variant": "off",
+      "group": "shared",
+      "repeat": 0,
+      "window_seconds": 0.7134144501760602,
+      "success_rate": 1.0,
+      "correct_rate": 1.0,
+      "quality_goodput": 11.213678105378602,
+      "goodput_definition": "Correct successful requests / window, no final-service SLO claim"
+    },
+    {
+      "variant": "off",
+      "group": "shared",
+      "repeat": 1,
+      "window_seconds": 0.7049377076327801,
+      "success_rate": 1.0,
+      "correct_rate": 1.0,
+      "quality_goodput": 11.348520462700803,
+      "goodput_definition": "Correct successful requests / window, no final-service SLO claim"
+    },
+    {
+      "variant": "off",
+      "group": "shared",
+      "repeat": 2,
+      "window_seconds": 0.7040001014247537,
+      "success_rate": 1.0,
+      "correct_rate": 1.0,
+      "quality_goodput": 11.363634726486005,
+      "goodput_definition": "Correct successful requests / window, no final-service SLO claim"
+    },
+    {
+      "variant": "off",
+      "group": "unique",
+      "repeat": 0,
+      "window_seconds": 0.703160067088902,
+      "success_rate": 1.0,
+      "correct_rate": 1.0,
+      "quality_goodput": 11.377210359968497,
+      "goodput_definition": "Correct successful requests / window, no final-service SLO claim"
+    },
+    {
+      "variant": "off",
+      "group": "unique",
+      "repeat": 1,
+      "window_seconds": 0.7028927141800523,
+      "success_rate": 1.0,
+      "correct_rate": 1.0,
+      "quality_goodput": 11.381537805996846,
+      "goodput_definition": "Correct successful requests / window, no final-service SLO claim"
+    },
+    {
+      "variant": "off",
+      "group": "unique",
+      "repeat": 2,
+      "window_seconds": 0.7035814113914967,
+      "success_rate": 1.0,
+      "correct_rate": 1.0,
+      "quality_goodput": 11.370397043574716,
+      "goodput_definition": "Correct successful requests / window, no final-service SLO claim"
+    },
+    {
+      "variant": "on",
+      "group": "shared",
+      "repeat": 0,
+      "window_seconds": 0.5292361872270703,
+      "success_rate": 1.0,
+      "correct_rate": 1.0,
+      "quality_goodput": 15.11612431855038,
+      "goodput_definition": "Correct successful requests / window, no final-service SLO claim"
+    },
+    {
+      "variant": "on",
+      "group": "shared",
+      "repeat": 1,
+      "window_seconds": 0.512247521430254,
+      "success_rate": 1.0,
+      "correct_rate": 1.0,
+      "quality_goodput": 15.617449895439377,
+      "goodput_definition": "Correct successful requests / window, no final-service SLO claim"
+    },
+    {
+      "variant": "on",
+      "group": "shared",
+      "repeat": 2,
+      "window_seconds": 0.5025540199130774,
+      "success_rate": 1.0,
+      "correct_rate": 1.0,
+      "quality_goodput": 15.91868671428336,
+      "goodput_definition": "Correct successful requests / window, no final-service SLO claim"
+    },
+    {
+      "variant": "on",
+      "group": "unique",
+      "repeat": 0,
+      "window_seconds": 0.7096809754148126,
+      "success_rate": 1.0,
+      "correct_rate": 1.0,
+      "quality_goodput": 11.272670787495684,
+      "goodput_definition": "Correct successful requests / window, no final-service SLO claim"
+    },
+    {
+      "variant": "on",
+      "group": "unique",
+      "repeat": 1,
+      "window_seconds": 0.707855292595923,
+      "success_rate": 1.0,
+      "correct_rate": 1.0,
+      "quality_goodput": 11.30174498047693,
+      "goodput_definition": "Correct successful requests / window, no final-service SLO claim"
+    },
+    {
+      "variant": "on",
+      "group": "unique",
+      "repeat": 2,
+      "window_seconds": 0.7114057801663876,
+      "success_rate": 1.0,
+      "correct_rate": 1.0,
+      "quality_goodput": 11.245340174392336,
+      "goodput_definition": "Correct successful requests / window, no final-service SLO claim"
+    }
+  ],
+  "cache_and_output_passed": true
+}

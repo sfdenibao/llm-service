@@ -1,0 +1,13 @@
+{
+  "request_count": 873,
+  "input_tokens": 611614,
+  "output_tokens": 103948,
+  "cost_micro_usd": 1846916,
+  "cancelled_count": 0,
+  "failed_count": 53,
+  "unknown_usage_count": 2,
+  "balance_micro_usd": 999998153084,
+  "reserved_micro_usd": 0,
+  "used_tokens": 715562,
+  "reserved_tokens": 0
+}

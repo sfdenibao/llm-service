@@ -1,0 +1,57 @@
+{
+  "time": "2026-11-06T12:53:02.791129+00:00",
+  "profile": "optimized",
+  "source": "live engine process and native SGLang metadata",
+  "engine_commands": [
+    [
+      "/home/daytona/llm-service/.venv-gpu/bin/python",
+      "-m",
+      "sglang.launch_server",
+      "--model-path",
+      "/opt/llm-cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+      "--served-model-name",
+      "Qwen/Qwen2.5-7B-Instruct",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "30001",
+      "--dtype",
+      "bfloat16",
+      "--context-length",
+      "4096",
+      "--max-running-requests",
+      "32",
+      "--max-total-tokens",
+      "16384",
+      "--mem-fraction-static",
+      "0.8",
+      "--attention-backend",
+      "flashinfer",
+      "--sampling-defaults",
+      "openai",
+      "--enable-cache-report",
+      "--log-level",
+      "warning"
+    ]
+  ],
+  "native_runtime": {
+    "model_path": "/opt/llm-cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+    "served_model_name": "Qwen/Qwen2.5-7B-Instruct",
+    "attention_backend": "flashinfer",
+    "dtype": "bfloat16",
+    "context_length": 4096,
+    "max_running_requests": 32,
+    "max_total_tokens": 16384,
+    "mem_fraction_static": 0.8,
+    "disable_radix_cache": false,
+    "sampling_defaults": "openai",
+    "enable_cache_report": true
+  },
+  "software": {
+    "sglang": "0.5.9",
+    "torch": "2.9.1",
+    "transformers": "4.57.1",
+    "flashinfer-python": "0.6.3",
+    "sgl-kernel": "0.3.21"
+  }
+}

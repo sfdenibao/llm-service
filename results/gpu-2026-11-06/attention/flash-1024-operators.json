@@ -1,0 +1,16 @@
+[
+  "aten::scaled_dot_product_attention",
+  "aten::_scaled_dot_product_flash_attention",
+  "aten::transpose",
+  "aten::as_strided",
+  "aten::_flash_attention_forward",
+  "aten::empty_like",
+  "aten::empty_strided",
+  "aten::empty",
+  "Activity Buffer Request",
+  "cudaFuncSetAttribute",
+  "cudaLaunchKernel",
+  "void pytorch_flash::flash_fwd_splitkv_kernel<Flash_fwd_kernel_traits<64, 64, 256, 4, false, false, cutlass::bfloat16_t, Flash_kernel_traits<64, 64, 256, 4, cutlass::bfloat16_t> >, true, false, false, true, true, false, true, false>(pytorch_flash::Flash_fwd_params)",
+  "void pytorch_flash::flash_fwd_splitkv_combine_kernel<Flash_fwd_kernel_traits<64, 64, 256, 4, false, false, cutlass::bfloat16_t, Flash_kernel_traits<64, 64, 256, 4, cutlass::bfloat16_t> >, 8, 1, true>(pytorch_flash::Flash_fwd_params)",
+  "cudaDeviceSynchronize"
+]

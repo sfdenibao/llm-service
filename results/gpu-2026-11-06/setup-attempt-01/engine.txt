@@ -1,0 +1,111 @@
+/tmp/tmpjntaiwa0/cuda_utils.c:6:10: fatal error: Python.h: No such file or directory
+    6 | #include <Python.h>
+      |          ^~~~~~~~~~
+compilation terminated.
+/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/layers/attention/fla/utils.py:212: UserWarning: Triton is not supported on current platform, roll back to CPU.
+  warnings.warn(
+/tmp/tmpajpw2tjq/cuda_utils.c:6:10: fatal error: Python.h: No such file or directory
+    6 | #include <Python.h>
+      |          ^~~~~~~~~~
+compilation terminated.
+/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/layers/attention/fla/utils.py:212: UserWarning: Triton is not supported on current platform, roll back to CPU.
+  warnings.warn(
+/tmp/tmphcz6gy5q/cuda_utils.c:6:10: fatal error: Python.h: No such file or directory
+    6 | #include <Python.h>
+      |          ^~~~~~~~~~
+compilation terminated.
+/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/layers/attention/fla/utils.py:212: UserWarning: Triton is not supported on current platform, roll back to CPU.
+  warnings.warn(
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+/tmp/tmp86a2t3yx/cuda_utils.c:6:10: fatal error: Python.h: No such file or directory
+    6 | #include <Python.h>
+      |          ^~~~~~~~~~
+compilation terminated.
+/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/layers/attention/fla/utils.py:212: UserWarning: Triton is not supported on current platform, roll back to CPU.
+  warnings.warn(
+[2026-11-06 12:16:44] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+[2026-11-06 12:16:44] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+[2026-11-06 12:16:44] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/transformers/__init__.py)
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:02,  1.29it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:02<00:02,  1.23s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02<00:00,  1.07it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:04<00:00,  1.01s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:04<00:00,  1.00s/it]
+
+  0%|          | 0/7 [00:00<?, ?it/s]Capturing batches (bs=24 avail_mem=5.69 GB):   0%|          | 0/7 [00:00<?, ?it/s]/tmp/tmpp81vjgsd/cuda_utils.c:6:10: fatal error: Python.h: No such file or directory
+    6 | #include <Python.h>
+      |          ^~~~~~~~~~
+compilation terminated.
+Capturing batches (bs=24 avail_mem=5.69 GB):   0%|          | 0/7 [00:00<?, ?it/s]
+[2026-11-06 12:16:49] Scheduler hit an exception: Traceback (most recent call last):
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/managers/scheduler.py", line 3130, in run_scheduler_process
+    scheduler = Scheduler(
+                ^^^^^^^^^^
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/managers/scheduler.py", line 368, in __init__
+    self.init_model_worker()
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/managers/scheduler.py", line 564, in init_model_worker
+    self.init_tp_model_worker()
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/managers/scheduler.py", line 522, in init_tp_model_worker
+    self.tp_worker = TpModelWorker(
+                     ^^^^^^^^^^^^^^
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/managers/tp_worker.py", line 247, in __init__
+    self._init_model_runner()
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/managers/tp_worker.py", line 330, in _init_model_runner
+    self._model_runner = ModelRunner(
+                         ^^^^^^^^^^^^
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/model_executor/model_runner.py", line 413, in __init__
+    self.initialize(min_per_gpu_memory)
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/model_executor/model_runner.py", line 609, in initialize
+    self.init_device_graphs()
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/model_executor/model_runner.py", line 2156, in init_device_graphs
+    self.graph_runner = graph_runners[self.device](self)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/model_executor/cuda_graph_runner.py", line 370, in __init__
+    self.capture()
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/model_executor/cuda_graph_runner.py", line 526, in capture
+    _capture_one_stream()
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/model_executor/cuda_graph_runner.py", line 513, in _capture_one_stream
+    ) = self.capture_one_batch_size(bs, forward, stream_idx)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/model_executor/cuda_graph_runner.py", line 689, in capture_one_batch_size
+    attn_backend.init_forward_metadata_capture_cuda_graph(
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/layers/attention/flashinfer_backend.py", line 573, in init_forward_metadata_capture_cuda_graph
+    self.indices_updater_decode.update(
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/layers/attention/flashinfer_backend.py", line 970, in update_single_wrapper
+    self.call_begin_forward(
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/sglang/srt/layers/attention/flashinfer_backend.py", line 1094, in call_begin_forward
+    create_flashinfer_kv_indices_triton[(bs,)](
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/triton/runtime/jit.py", line 419, in <lambda>
+    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/triton/runtime/jit.py", line 713, in run
+    device = driver.active.get_current_device()
+             ^^^^^^^^^^^^^
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/triton/runtime/driver.py", line 28, in active
+    self._active = self.default
+                   ^^^^^^^^^^^^
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/triton/runtime/driver.py", line 22, in default
+    self._default = _create_driver()
+                    ^^^^^^^^^^^^^^^^
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/triton/runtime/driver.py", line 10, in _create_driver
+    return active_drivers[0]()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/triton/backends/nvidia/driver.py", line 719, in __init__
+    self.utils = CudaUtils()  # TODO: make static
+                 ^^^^^^^^^^^
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/triton/backends/nvidia/driver.py", line 63, in __init__
+    mod = compile_module_from_src(
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/triton/runtime/build.py", line 89, in compile_module_from_src
+    so = _build(name, src_path, tmpdir, library_dirs or [], include_dirs or [], libraries or [], ccflags or [])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/triton/runtime/build.py", line 51, in _build
+    subprocess.check_call(cc_cmd, stdout=subprocess.DEVNULL)
+  File "/usr/lib/python3.12/subprocess.py", line 413, in check_call
+    raise CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command '['/usr/bin/gcc', '/tmp/tmpp81vjgsd/cuda_utils.c', '-O3', '-shared', '-fPIC', '-Wno-psabi', '-o', '/tmp/tmpp81vjgsd/cuda_utils.cpython-312-x86_64-linux-gnu.so', '-lcuda', '-L/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/triton/backends/nvidia/lib', '-L/usr/lib/x86_64-linux-gnu', '-I/home/daytona/llm-service/.venv-gpu/lib/python3.12/site-packages/triton/backends/nvidia/include', '-I/tmp/tmpp81vjgsd', '-I/usr/include/python3.12']' returned non-zero exit status 1.
+
+[2026-11-06 12:16:49] Received sigquit from a child process. It usually means the child failed.

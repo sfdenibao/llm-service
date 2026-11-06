@@ -1,0 +1,15 @@
+{
+  "observed_at_utc": "2026-11-06T12:57:57Z",
+  "source": "Visible Agentist lab page after user-confirmed End and destroy",
+  "url": "https://agentist.org/lab/llm-lab",
+  "machine_status_text": "当前没有运行中的机器",
+  "remaining_minutes_displayed": 13,
+  "starts_used_this_session": 1,
+  "formal_evaluation_submitted": false,
+  "all_run_results_downloaded_before_destroy": true,
+  "screenshot": "platform-stopped.png",
+  "notes": [
+    "Timestamp is observation time, not a precise cloud deletion timestamp.",
+    "Remaining minutes are the rounded page display, not a precise duration measurement."
+  ]
+}

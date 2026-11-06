@@ -2,13 +2,15 @@
 
 SGLang 模型服务工程：OpenAI 兼容网关、SSE、用户/API Key、实验计费账本、额度、Agent 工具调用、管理台、可重建部署与 GPU 机制实验。
 
-**当前已验证 CPU 网关和账本；真实 GPU 部署、模型能力与性能目标尚待运行。** 固定 CPU fixture 输出不是模型推理成绩。[需求映射](docs/requirements-matrix.md) · [测试记录](docs/test-results.md) · [性能方法](docs/performance.md) · [来源](docs/sources.md)
+**已在 Daytona RTX 4090 完成真实 Qwen/SGLang 服务、两配置768次测量与三项机制实验；optimized 384/384成功且正确，四目标共32项公开阈值通过。** baseline为333/384，其51个HTTP504失败原样保留。正式评测尚未提交；最终代码在第二台全新机器的从零重建未验证。[完整实测报告](reports/gpu-2026-11-06-final/summary.md) · [测试记录](docs/test-results.md) · [性能实测](docs/performance.md) · [需求映射](docs/requirements-matrix.md) · [来源](docs/sources.md)
 
 ![管理台账本](results/console-browser/ledger.png)
 
 ## 当前证据
 
-状态核对日期：2026-11-06（Asia/Shanghai）。历史 CPU、Actions 与浏览器测试执行于 2026-10-24；2026-11-06 另完成本机 20 项准备阶段回归，分别记录如下。
+状态核对日期：2026-11-06（Asia/Shanghai）。历史 CPU 与浏览器结果保留；本次新增真实 GPU、机制与性能证据，并完成固定提交的 Ubuntu CPU 回归。
+
+本次练习机已结束并回收；2026-11-06 20:57（北京时间）页面确认没有运行中的机器，剩余练习额度13分钟。全部实验结果已备份，正式评测尚未提交。[平台回收证据](results/gpu-2026-11-06/platform-stopped.png)
 
 | 层次 | 结果 |
 | --- | --- |
@@ -17,13 +19,21 @@ SGLang 模型服务工程：OpenAI 兼容网关、SSE、用户/API Key、实验�
 | 2026-11-06 准备阶段回归 | Windows 20/20，`results/regression-2026-11-06-preflight/report.json`；`worktree_dirty=true`，测试对象含尚未提交的修改 |
 | HTTP-only 管理自测 | 5 组通过，4 类故障注入明确跳过，另由回归测试覆盖；`results/control-plane-mock-01.json` |
 | Console 浏览器 | 用户创建、额度、余额、key 签发/轮换/撤销、停用、价格、账本、审计已操作；`results/console-browser/` |
-| GitHub Actions / Ubuntu 24.04 | 官方公开 checker 18/18、深入回归 19/19；完整 SHA 与运行链接见下文 |
-| 真实 SGLang / GPU 实验 / SLO | NOT_TESTED，已有代码入口，尚无 GPU 数值 |
+| GitHub Actions / Ubuntu 24.04 | 提交 `837ca04`：官方公开 checker 18/18、深入回归 24/24；历史 `883276d` 的19/19保留 |
+| 真实 SGLang / 管理与 Agent | selftest 5/5、live管理6组通过；实际两次模型调用与工具往返，4类故障注入另由CPU覆盖 |
+| 真实服务取消与幂等启动 | 取消恢复7/7，GPU任务释放未证明；同环境 setup 1.329秒、PID保持，不等于冷启动 |
+| GPU 机制实验 | KV 12行、prefix 96行、attention 18行通过，见 `results/gpu-2026-11-06/` |
+| 完整性能对照 | 各8组384请求；baseline333/384，optimized384/384，optimized四目标32项公开阈值通过 |
+| 结束前复检与清理 | 恢复optimized后selftest 5/5；账本预占归零；147文件凭据精确值扫描通过；20:53:08已停止本项目进程，平台实例回收另记 |
 | 正式评分 / 人工理解验收 | NOT_TESTED |
 
-Ubuntu Actions 的两份报告均绑定提交 `883276d0f338a83e9f7ab692e0e97b684798d055`：[官方 CPU 软评测](https://github.com/sfdenibao/llm-service/actions/runs/40084779090)（[归档报告](results/github-actions-883276d/soft/report.json)，18 pass、0 missing、0 invalid、0 blocked）；[CPU 回归](https://github.com/sfdenibao/llm-service/actions/runs/40084779009)（[归档报告](results/github-actions-883276d/regression/report.json)，19/19，`execution_environment=linux`）。这些是该提交的 CPU 证据；后续代码提交需关联各自测试结果，不能据此宣称 GPU 或正式评分通过。
+2026-10-24 的两份历史 Ubuntu Actions 报告绑定提交 `883276d0f338a83e9f7ab692e0e97b684798d055`：[官方 CPU 软评测](https://github.com/sfdenibao/llm-service/actions/runs/40084779090)（[归档报告](results/github-actions-883276d/soft/report.json)，18 pass、0 missing、0 invalid、0 blocked）；[CPU 回归](https://github.com/sfdenibao/llm-service/actions/runs/40084779009)（[归档报告](results/github-actions-883276d/regression/report.json)，19/19，`execution_environment=linux`）。这些是该提交的 CPU 证据；后续代码提交需关联各自测试结果，不能据此宣称 GPU 或正式评分通过。
 
-2026-11-06 修正启动入口，按 `python3.12`、`python3`、`python` 顺序精确选择 Python 3.12；实验失败时保存不含局部变量并脱敏的 traceback，清单保持未完成。新增失败证据测试后本机回归 20/20；报告按实际环境生成 `not_tested` 并记录工作区修改状态。该报告中的旧 HEAD SHA 加上 `worktree_dirty=true` 不等于已提交版本通过，GPU 仍为 NOT_TESTED。
+2026-11-06 准备阶段修正 Python 3.12 选择与失败证据记录，本机20/20报告的 `worktree_dirty=true` 保留。真实 GPU 部署随后修复 Python.h 缺失、venv ninja PATH 和 SGLang nullable cache usage 解析；首次失败日志与修复后的结果分别归档，不覆盖失败。
+
+本次基准与机制固定提交 `837ca04e52fe800f974cf46f44b7602c87012bb6`，同提交 [CPU软评测18/18](https://github.com/sfdenibao/llm-service/actions/runs/42217691662)、[Ubuntu回归24/24](https://github.com/sfdenibao/llm-service/actions/runs/42217691920) 的报告位于 `results/github-actions-837ca04/`。真实服务基础与管理测试对应 `04d791e30ecbbe4064a7a4d0abf8079fce6be781`，之后的 `837ca04` 增加独立取消探针。GPU 原始数据、环境和各阶段提交标识位于 `results/gpu-2026-11-06/`，数值与边界详见性能文档；公开练习达标不等于官方得分。
+
+同GPU、同seed且对应输入完全相同的对照中，short C8/C16有效吞吐提高5.65/8.48倍，long C8/C16提高7.32/13.62倍。baseline在长输出高并发下有51次约20秒的HTTP504，符合单执行槽的排队超时瓶颈；optimized全部成功。复核报告PASSED表示数据完整、复算一致与optimized阈值通过，保留baseline失败，不产生官方分数。
 
 旧失败记录保留：`regression-01` 中断流清理失败，修复后 `regression-02` 16/16；增加边界后 `regression-03` 19/19。早期报告生成时没有 commit，`commit_sha=null` 保持原样。
 
@@ -69,7 +79,7 @@ bash setup.sh --stop
 
 contract-test 只替换模型引擎，鉴权、账本、配额、恢复代码与 live 相同，不安装 SGLang/CUDA/权重。`gateway.pid` 对应实际监听进程；`processes.json` 记录 PID 与创建时间，防止误杀复用 PID。配置/代码/私密配置摘要变化会重建自己的进程；同配置幂等保持 PID。
 
-Linux RTX 4090：`BENCH_PROFILE=baseline bash setup.sh`，之后 `BENCH_PROFILE=optimized bash setup.sh`。live 使用 `.venv-gpu` 完整版本锁和独立 `.venv-bench` 客户端锁。SGLang 0.5.9 / PyTorch 2.9.1 / Transformers 4.57.1 的锁来自固定公开参考提交，本项目的 GPU 重建仍待验证。
+Linux RTX 4090：`BENCH_PROFILE=baseline bash setup.sh`，之后 `BENCH_PROFILE=optimized bash setup.sh`。live 使用 `.venv-gpu` 完整版本锁和独立 `.venv-bench` 客户端锁。SGLang 0.5.9 / PyTorch 2.9.1 / Transformers 4.57.1 已在本次练习机运行；setup 会核查原生编译器和 Python 开发头文件，并将 venv 工具加入 PATH。本次经历现场修复与已有缓存重跑，最终代码在第二台全新机器从零重建仍待验证。
 
 ## 请求与账本
 
