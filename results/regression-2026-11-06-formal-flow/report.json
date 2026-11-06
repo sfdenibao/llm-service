@@ -1,0 +1,251 @@
+{
+  "schema": "llm-local-regression/1",
+  "suite": "CPU HTTP integration",
+  "commit_sha": "e432d1e1759e274e9304c3282103787a54f86e97",
+  "worktree_dirty": true,
+  "execution_environment": "win32",
+  "started_at": "2026-11-06T14:41:04.969867+00:00",
+  "finished_at": "2026-11-06T14:42:34.699766+00:00",
+  "tests_run": 51,
+  "passed": true,
+  "checks": [
+    {
+      "test_id": "tests.test_bootstrap_install.BootstrapInstallTests.test_command_deadline_terminates_child_and_preserves_redacted_failure_log",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_bootstrap_install.BootstrapInstallTests.test_network_failure_stops_at_attempt_limit_without_marker",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_bootstrap_install.BootstrapInstallTests.test_permanent_failure_stops_immediately_and_removes_stale_marker",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_bootstrap_install.BootstrapInstallTests.test_real_pip_recovers_after_local_wheel_body_read_timeout",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_bootstrap_install.BootstrapInstallTests.test_retry_cannot_extend_shared_budget",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_bootstrap_install.BootstrapInstallTests.test_startup_deadline_invokes_manifest_cleanup",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_bootstrap_install.BootstrapInstallTests.test_successful_install_with_failed_pip_check_cannot_write_marker",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_bootstrap_prerequisites.BootstrapPrerequisiteTests.test_existing_headers_and_compilers_do_not_install",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_bootstrap_prerequisites.BootstrapPrerequisiteTests.test_missing_prerequisites_run_timeout_inside_root_or_sudo_and_recheck",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_bootstrap_prerequisites.BootstrapPrerequisiteTests.test_privileged_timeout_or_insufficient_deadline_stops_before_install",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_experiment_failure.ExperimentConfigurationTests.test_invalid_profile_and_nonlocal_engine_are_rejected",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_experiment_failure.ExperimentConfigurationTests.test_saved_cache_is_temporary_and_explicit_cache_selection_wins",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_experiment_failure.ExperimentFailureTests.test_contract_mode_refused_before_stopping_services",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_experiment_failure.ExperimentFailureTests.test_failure_evidence_is_incomplete_and_redacted",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_experiment_failure.ExperimentFailureTests.test_formal_case_routes_without_service_credentials_using_cpu_doubles",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_experiment_failure.ExperimentFailureTests.test_real_cuda_gate_rejects_cpu_before_stopping_services",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_experiment_failure.ExperimentFailureTests.test_termination_guard_ignores_repeated_term_and_restores_previous_handler",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_experiment_processes.ExperimentProcessPlatformTests.test_non_linux_refuses_before_spawning",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_formal_lifecycle.FormalLifecycleTests.test_custom_data_stop_and_profile_switch_with_minimal_environment",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_integration.GatewayTests.test_01_billing_stream_and_nonstream",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_integration.GatewayTests.test_02_two_tenants_four_keys_isolation",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_integration.GatewayTests.test_03_key_lifecycle_storage_and_admin_denial",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_integration.GatewayTests.test_04_idempotency_twenty_concurrent",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_integration.GatewayTests.test_05_atomic_reservation_twenty_concurrent",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_integration.GatewayTests.test_06_shared_token_rpm_and_concurrency_limits",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_integration.GatewayTests.test_07_price_versions_credit_and_summary",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_integration.GatewayTests.test_08_sse_signal_gate_utf8_and_coalesced_events",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_integration.GatewayTests.test_09_cancel_releases_slot_and_aborts",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_integration.GatewayTests.test_10_missing_usage_and_missing_done_are_errors",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_integration.GatewayTests.test_11_queue_bounds_timeout_and_recovery",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_integration.GatewayTests.test_12_restart_unknown_usage_releases_with_audit",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_integration.GatewayTests.test_13_restart_after_usage_settles_exactly_once",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_integration.GatewayTests.test_14_agent_two_calls_parent_child_and_idempotency",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_integration.GatewayTests.test_15_idempotent_setup_and_stop_preserve_fixture",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_integration.GatewayTests.test_16_health_dependency_and_input_validation",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_integration.GatewayTests.test_17_queued_timeout_and_disconnect_have_no_engine_usage",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_integration.GatewayTests.test_18_inflight_revocation_price_snapshot_and_credit_safety",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_integration.GatewayTests.test_19_malformed_sse_reports_error_without_done",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_integration.GatewayTests.test_20_sglang_nullable_cache_details_settle_real_usage",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_supervisor_registry.SupervisorRegistryTests.test_cache_context_records_resolved_paths_without_credentials",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_supervisor_registry.SupervisorRegistryTests.test_context_includes_explicit_unregistered_legacy_directory",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_supervisor_registry.SupervisorRegistryTests.test_explicit_stop_targets_one_directory_then_context_stops_all_and_preserves_data",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_supervisor_registry.SupervisorRegistryTests.test_foreign_manifest_and_mismatched_pid_generation_are_not_killed",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_supervisor_registry.SupervisorRegistryTests.test_foreign_registry_fails_closed_and_experiment_failure_releases_global_lock",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_supervisor_registry.SupervisorRegistryTests.test_registry_write_failure_prevents_starting_children",
+      "passed": true,
+      "actual": "All assertions passed"
+    },
+    {
+      "test_id": "tests.test_supervisor_registry.SupervisorRegistryTests.test_start_registers_before_work_and_discards_missing_manifest_entries",
+      "passed": true,
+      "actual": "All assertions passed"
+    }
+  ],
+  "official_score": false,
+  "not_tested": [
+    "Real GPU inference",
+    "Browser console",
+    "Performance SLO",
+    "Linux SIGKILL when running on Windows",
+    "GitHub Actions"
+  ]
+}

@@ -33,3 +33,13 @@
 固定 `5d1d2ee` 的 [Ubuntu完整回归](https://github.com/sfdenibao/llm-service/actions/runs/42227539790) 为32/32、零跳过、`worktree_dirty=false`；GNU timeout真实合成进程树测试在0.603秒后父子PID均不存在。[公开接口检查](https://github.com/sfdenibao/llm-service/actions/runs/42227539886) 为18/18。两份artifact的完整SHA和ZIP摘要均核对，原字节保存在 [CI归档](../results/github-actions-5d1d2ee/verification.json)。
 
 平台实例于21:54:34另行确认回收，页面显示剩余3分钟练习额度，正式评测历史仍只有 `aa62145` 一次。修复验证没有使用最后一次正式名额。
+
+## 正式阶段切换补查与修复
+
+323秒冷启动验证直接进入 GPU 服务，没有复演正式控制器的 CPU 凭据检查→无环境变量停止→另一 DATA_DIR 启动→独立实验这一完整调用顺序。后续对照旧正式报告可见命令，在 CPU 环境复现两个确定的缺陷：无 DATA_DIR 的 stop 查默认目录而遗留先前网关；实验入口加载服务 Settings，缺少 API_KEY/KEY_HASH_SECRET 时退出。这些是后续阶段的风险，旧正式报告实际首因仍是安装下载超时，不能改写为这些问题已在正式 GPU 阶段发生。
+
+本次修复为每个 checkout 原子登记实际运行目录，并用同一生命周期锁覆盖启动、停止和完整实验。无环境变量 stop 能找到本项目先前服务；显式 DATA_DIR 保持定向停止；继续核对 manifest 项目归属、PID 和创建时间。账本、运行证据和外部 fixture 保留。实验配置与服务认证分离，真实网关密钥规则不变。
+
+正式 setup 显式指定模型缓存，实验命令没有重复传入；基础环境是否预设相同缓存尚无证明。因此补上非秘密缓存路径的登记与复用，实验显式缓存变量优先。另补齐 Prefix 超时收到 SIGTERM 后的自有会话清理，使父进程提前退出或子进程忽略 TERM 时仍能处理并记录失败。模型、依赖锁、实验矩阵、精度容差和评分门槛保持不变。
+
+新增隔离 checkout 测试先在旧实现实际复现“stop 返回0但网关仍活着”，再对新实现执行真实 CPU bootstrap、无环境变量 stop、同端口换 DATA_DIR、baseline/optimized切换与幂等。独立实验入口用明确标记的 CUDA/数值替身检查最小环境和真实服务清理；它不证明 GPU 数值或吞吐。Linux 信号与子进程清理由 Ubuntu 回归单独验证。本次不创建云端实例、不提交正式评测；最新结果见[测试记录](test-results.md)。

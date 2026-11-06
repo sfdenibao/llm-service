@@ -2,6 +2,10 @@
 
 状态核对日期：2026-11-06（Asia/Shanghai）。历史测试执行于 2026-10-24；本次新增 Windows准备回归、Ubuntu Actions、Daytona RTX4090真实服务与实验结果。不改写旧报告或执行日期。本机使用 Windows / Python3.12.10；Actions 使用 Ubuntu 24.04 / Python3.12；GPU 为 Daytona Linux / Python3.12.3。
 
+正式流程补查：本机执行 `.venv\Scripts\python.exe scripts/run_tests.py --out results/regression-2026-11-06-formal-flow`，51项中46项通过、5项因Linux专属信号行为在Windows跳过，零失败/错误。报告的旧HEAD与 `worktree_dirty=true` 如实保留；该结果不属于旧提交的原始代码。新增隔离checkout的实际调用顺序为 CPU凭据服务→无DATA_DIR停止→另一DATA_DIR的baseline→三项最小环境实验入口→optimized→幂等→重复停止，六阶段全部通过，cleanup_errors为空。HTTP服务与停止均为真实进程；实验入口只替换CUDA探针和数值函数，明确不证明GPU推理或评分。此前旧实现的同类停止测试失败，私有复现记录保留在 `.runtime/formal-flow-fix-before/`。
+
+独立实验配置、缓存继承/显式优先、失败证据与SIGTERM处理、registry所有权/多目录/锁竞争均有聚焦用例。另增加四项真正的Linux进程测试，覆盖父提前退出与不同进程组、注册期间TERM、注册失败清理、连续TERM和拒绝TERM的子进程；这些在本机明确跳过，必须以新提交对应Ubuntu Actions结果为准。本轮未启动GPU、未提交正式评测。
+
 20:53停止项目服务并导出全部结果后，经用户确认回收云端练习机。20:57平台页面确认当前没有运行中的机器，显示剩余13分钟；见 [回收截图](../results/gpu-2026-11-06/platform-stopped.png) 与 [状态记录](../results/gpu-2026-11-06/platform-state.json)。这证明平台已回收实例，与前面的HTTP取消是否立即释放GPU任务是不同检查。
 
 | 证据（results目录下） | 结果 | 边界 |

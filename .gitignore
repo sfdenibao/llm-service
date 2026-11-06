@@ -18,6 +18,7 @@ data/
 !results/github-actions-5d1d2ee/**/*.log
 !results/regression-2026-11-06-install-retry*/**/*.log
 !results/cold-start-2026-11-06/**/*.log
+!results/regression-2026-11-06-formal-flow/**/*.log
 *.pem
 *.key
 models/

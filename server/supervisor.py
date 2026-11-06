@@ -1,5 +1,6 @@
 """Only manage processes launched by this checkout; PID reuse is checked."""
 import argparse
+from contextlib import contextmanager
 import hashlib
 import json
 import os
@@ -36,7 +37,53 @@ def save(path, data):
     tmp.replace(path)
 
 
-def stop(data_dir):
+def registry_path():
+    return ROOT / '.runtime' / 'managed-services.json'
+
+
+def load_registry():
+    path = registry_path()
+    if not path.exists():
+        return {'schema': 'managed-services/1', 'project_root': str(ROOT.resolve()),
+                'data_dirs': [], 'live_cache_env': {}}
+    value = json.loads(path.read_text(encoding='utf-8'))
+    if (not isinstance(value, dict) or value.get('schema') != 'managed-services/1'
+            or value.get('project_root') != str(ROOT.resolve())
+            or not isinstance(value.get('data_dirs'), list)
+            or any(not isinstance(p, str) or not Path(p).is_absolute() for p in value['data_dirs'])):
+        raise RuntimeError('Service registry does not belong to this checkout or is invalid')
+    cache = value.get('live_cache_env', {})
+    if (not isinstance(cache, dict) or set(cache) - {'HF_HOME', 'HF_HUB_CACHE'}
+            or any(not isinstance(p, str) or not Path(p).is_absolute() for p in cache.values())):
+        raise RuntimeError('Service cache registry is invalid')
+    value['live_cache_env'] = cache
+    return value
+
+
+def save_registry(value):
+    path = registry_path()
+    path.parent.mkdir(parents=True, exist_ok=True)
+    save(path, value)
+
+
+def register_data_dir(data_dir):
+    """Called under the checkout lock, before a service child can be spawned."""
+    value = load_registry()
+    # Removed directories/manifests cannot identify a process. Do not recreate them.
+    directories = [Path(p) for p in value['data_dirs'] if (Path(p) / 'processes.json').is_file()]
+    value['data_dirs'] = [str(p) for p in dict.fromkeys([*directories, Path(data_dir).resolve()])]
+    save_registry(value)
+
+
+def remember_live_cache(constants):
+    value = load_registry()
+    value['live_cache_env'] = {name: str(Path(getattr(constants, name)).expanduser().resolve())
+                               for name in ('HF_HOME', 'HF_HUB_CACHE')}
+    save_registry(value)
+
+
+def stop_locked(data_dir):
+    """The caller holds the checkout lock, then this DATA_DIR's lock."""
     state_path = data_dir / 'processes.json'
     if not state_path.exists():
         return
@@ -67,6 +114,35 @@ def stop(data_dir):
     state['processes'] = []
     save(state_path, state)
     (data_dir / 'gateway.pid').unlink(missing_ok=True)
+
+
+def stop(data_dir):
+    """Explicit DATA_DIR stop; retain its ledger and all other managed services."""
+    data_dir = Path(data_dir).resolve()
+    with exclusive_lock(ROOT / '.runtime/lifecycle.lock'):
+        with exclusive_lock(data_dir / 'supervisor.lock'):
+            stop_locked(data_dir)
+
+
+@contextmanager
+def stopped_services():
+    """Keep this checkout stopped throughout a native experiment.
+
+    Lock order is always checkout -> DATA_DIR. No service start can acquire the
+    checkout lock until the entire context exits, including exceptional exits.
+    """
+    with exclusive_lock(ROOT / '.runtime/lifecycle.lock'):
+        value = load_registry()
+        directories = [Path(p) for p in value['data_dirs']]
+        directories.append(ROOT / '.runtime/data')  # Older default manifests.
+        if os.environ.get('DATA_DIR'):
+            directories.append(Path(os.environ['DATA_DIR']))
+        for data_dir in dict.fromkeys(p.resolve() for p in directories):
+            if not (data_dir / 'processes.json').exists():
+                continue
+            with exclusive_lock(data_dir / 'supervisor.lock'):
+                stop_locked(data_dir)
+        yield dict(value['live_cache_env'])
 
 
 def port_free(host, port):
@@ -113,7 +189,7 @@ def engine_command(settings, model_path, port):
     return command
 
 
-def start(settings):
+def start_locked(settings):
     data_dir = settings.data_dir
     data_dir.mkdir(parents=True, exist_ok=True)
     state_path = data_dir / 'processes.json'
@@ -129,7 +205,7 @@ def start(settings):
                         return
             except httpx.HTTPError:
                 pass
-        stop(data_dir)
+        stop_locked(data_dir)
     port_free(settings.host, settings.port)
     state = {'project_root': str(ROOT.resolve()), 'fingerprint': wanted, 'processes': [], 'mode': 'contract-test' if settings.contract_test else 'live'}
     env = os.environ.copy()
@@ -150,9 +226,10 @@ def start(settings):
         return child
     try:
         if not settings.contract_test:
-            from huggingface_hub import snapshot_download
+            from huggingface_hub import constants, snapshot_download
             cache = snapshot_download(settings.model, revision=settings.revision)
             snapshot_download('Qwen/Qwen2.5-1.5B-Instruct', revision='989aa7980e4cf806f80c7fef2b1adb7bc71aa306')
+            remember_live_cache(constants)
             engine_port = urlsplit(settings.engine_url).port
             port_free('127.0.0.1', engine_port)
             command = engine_command(settings, cache, engine_port)
@@ -172,21 +249,33 @@ def start(settings):
         save(state_path, state)
         print(f'Ready: {url}; mode={state["mode"]}; gateway_pid={actual_pid}')
     except BaseException:
-        stop(data_dir)
+        stop_locked(data_dir)
         raise
+
+
+def start(settings):
+    # Direct callers get the same locking and durable registration as the CLI.
+    data_dir = Path(settings.data_dir).resolve()
+    settings.data_dir = data_dir
+    with exclusive_lock(ROOT / '.runtime/lifecycle.lock'):
+        with exclusive_lock(data_dir / 'supervisor.lock'):
+            register_data_dir(data_dir)
+            return start_locked(settings)
 
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--stop', action='store_true')
     args = parser.parse_args()
-    data_dir = Path(os.environ.get('DATA_DIR', ROOT / '.runtime/data')).resolve()
-    with exclusive_lock(data_dir / 'supervisor.lock'):
-        if args.stop:
-            stop(data_dir)
-            print('Owned service processes stopped; DATA_DIR preserved')
+    if args.stop:
+        if os.environ.get('DATA_DIR'):
+            stop(Path(os.environ['DATA_DIR']))
         else:
-            start(Settings.load())
+            with stopped_services():
+                pass
+        print('Owned service processes stopped; DATA_DIR preserved')
+    else:
+        start(Settings.load())
 
 
 if __name__ == '__main__':

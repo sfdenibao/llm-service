@@ -1,0 +1,33 @@
+["C:\\Users\\Administrator\\Documents\\ChatGPT\\agent-learn\\homework\\llm-service\\.venv\\Scripts\\python.exe", "-m", "server.bootstrap", "--contract-test"]
+Installing requirements.lock: attempt 1/2, socket timeout 60s
+Starting supervised services; 791s of work budget remains
+Ready: http://127.0.0.1:56067/healthz; mode=contract-test; gateway_pid=66756
+
+
+["C:\\Users\\Administrator\\Documents\\ChatGPT\\agent-learn\\homework\\llm-service\\.venv\\Scripts\\python.exe", "-m", "server.bootstrap", "--stop"]
+Owned service processes stopped; DATA_DIR preserved
+
+
+["C:\\Users\\Administrator\\Documents\\ChatGPT\\agent-learn\\homework\\llm-service\\.venv\\Scripts\\python.exe", "-m", "server.bootstrap", "--contract-test"]
+Starting supervised services; 810s of work budget remains
+Ready: http://127.0.0.1:56067/healthz; mode=contract-test; gateway_pid=53136
+
+
+["C:\\Users\\Administrator\\Documents\\ChatGPT\\agent-learn\\homework\\llm-service\\.venv\\Scripts\\python.exe", "-m", "server.bootstrap", "--contract-test"]
+Starting supervised services; 810s of work budget remains
+Ready: http://127.0.0.1:56067/healthz; mode=contract-test; gateway_pid=59256
+
+
+["C:\\Users\\Administrator\\Documents\\ChatGPT\\agent-learn\\homework\\llm-service\\.venv\\Scripts\\python.exe", "-m", "server.bootstrap", "--contract-test"]
+Starting supervised services; 810s of work budget remains
+Already ready; existing processes and ledger preserved
+
+
+["C:\\Users\\Administrator\\Documents\\ChatGPT\\agent-learn\\homework\\llm-service\\.venv\\Scripts\\python.exe", "-m", "server.bootstrap", "--stop"]
+Owned service processes stopped; DATA_DIR preserved
+
+
+["C:\\Users\\Administrator\\Documents\\ChatGPT\\agent-learn\\homework\\llm-service\\.venv\\Scripts\\python.exe", "-m", "server.bootstrap", "--stop"]
+Owned service processes stopped; DATA_DIR preserved
+
+

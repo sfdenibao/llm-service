@@ -1,0 +1,15 @@
+{
+  "verified_phases": [
+    "custom CPU DATA_DIR -> no-env setup --stop; fixture and ledger preserved",
+    "same gateway port reused with a different DATA_DIR and baseline profile",
+    "three minimal-env experiment entrypoints release real services; numerical work uses CPU doubles",
+    "optimized profile starts after mechanism entrypoints",
+    "identical setup preserves the listening PID",
+    "no-env stop is repeatable and leaves the external fixture alive"
+  ],
+  "execution_environment": "win32",
+  "gpu_exercised": false,
+  "formal_evaluation_submitted": false,
+  "cleanup_errors": [],
+  "external_fixture_stopped_by_test_driver": true
+}

@@ -1,13 +1,12 @@
 """Actual SGLang cache hits, with identical token IDs for cache-on/off comparisons."""
 import json
 import os
-import subprocess
 import time
 from urllib.parse import urlsplit
 import uuid
 import httpx
-import psutil
 from experiments.common import append_row,json_hash,write_json
+from experiments.processes import owned_session
 from server.supervisor import engine_command,port_free,wait_ready
 
 
@@ -33,9 +32,8 @@ def run(out,info,settings):
         settings.config={**settings.config,'prefix_cache':variant=='on','max_running_requests':8,'max_total_tokens':16384}
         port_free('127.0.0.1',port)
         env={k:v for k,v in os.environ.items() if k not in ('API_KEY','ADMIN_API_KEY','KEY_HASH_SECRET','FIXTURE_CONTROL_KEY')}
-        with (out/f'engine-{variant}.log').open('ab') as log:
-            process=subprocess.Popen(engine_command(settings,cache,port),env=env,stdin=subprocess.DEVNULL,stdout=log,stderr=log,start_new_session=True)
-        try:
+        with (out/f'engine-{variant}.log').open('ab') as log, owned_session(
+                engine_command(settings,cache,port),env=env,stdout=log) as process:
             wait_ready(settings.engine_url+'/health',process,180)
             with httpx.Client(base_url=settings.engine_url,timeout=30,trust_env=False) as client:
                 for group in ('shared','unique'):
@@ -75,16 +73,5 @@ def run(out,info,settings):
                         groups.append({'variant':variant,'group':group,'repeat':repeat,'window_seconds':seconds,
                                        'success_rate':successful/8,'correct_rate':correct/8,'quality_goodput':correct/seconds,
                                        'goodput_definition':'Correct successful requests / window, no final-service SLO claim'})
-        finally:
-            p=psutil.Process(process.pid) if process.poll() is None else None
-            owned=[p,*p.children(recursive=True)] if p else []
-            for item in owned:
-                try:item.terminate()
-                except psutil.NoSuchProcess:pass
-            _,alive=psutil.wait_procs(owned,timeout=10)
-            for item in alive:
-                try:item.kill()
-                except psutil.NoSuchProcess:pass
-            psutil.wait_procs(alive,timeout=5);process.wait(timeout=5)
     write_json(out/'summary.json',{'groups':groups,'cache_and_output_passed':overall})
     return overall

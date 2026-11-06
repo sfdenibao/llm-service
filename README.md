@@ -2,7 +2,7 @@
 
 SGLang 模型服务工程：OpenAI 兼容网关、SSE、用户/API Key、实验计费账本、额度、Agent 工具调用、管理台、可重建部署与 GPU 机制实验。
 
-**已在 Daytona RTX 4090 完成真实 Qwen/SGLang 服务、两配置768次测量与三项机制实验；optimized 384/384成功且正确，四目标共32项公开阈值通过。** baseline为333/384，其51个HTTP504失败原样保留。第一次正式评测在 cuDNN 下载超时后终止，GPU 测试未执行；安装超时与下载重试已修复，新实例从零启动323秒通过，保留最后一次正式评测名额。[安装修复与验证](docs/install-recovery.md) · [完整实测报告](reports/gpu-2026-11-06-final/summary.md) · [测试记录](docs/test-results.md) · [性能实测](docs/performance.md) · [需求映射](docs/requirements-matrix.md) · [来源](docs/sources.md)
+历史提交已在 Daytona RTX 4090 完成真实 Qwen/SGLang 服务、两配置768次测量与三项机制实验；optimized 384/384成功且正确，四目标共32项公开阈值通过。baseline为333/384，其51个HTTP504失败原样保留。第一次正式评测在 cuDNN 下载超时后终止，GPU 测试未执行；安装修复后的新实例从零启动323秒通过。**随后复核发现正式阶段切换仍有缺口，本次补齐跨 DATA_DIR 停机、独立实验配置和超时清理；新增验证为 CPU，不将历史 GPU 结果归给当前修改。最后一次正式评测名额保留。** [修复与验证](docs/install-recovery.md) · [完整实测报告](reports/gpu-2026-11-06-final/summary.md) · [测试记录](docs/test-results.md) · [性能实测](docs/performance.md) · [需求映射](docs/requirements-matrix.md) · [来源](docs/sources.md)
 
 ![管理台账本](results/console-browser/ledger.png)
 
@@ -81,6 +81,8 @@ bash setup.sh --stop
 
 contract-test 只替换模型引擎，鉴权、账本、配额、恢复代码与 live 相同，不安装 SGLang/CUDA/权重。`gateway.pid` 对应实际监听进程；`processes.json` 记录 PID 与创建时间，防止误杀复用 PID。配置/代码/私密配置摘要变化会重建自己的进程；同配置幂等保持 PID。
 
+每个 checkout 在 `.runtime/managed-services.json` 登记自己启动过的 DATA_DIR。未设置 DATA_DIR 的 `setup.sh --stop` 停止这些目录中的自有进程；显式设置 DATA_DIR 时只停止指定目录。两者都核验项目根目录、PID 与创建时间，不删除账本、不停止外部 fixture。启动、停止、独立实验共享生命周期锁，避免阶段切换相互抢占。
+
 Linux RTX 4090：`BENCH_PROFILE=baseline bash setup.sh`，之后 `BENCH_PROFILE=optimized bash setup.sh`。live 使用 `.venv-gpu` 完整版本锁和独立 `.venv-bench` 客户端锁。SGLang 0.5.9 / PyTorch 2.9.1 / Transformers 4.57.1 已在本次练习机运行；setup 会核查原生编译器和 Python 开发头文件，并将 venv 工具加入 PATH。两处依赖安装均使用60秒 socket timeout、最多两轮安装尝试和共享截止时间；每轮失败日志独立保留，只有安装及 `pip check` 都成功才写入依赖标记。全新环境验证状态见 [安装修复记录](docs/install-recovery.md)。
 
 ## 请求与账本
@@ -127,6 +129,8 @@ BENCH_PROFILE=optimized bash setup.sh
 ```
 
 实验会先停止本项目服务释放显存，之后可用 setup 恢复。KV 为固定 1.5B FP32 revision `989aa7980e4cf806f80c7fef2b1adb7bc71aa306`；最终服务与 prefix 为 7B BF16 revision `a09a35458c702b33eeacc393d103063234e8bc28`；attention 为合成张量。
+
+独立实验不要求 API_KEY、ADMIN_API_KEY、KEY_HASH_SECRET 或 DATA_DIR；实际服务仍强制验证密钥。实验未显式设置缓存变量时，复用此前 live setup 登记的实际 HF_HOME/HF_HUB_CACHE，显式设置优先。收到 SIGTERM 时记录失败并清理 Prefix 自有引擎会话，实验失败不写成成功结果。
 
 ```bash
 .venv-gpu/bin/python scripts/download_tools.py --out tools/public-fresh-run
