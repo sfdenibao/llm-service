@@ -256,7 +256,12 @@ class Store:
 
     def journal(self, rid, usage):
         inp, out = usage.get('prompt_tokens'), usage.get('completion_tokens')
-        cached = usage.get('prompt_tokens_details', {}).get('cached_tokens', 0)
+        details = usage.get('prompt_tokens_details')
+        if details is None:
+            details = {}
+        if not isinstance(details, dict):
+            raise ServiceError(502, 'invalid_engine_usage')
+        cached = details.get('cached_tokens', 0)
         if not all(type(x) is int and x >= 0 for x in (inp, out, cached)) or cached > inp:
             raise ServiceError(502, 'invalid_engine_usage')
         with self.tx() as db:

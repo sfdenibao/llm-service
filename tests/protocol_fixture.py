@@ -33,6 +33,7 @@ class Handler(original.Handler):
         rid=data.get('rid');mode=MODE
         with original.LOCK:original.CALLS.append({'rid':rid,'stream':bool(data.get('stream')),'mode':mode})
         usage={'prompt_tokens':100,'completion_tokens':50,'total_tokens':150}
+        if mode=='null_usage_details':usage['prompt_tokens_details']=None
         if mode=='agent':
             messages=data['messages']
             if messages[-1]['content'].startswith('lookup_order tool result: '):

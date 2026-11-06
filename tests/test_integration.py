@@ -315,3 +315,13 @@ class GatewayTests(unittest.IsolatedAsyncioTestCase):
         self.assertIn('invalid_sse_json',r.text);self.assertNotIn('[DONE]',r.text)
         self.assertEqual((await self.metrics())['active'],0)
         await self.mode('');self.assertEqual((await self.chat()).status_code,200)
+
+    async def test_20_sglang_nullable_cache_details_settle_real_usage(self):
+        await self.mode('null_usage_details')
+        plain=await self.chat();stream=await self.chat(stream=True)
+        self.assertEqual(plain.status_code,200)
+        self.assertIn('data: [DONE]',stream.text)
+        report=await self.usage()
+        self.assertEqual(report['summary']['cost_micro_usd'],1000)
+        self.assertEqual(report['summary']['reserved_micro_usd'],0)
+        self.assertTrue(all(r['usage_state']=='exact' and r['cached_tokens']==0 for r in report['items']))

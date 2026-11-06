@@ -1,0 +1,36 @@
+{
+  "schema": "github-actions-artifact-archive/1",
+  "repository": "sfdenibao/llm-service",
+  "commit_sha": "e891241e1fa690d18e8ab57a2bbbf2309b1ca520",
+  "retrieved_at": "2026-11-06",
+  "report_files_unmodified": true,
+  "official_score": false,
+  "runs": [
+    {
+      "run_id": 42216988626,
+      "run_url": "https://github.com/sfdenibao/llm-service/actions/runs/42216988626",
+      "head_sha": "e891241e1fa690d18e8ab57a2bbbf2309b1ca520",
+      "conclusion": "success",
+      "artifact_id": 13501263250,
+      "artifact_name": "llm-soft-report",
+      "zip_sha256": "816eea9a0d772b705cf0dfc5ba2e5ecdf9e7479dc8a3e3481f2445a202d78c0b",
+      "artifact_created_at": "2026-11-06T12:21:19Z",
+      "artifact_expires_at": "2026-11-20T12:21:18Z",
+      "sha256_verified": true,
+      "archive_paths_checked": true
+    },
+    {
+      "run_id": 42216988632,
+      "run_url": "https://github.com/sfdenibao/llm-service/actions/runs/42216988632",
+      "head_sha": "e891241e1fa690d18e8ab57a2bbbf2309b1ca520",
+      "conclusion": "success",
+      "artifact_id": 13500824570,
+      "artifact_name": "cpu-regression-report",
+      "zip_sha256": "9c0a3431569fa25700b38f7257368b639369491016e1974037551276b10327f7",
+      "artifact_created_at": "2026-11-06T12:21:36Z",
+      "artifact_expires_at": "2026-11-20T12:21:35Z",
+      "sha256_verified": true,
+      "archive_paths_checked": true
+    }
+  ]
+}
