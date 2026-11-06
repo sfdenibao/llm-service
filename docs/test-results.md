@@ -50,4 +50,4 @@
 
 baseline与optimized对应24份输入文件逐字节一致，seed均为1093552657。baseline的51次失败在raw中均为HTTP504、content_events=0、TTFT=null、E2E为20.033–20.168秒；metrics的timed_out=51。结合单槽与20秒排队上限，符合排队超时瓶颈；raw未保存504响应体，未将其解释为模型答错或显存不足。复核保留所有失败在分母中，细节见 [完整实测报告](../reports/gpu-2026-11-06-final/summary.md)。
 
-早期报告没有commit，原null不回填；后续提交运行应关联完整SHA。本次真实GPU、三项机制与两配置完整对照已有上表证据。最终代码的全新环境重建、GPU内部任务/显存释放证明、正式95分及人工5分仍NOT_TESTED。具体性能数值与实验解释见 [性能实测](performance.md)。
+早期报告没有commit，原null不回填；后续提交运行应关联完整SHA。本次真实GPU、三项机制与两配置完整对照已有上表证据。首次正式评测在 cuDNN 下载超时后终止，自动0/95，GPU阶段未执行，人工5分尚未验收；全新环境重建验证正在进行，GPU内部任务/显存释放仍未证明。安装修复与新增测试见[记录](install-recovery.md)。具体性能数值与实验解释见 [性能实测](performance.md)。

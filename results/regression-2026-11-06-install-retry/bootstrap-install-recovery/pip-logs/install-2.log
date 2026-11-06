@@ -1,0 +1,7 @@
+Command: C:\Users\ADMINI~1\AppData\Local\Temp\tmp7e2veqzb\isolated\Scripts\python.exe -m pip install --disable-pip-version-check --no-input --progress-bar off --timeout 0.2 --retries 2 -r C:\Users\ADMINI~1\AppData\Local\Temp\tmp7e2veqzb\requirements.lock
+Collecting installer-probe@ http://127.0.0.1:56285/installer_probe-0.0.1-py3-none-any.whl?token=[REDACTED] (from -r C:\Users\ADMINI~1\AppData\Local\Temp\tmp7e2veqzb\requirements.lock (line 1))
+  Downloading http://127.0.0.1:56285/installer_probe-0.0.1-py3-none-any.whl?token=[REDACTED] (132 kB)
+Installing collected packages: installer-probe
+Successfully installed installer-probe-0.0.1
+
+Exit code: 0; budget_timeout=False

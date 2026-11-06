@@ -1,0 +1,21 @@
+{
+  "schema": "local-pip-download-recovery/1",
+  "passed": true,
+  "transport": "loopback HTTP only",
+  "pip_version": "25.0.1",
+  "socket_timeout_seconds": 0.2,
+  "outer_attempt_limit": 2,
+  "fault": "First request advertises full Content-Length but stalls after 128 bytes for 1 second",
+  "first_timeout_observed": true,
+  "recovery_install_succeeded": true,
+  "pip_check_passed": true,
+  "marker_written": true,
+  "imported_version": "0.0.1",
+  "not_tested": [
+    "External CDN",
+    "706 MB CUDA wheel",
+    "GPU cold startup",
+    "TLS/proxy recovery"
+  ],
+  "http_requests": 2
+}

@@ -2,7 +2,7 @@
 
 SGLang 模型服务工程：OpenAI 兼容网关、SSE、用户/API Key、实验计费账本、额度、Agent 工具调用、管理台、可重建部署与 GPU 机制实验。
 
-**已在 Daytona RTX 4090 完成真实 Qwen/SGLang 服务、两配置768次测量与三项机制实验；optimized 384/384成功且正确，四目标共32项公开阈值通过。** baseline为333/384，其51个HTTP504失败原样保留。正式评测尚未提交；最终代码在第二台全新机器的从零重建未验证。[完整实测报告](reports/gpu-2026-11-06-final/summary.md) · [测试记录](docs/test-results.md) · [性能实测](docs/performance.md) · [需求映射](docs/requirements-matrix.md) · [来源](docs/sources.md)
+**已在 Daytona RTX 4090 完成真实 Qwen/SGLang 服务、两配置768次测量与三项机制实验；optimized 384/384成功且正确，四目标共32项公开阈值通过。** baseline为333/384，其51个HTTP504失败原样保留。第一次正式评测在 cuDNN 下载超时后终止，GPU 测试未执行；当前正在修复安装重试并验证全新环境启动，保留最后一次正式评测名额。[安装修复与验证](docs/install-recovery.md) · [完整实测报告](reports/gpu-2026-11-06-final/summary.md) · [测试记录](docs/test-results.md) · [性能实测](docs/performance.md) · [需求映射](docs/requirements-matrix.md) · [来源](docs/sources.md)
 
 ![管理台账本](results/console-browser/ledger.png)
 
@@ -10,7 +10,7 @@ SGLang 模型服务工程：OpenAI 兼容网关、SSE、用户/API Key、实验�
 
 状态核对日期：2026-11-06（Asia/Shanghai）。历史 CPU 与浏览器结果保留；本次新增真实 GPU、机制与性能证据，并完成固定提交的 Ubuntu CPU 回归。
 
-本次练习机已结束并回收；2026-11-06 20:57（北京时间）页面确认没有运行中的机器，剩余练习额度13分钟。全部实验结果已备份，正式评测尚未提交。[平台回收证据](results/gpu-2026-11-06/platform-stopped.png)
+首次练习机已结束并回收；2026-11-06 20:57（北京时间）页面确认没有运行中的机器，剩余练习额度13分钟。全部实验结果已备份。随后一次正式评测在安装阶段终止，云端已确认回收。[首次练习回收证据](results/gpu-2026-11-06/platform-stopped.png)
 
 | 层次 | 结果 |
 | --- | --- |
@@ -25,7 +25,7 @@ SGLang 模型服务工程：OpenAI 兼容网关、SSE、用户/API Key、实验�
 | GPU 机制实验 | KV 12行、prefix 96行、attention 18行通过，见 `results/gpu-2026-11-06/` |
 | 完整性能对照 | 各8组384请求；baseline333/384，optimized384/384，optimized四目标32项公开阈值通过 |
 | 结束前复检与清理 | 恢复optimized后selftest 5/5；账本预占归零；147文件凭据精确值扫描通过；20:53:08已停止本项目进程，平台实例回收另记 |
-| 正式评分 / 人工理解验收 | NOT_TESTED |
+| 第一次正式评分 / 人工理解验收 | 自动0/95：安装阶段 cuDNN 下载超时，GPU测试未执行；人工5分尚未验收 |
 
 2026-10-24 的两份历史 Ubuntu Actions 报告绑定提交 `883276d0f338a83e9f7ab692e0e97b684798d055`：[官方 CPU 软评测](https://github.com/sfdenibao/llm-service/actions/runs/40084779090)（[归档报告](results/github-actions-883276d/soft/report.json)，18 pass、0 missing、0 invalid、0 blocked）；[CPU 回归](https://github.com/sfdenibao/llm-service/actions/runs/40084779009)（[归档报告](results/github-actions-883276d/regression/report.json)，19/19，`execution_environment=linux`）。这些是该提交的 CPU 证据；后续代码提交需关联各自测试结果，不能据此宣称 GPU 或正式评分通过。
 
@@ -68,6 +68,7 @@ Windows 的解释器路径替换为 `.venv\Scripts\python.exe`。自测创建独
 | MODEL_ID / MODEL_REVISION | 固定模型与 revision，见下文 |
 | BENCH_PROFILE | baseline / optimized |
 | HF_HOME | 模型下载缓存，由依赖库读取 |
+| SETUP_TIMEOUT_SECONDS | 整次 setup 总预算，默认840秒，允许60–900；其中预留30秒终止命令与清理自有服务 |
 
 外部 CPU fixture 已启动时：
 
@@ -79,7 +80,7 @@ bash setup.sh --stop
 
 contract-test 只替换模型引擎，鉴权、账本、配额、恢复代码与 live 相同，不安装 SGLang/CUDA/权重。`gateway.pid` 对应实际监听进程；`processes.json` 记录 PID 与创建时间，防止误杀复用 PID。配置/代码/私密配置摘要变化会重建自己的进程；同配置幂等保持 PID。
 
-Linux RTX 4090：`BENCH_PROFILE=baseline bash setup.sh`，之后 `BENCH_PROFILE=optimized bash setup.sh`。live 使用 `.venv-gpu` 完整版本锁和独立 `.venv-bench` 客户端锁。SGLang 0.5.9 / PyTorch 2.9.1 / Transformers 4.57.1 已在本次练习机运行；setup 会核查原生编译器和 Python 开发头文件，并将 venv 工具加入 PATH。本次经历现场修复与已有缓存重跑，最终代码在第二台全新机器从零重建仍待验证。
+Linux RTX 4090：`BENCH_PROFILE=baseline bash setup.sh`，之后 `BENCH_PROFILE=optimized bash setup.sh`。live 使用 `.venv-gpu` 完整版本锁和独立 `.venv-bench` 客户端锁。SGLang 0.5.9 / PyTorch 2.9.1 / Transformers 4.57.1 已在本次练习机运行；setup 会核查原生编译器和 Python 开发头文件，并将 venv 工具加入 PATH。两处依赖安装均使用60秒 socket timeout、最多两轮安装尝试和共享截止时间；每轮失败日志独立保留，只有安装及 `pip check` 都成功才写入依赖标记。全新环境验证状态见 [安装修复记录](docs/install-recovery.md)。
 
 ## 请求与账本
 

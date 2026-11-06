@@ -1,0 +1,10 @@
+Starting supervised services; 810s of work budget remains
+Ready: http://127.0.0.1:56303/healthz; mode=contract-test; gateway_pid=16956
+
+Ready: http://127.0.0.1:56303/healthz; mode=contract-test; gateway_pid=48676
+Ready: http://127.0.0.1:56303/healthz; mode=contract-test; gateway_pid=61824
+Ready: http://127.0.0.1:56303/healthz; mode=contract-test; gateway_pid=59516
+Starting supervised services; 810s of work budget remains
+Already ready; existing processes and ledger preserved
+
+Ready: http://127.0.0.1:56303/healthz; mode=contract-test; gateway_pid=55320
