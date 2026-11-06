@@ -3,12 +3,56 @@ import argparse
 import hashlib
 import os
 from pathlib import Path
+import shutil
 import subprocess
 import sys
+import sysconfig
 import venv
 from server.locking import exclusive_lock
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def ensure_native_build_tools():
+    """Triton compiles a Python extension at startup, even with cached wheels."""
+    include = Path(sysconfig.get_path('include'))
+
+    def missing():
+        packages = []
+        if not (include / 'Python.h').is_file():
+            packages.append('python3.12-dev')
+        if not shutil.which('gcc') or not shutil.which('g++'):
+            packages.append('build-essential')
+        return packages
+
+    packages = missing()
+    if not packages:
+        return
+    if not shutil.which('apt-get'):
+        raise SystemExit('Live GPU setup needs ' + ', '.join(packages) +
+                         '; apt-get is unavailable. Python headers must be in ' + str(include))
+    prefix = []
+    if os.geteuid() != 0:
+        if not shutil.which('sudo'):
+            raise SystemExit('Live GPU setup needs ' + ', '.join(packages) +
+                             '; install these packages as root or provide passwordless sudo')
+        prefix = ['sudo', '-n']
+    command = prefix + ['env', 'DEBIAN_FRONTEND=noninteractive', 'apt-get']
+    print('Installing live GPU build prerequisites: ' + ', '.join(packages), flush=True)
+    for operation, arguments, timeout in (
+        ('package index update', ['update'], 120),
+        ('build prerequisite installation', ['install', '-y', '--no-install-recommends', *packages], 180),
+    ):
+        try:
+            subprocess.run(command + arguments, check=True, timeout=timeout, stdin=subprocess.DEVNULL)
+        except subprocess.TimeoutExpired:
+            raise SystemExit(f'Live GPU {operation} exceeded {timeout} seconds; inspect apt output and retry setup') from None
+        except (OSError, subprocess.CalledProcessError):
+            raise SystemExit(f'Live GPU {operation} failed; inspect apt output and ensure root or passwordless sudo access') from None
+    remaining = missing()
+    if remaining:
+        raise SystemExit('Live GPU build prerequisites still missing after installation: ' + ', '.join(remaining) +
+                         '. Active Python include directory: ' + str(include))
 
 
 def main():
@@ -30,6 +74,7 @@ def main():
             if sys.platform != 'linux':
                 raise SystemExit('Live SGLang deployment requires the Linux GPU environment; use --contract-test locally')
             subprocess.run(['nvidia-smi', '--query-gpu=name', '--format=csv,noheader'], check=True, timeout=10)
+            ensure_native_build_tools()
         path = ROOT / ('.venv' if args.contract_test else '.venv-gpu')
         python = path / ('Scripts/python.exe' if os.name == 'nt' else 'bin/python')
         lock = ROOT / ('requirements.lock' if args.contract_test else 'requirements-native-linux-py312.lock')
@@ -42,6 +87,7 @@ def main():
             subprocess.run([str(python), '-m', 'pip', 'check'], check=True)
             marker.write_text(digest)
         env = os.environ.copy()
+        env['PATH'] = str(python.parent) + os.pathsep + env.get('PATH', '')
         env['CONTRACT_TEST'] = '1' if args.contract_test else '0'
         if not args.contract_test:
             bench = ROOT / '.venv-bench'
