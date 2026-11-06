@@ -1,0 +1,64 @@
+{
+  "schema": "llm-serving-acceptance/1",
+  "version": "daytona-4090-v5-operator-pending",
+  "status": "uncalibrated",
+  "hardware_contains": "RTX 4090",
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+  "dtype": "bfloat16",
+  "workload_version": "typed-json-numbered-records-prose-exact-input/5",
+  "concurrencies": [
+    1,
+    4,
+    8,
+    16
+  ],
+  "repeats": 3,
+  "requests_per_repeat": 16,
+  "deadline_seconds": 45,
+  "warmup_requests": 2,
+  "workloads": [
+    {
+      "id": "short",
+      "input_tokens": 512,
+      "records": 1,
+      "max_output_tokens": 96
+    },
+    {
+      "id": "long",
+      "input_tokens": 1024,
+      "records": 8,
+      "max_output_tokens": 384
+    }
+  ],
+  "targets": null,
+  "calibration": null,
+  "notes": [
+    "No points until targets and real calibration evidence are published. Null thresholds are never a pass.",
+    "Timing uses trusted client clock. TTFT is time to first non-empty text event; TPOT uses independently retokenized visible text. Event gaps are not exact per-token ITL.",
+    "Per-run inputs are fresh; only shape warmup is reused. Both profiles get identical measured prompts. Cache hits are permitted and must be reported separately in cache-specific tests.",
+    "Model, hardware, dtype, exact chat-template input lengths and maximum output lengths are part of the acceptance contract. Output length is model-determined and recorded; correctness is a prerequisite for counting useful throughput.",
+    "Closed-loop structured extraction with shared padding, not general LLM throughput. Common padding prefixes may benefit RadixAttention; dedicated shared/unique prefix on/off tests remain separate evidence.",
+    "Neutral decoding is fixed: temperature=0 in requests, SGLang --sampling-defaults=openai, repetition_penalty=1, top_p=1, top_k=-1. Runtime declarations are checked for both profiles; model-inherited sampling defaults cannot be mixed into calibration.",
+    "Controller measurement v2 retains explicit request_timeout/upstream_timeout SSE errors as failed timeout rows. Missing or generic error codes remain protocol failures; historical raw rows are never reclassified.",
+    "Changes only repeated z padding to a frozen natural-language bank; original v1 extraction instructions, RNG records, strict typed answers, input lengths and output caps remain unchanged.",
+    "Causal diagnostic e32ced55: native SGLang 8/8, HF eager 6/8. HF long literal-copy controls still have numeric errors. Qualification64 was NOT run under that original both-paths-pass protocol.",
+    "Subsequent decision: HF remains a diagnostic control; validate the actual delivered SGLang service on all64 independent frozen extraction cases before the full new calibration matrix. No raw failures are removed or reclassified.",
+    "Current default is the uncalibrated 7B BF16 v5 candidate. No performance target is inferred from the failed v4 run.",
+    "v5 preserves original RNG, strict typed answers and array order, exact512/1024 token inputs, 96/384 output caps, neutral decoding and generic json_object mode. Only long inputs gain Record1..8 numbering and an explicit instruction to preserve numbered input order without grouping/sorting by city/id/units. Short inputs are identical to v4.",
+    "The same frozen natural-language prose bank fills exact token lengths; no JSON answers are included in prompts and no output repair, order-insensitive comparison or seed filtering is allowed.",
+    "Qualification uses all64 new frozen cases from seeds2026101811..2026101814 without retries. v1-v4 original evidence remains unchanged and cannot calibrate v5."
+  ],
+  "decoding_policy": {
+    "temperature": 0,
+    "repetition_penalty": 1.0,
+    "top_p": 1.0,
+    "top_k": -1,
+    "sampling_defaults": "openai"
+  },
+  "measurement_version": "controller-sse/2",
+  "prose_bank_sha256": "84e28c0006bf3fb30049caaa505cf2bd2f3e2ea5d9f1f34a190ba2aa4936dcbf",
+  "response_format": {
+    "type": "json_object"
+  }
+}

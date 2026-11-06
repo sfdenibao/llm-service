@@ -26,10 +26,15 @@ def main():
     with (args.out/'unittest.txt').open('w',encoding='utf-8') as log:
         result=unittest.TextTestRunner(stream=log,verbosity=2,resultclass=Results).run(suite)
     commit=subprocess.run(['git','rev-parse','--verify','HEAD'],cwd=ROOT,capture_output=True,text=True)
+    dirty=subprocess.run(['git','status','--porcelain','--untracked-files=no'],cwd=ROOT,capture_output=True,text=True)
+    not_tested=['Real GPU inference','Browser console','Performance SLO']
+    if sys.platform=='win32':not_tested.append('Linux SIGKILL when running on Windows')
+    if os.environ.get('GITHUB_ACTIONS')!='true':not_tested.append('GitHub Actions')
     report={'schema':'llm-local-regression/1','suite':'CPU HTTP integration','commit_sha':commit.stdout.strip() or None,
+            'worktree_dirty':bool(dirty.stdout.strip()),
             'execution_environment':sys.platform,'started_at':started,'finished_at':datetime.now(timezone.utc).isoformat(),
             'tests_run':result.testsRun,'passed':result.wasSuccessful(),'checks':result.rows,'official_score':False,
-            'not_tested':['Real GPU inference','Linux SIGKILL when running on Windows','GitHub Actions','Browser console','Performance SLO']}
+            'not_tested':not_tested}
     (args.out/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
     print(json.dumps({'tests':result.testsRun,'failures':len(result.failures),'errors':len(result.errors),'passed':result.wasSuccessful()}))
     if not result.wasSuccessful():print((args.out/'unittest.txt').read_text(encoding='utf-8')[-12000:])

@@ -1,14 +1,14 @@
 # 分阶段实施与学习路线
 
-状态日期：2026-10-24（Asia/Shanghai）。阶段完成必须有对应测试证据，不能只按文件数量判断。
+状态核对日期：2026-11-06（Asia/Shanghai）。历史 CPU 与 Actions 测试执行于 2026-10-24；2026-11-06 另完成含未提交修改的 Windows 回归 20/20。阶段完成必须有对应测试证据，不能只按文件数量判断。
 
 | 阶段 | 交付内容 | 先理解什么 | 进入下一阶段的依据 | 当前状态 |
 | --- | --- | --- | --- | --- |
 | 0. 开工准备 | 独立目录；任务书/配置来源；官方 CPU 工作流；需求映射 | 要交付什么、怎样证明完成 | 资源哈希与配置一致；确认已有项目修改边界 | PASS（准备范围） |
-| 1. 可启动的服务 | 依赖锁、setup、进程管理；health/info/models；鉴权边界 | Controller、拦截器、下游服务、就绪与存活区别 | 干净启动、未就绪 503、无 key 拒绝、幂等重跑、只停自有进程 | PASS（Windows CPU）；Linux 待 Actions |
+| 1. 可启动的服务 | 依赖锁、setup、进程管理；health/info/models；鉴权边界 | Controller、拦截器、下游服务、就绪与存活区别 | 干净启动、未就绪 503、无 key 拒绝、幂等重跑、只停自有进程 | PASS（Windows 与 Ubuntu Actions CPU） |
 | 2. 真实多用户账本 | 用户、key、轮换/撤销、价格、预占/结算、用户级配额 | 身份与 token 用量是两件事；数据库事务避免并发透支 | 精确计费、权限隔离、幂等和并发竞争测试 | PASS（CPU） |
 | 3. 完整请求生命周期 | SSE、队列、超时、取消、usage journal、崩溃恢复 | 流式读取与生成；排队槽位；未知用量与已知用量的恢复差别 | 首包在受控结束信号前到达；取消恢复；两个崩溃窗口收敛 | PASS（CPU）；GPU 取消待测 |
-| 4. 可用产品与 CPU 验收 | Console、白名单 Agent、独立公开自测、Actions 报告 | 父子调用与账本关联；接口通过和页面可用区别 | 18 项软评测；19项深入 CPU；Console 浏览器操作 | 本机 PASS；Actions 进行中 |
+| 4. 可用产品与 CPU 验收 | Console、白名单 Agent、独立公开自测、Actions 报告 | 父子调用与账本关联；接口通过和页面可用区别 | 18 项软评测；19项深入 CPU；Console 浏览器操作 | 本机 PASS；Ubuntu Actions 18/18 与 19/19 |
 | 5. 真实 SGLang 部署 | 锁定 GPU 依赖与模型；baseline/optimized；两用户 live 自测 | 网关准入与引擎连续批处理的分工 | GPU/版本实际证据；两用户 SSE/非流式/工具往返及准确计费 | 已实现，NOT_TESTED |
 | 6. 三项机制实验与优化 | KV、prefix、attention 实验；完整性能矩阵 | 复用历史 KV、复用共享前缀、减少 Attention 内存搬运 | 原始矩阵、数值/算子/缓存命中证据；四组全部八项逐项比较 | 已实现，NOT_TESTED |
 | 7. 交付与正式验收 | README、性能说明、脱敏原始数据、完整 SHA、平台报告 | 可复现与技术取舍；自测与独立评分区别 | 固定 commit 的正式报告；本人解释理解 | 文档已就绪；正式评测未提交 |
@@ -29,11 +29,13 @@
 
 ## 环境与外部条件
 
-本机已找到 Python 3.12.10、Git 与 Git Bash。只发现 docker-desktop WSL 发行版，Docker Linux daemon 本次检查不可连接；没有据此声称 Linux setup 已通过。Windows 上可以写代码和运行适用的 CPU 测试，Linux 进程/SIGKILL/setup 行为应在实际 Linux 环境验证。
+2026-10-24 本机检查找到 Python 3.12.10、Git 与 Git Bash，只发现 docker-desktop WSL 发行版，Docker Linux daemon 当时不可连接。之后在真实 Ubuntu 24.04 Actions 完成 CPU setup 与生命周期回归；本机环境检查和云端测试是两份独立证据。
 
-用户已指定公开仓库 `sfdenibao/llm-service`；当前课程仓库不是本项目提交目标。工作流需在目标默认分支存在后才能使用手动入口。
+公开仓库为 `sfdenibao/llm-service`。提交 `883276d0f338a83e9f7ab692e0e97b684798d055` 已有 [官方 CPU 软评测 18/18](https://github.com/sfdenibao/llm-service/actions/runs/40084779090) 与 [CPU 回归 19/19](https://github.com/sfdenibao/llm-service/actions/runs/40084779009)，归档位于 `results/github-actions-883276d/`，详细边界见 [测试记录](test-results.md)。后续代码提交需关联对应的新报告。
 
-GPU 阶段需要用户已有的 Daytona 实验环境。普通准备、下载公开工具、安装工作流文件都不代表申请了 GPU 或消耗了正式评测次数。60 分钟实验时间应用于已经完成 CPU 验证的工程。
+2026-11-06 准备阶段修正 Python 3.12 选择、实验失败 traceback 保存与脱敏、测试报告环境标签及工作区修改状态。新增失败证据测试后 Windows 回归 20/20，报告位于 `results/regression-2026-11-06-preflight/`，明确 `worktree_dirty=true`；尚不构成新提交的 Ubuntu 或 GPU 证据。
+
+GPU 阶段尚无实测证据。2026-11-06 课程页面现场核对仍剩余 60 分钟，启动次数上限现为 10 次；使用前以页面当时状态为准。普通准备、下载公开工具、安装工作流文件都不代表申请了 GPU 或消耗了正式评测次数。实验时间应用于已经完成 CPU 验证的工程。
 
 ## 每阶段的记录格式
 

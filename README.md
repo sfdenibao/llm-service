@@ -8,15 +8,22 @@ SGLang 模型服务工程：OpenAI 兼容网关、SSE、用户/API Key、实验�
 
 ## 当前证据
 
+状态核对日期：2026-11-06（Asia/Shanghai）。历史 CPU、Actions 与浏览器测试执行于 2026-10-24；2026-11-06 另完成本机 20 项准备阶段回归，分别记录如下。
+
 | 层次 | 结果 |
 | --- | --- |
 | 官方公开 18 项 HTTP checker | 本机 Windows 18/18，`results/cpu-soft-01/soft-report.json` |
 | 深入 CPU 回归 | 19/19，`results/regression-03/report.json`；真实 HTTP、事务竞争、信号控制 SSE、取消和强制终止恢复 |
+| 2026-11-06 准备阶段回归 | Windows 20/20，`results/regression-2026-11-06-preflight/report.json`；`worktree_dirty=true`，测试对象含尚未提交的修改 |
 | HTTP-only 管理自测 | 5 组通过，4 类故障注入明确跳过，另由回归测试覆盖；`results/control-plane-mock-01.json` |
 | Console 浏览器 | 用户创建、额度、余额、key 签发/轮换/撤销、停用、价格、账本、审计已操作；`results/console-browser/` |
-| GitHub Actions / Linux | 以对应完整 commit 的 Actions 报告为准，本机结果不能代替 |
+| GitHub Actions / Ubuntu 24.04 | 官方公开 checker 18/18、深入回归 19/19；完整 SHA 与运行链接见下文 |
 | 真实 SGLang / GPU 实验 / SLO | NOT_TESTED，已有代码入口，尚无 GPU 数值 |
 | 正式评分 / 人工理解验收 | NOT_TESTED |
+
+Ubuntu Actions 的两份报告均绑定提交 `883276d0f338a83e9f7ab692e0e97b684798d055`：[官方 CPU 软评测](https://github.com/sfdenibao/llm-service/actions/runs/40084779090)（[归档报告](results/github-actions-883276d/soft/report.json)，18 pass、0 missing、0 invalid、0 blocked）；[CPU 回归](https://github.com/sfdenibao/llm-service/actions/runs/40084779009)（[归档报告](results/github-actions-883276d/regression/report.json)，19/19，`execution_environment=linux`）。这些是该提交的 CPU 证据；后续代码提交需关联各自测试结果，不能据此宣称 GPU 或正式评分通过。
+
+2026-11-06 修正启动入口，按 `python3.12`、`python3`、`python` 顺序精确选择 Python 3.12；实验失败时保存不含局部变量并脱敏的 traceback，清单保持未完成。新增失败证据测试后本机回归 20/20；报告按实际环境生成 `not_tested` 并记录工作区修改状态。该报告中的旧 HEAD SHA 加上 `worktree_dirty=true` 不等于已提交版本通过，GPU 仍为 NOT_TESTED。
 
 旧失败记录保留：`regression-01` 中断流清理失败，修复后 `regression-02` 16/16；增加边界后 `regression-03` 19/19。早期报告生成时没有 commit，`commit_sha=null` 保持原样。
 
