@@ -1,0 +1,63 @@
+{
+  "schema": "ci-install-retry-verification/1",
+  "commit_sha": "5d1d2eea583baec41b047366a2a9e84a6aaf75d3",
+  "repository": "sfdenibao/llm-service",
+  "passed": true,
+  "official_score": false,
+  "soft_checks": {
+    "passed": 18,
+    "total": 18,
+    "run_url": "https://github.com/sfdenibao/llm-service/actions/runs/42227539886"
+  },
+  "ubuntu_regression": {
+    "passed": 32,
+    "total": 32,
+    "skipped": 0,
+    "worktree_dirty": false,
+    "run_url": "https://github.com/sfdenibao/llm-service/actions/runs/42227539790"
+  },
+  "network_recovery": {
+    "schema": "local-pip-download-recovery/1",
+    "passed": true,
+    "transport": "loopback HTTP only",
+    "pip_version": "25.0.1",
+    "socket_timeout_seconds": 0.2,
+    "outer_attempt_limit": 2,
+    "fault": "First request advertises full Content-Length but stalls after 128 bytes for 1 second",
+    "first_timeout_observed": true,
+    "recovery_install_succeeded": true,
+    "pip_check_passed": true,
+    "marker_written": true,
+    "imported_version": "0.0.1",
+    "not_tested": [
+      "External CDN",
+      "706 MB CUDA wheel",
+      "GPU cold startup",
+      "TLS/proxy recovery"
+    ],
+    "http_requests": 2
+  },
+  "timeout_subtree": {
+    "passed": true,
+    "exit_code": -9,
+    "elapsed_seconds": 0.6031855449999739,
+    "uid": 1001,
+    "process_states": [
+      {
+        "pid": 2352,
+        "state": "absent"
+      },
+      {
+        "pid": 2353,
+        "state": "absent"
+      }
+    ],
+    "scope": "Real GNU timeout TERM then KILL of a synthetic sleep subtree; no apt or sudo execution"
+  },
+  "artifact_digests_matched": true,
+  "limitations": [
+    "CI is CPU-only and does not establish GPU cold startup or official scoring.",
+    "HTTP recovery used a real small wheel over loopback HTTP and pip 25.0.1, not an external 706 MB CUDA wheel or the practice image pip 24.0.",
+    "Timeout subtree exercised real GNU timeout against a synthetic process tree; apt and sudo placement is separately unit-tested, not run here."
+  ]
+}

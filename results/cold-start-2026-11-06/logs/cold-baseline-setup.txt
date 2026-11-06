@@ -1,0 +1,8 @@
+NVIDIA GeForce RTX 4090
+Installing live GPU build prerequisites: python3.12-dev
+Installing requirements-native-linux-py312.lock: attempt 1/2, socket timeout 60s
+Installing requirements-benchmark.lock: attempt 1/2, socket timeout 60s
+Starting supervised services; 297s of work budget remains
+Fetching 14 files:   0%|          | 0/14 [00:00<?, ?it/s]Fetching 14 files:  57%|█████▋    | 8/14 [00:00<00:00,  9.82it/s]Fetching 14 files:  86%|████████▌ | 12/14 [00:20<00:03,  1.67s/it]Fetching 14 files:  93%|█████████▎| 13/14 [00:25<00:01,  1.99s/it]Fetching 14 files: 100%|██████████| 14/14 [00:26<00:00,  1.93s/it]Fetching 14 files: 100%|██████████| 14/14 [00:26<00:00,  1.93s/it]
+Fetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]Fetching 10 files:  80%|████████  | 8/10 [00:00<00:00, 27.06it/s]Fetching 10 files: 100%|██████████| 10/10 [00:11<00:00,  1.17s/it]
+Ready: http://127.0.0.1:8000/healthz; mode=live; gateway_pid=2006

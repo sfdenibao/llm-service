@@ -1,0 +1,35 @@
+None of PyTorch, TensorFlow >= 2.0, or Flax have been found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+{
+  "checks": {
+    "health": true,
+    "models": true,
+    "auth": true,
+    "nonstream": true,
+    "stream": true
+  },
+  "passed": true,
+  "stream_sample": {
+    "ok": true,
+    "quality_pass": true,
+    "status": 200,
+    "ttft_ms": 56.352353654801846,
+    "e2e_ms": 83.48368760198355,
+    "tpot_ms": null,
+    "event_gap_p95_ms": null,
+    "content_events": 1,
+    "visible_output_tokens": 1,
+    "usage_completion_tokens_unverified": 2,
+    "token_count_source": "local_tokenizer_visible_text",
+    "error": null
+  },
+  "schema": "agentist-public-selftest/1.0",
+  "official_score": false,
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+  "notes": [
+    "Public editable practice tool; not the official hidden workload, thresholds or score.",
+    "TTFT is first nonempty content event; TPOT is a proxy only with independent token counts.",
+    "SSE event gaps are not exact token ITL. Without --verify-tokens token throughput is null.",
+    "Practice workload asks for OK; do not compare its speed against official structured-task targets."
+  ]
+}

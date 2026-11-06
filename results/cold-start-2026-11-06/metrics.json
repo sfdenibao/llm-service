@@ -1,0 +1,112 @@
+{
+  "active": 0,
+  "queued": 0,
+  "counters": {
+    "completed": 14,
+    "rejected": 5,
+    "cancelled": 0,
+    "timed_out": 0,
+    "failed": 20,
+    "abort_acknowledged": 0,
+    "abort_failed": 0
+  },
+  "rejection_reasons": {
+    "invalid_api_key": 3,
+    "admin_auth_required": 1,
+    "tenant_scope_not_allowed": 1
+  },
+  "uptime_seconds": 19.34026134200394,
+  "gpu_memory": {
+    "current_mib": 17466,
+    "peak_observed_mib": 17466,
+    "scope": "owned processes",
+    "source": "nvidia-smi",
+    "observed": true
+  },
+  "recent_requests": [
+    {
+      "request_id": "req_df54c7d28f0149d3a86b0b09a7ca7edd",
+      "status": "completed",
+      "queue_ms": 0.1316312700510025,
+      "duration_ms": 87.00243569910526
+    },
+    {
+      "request_id": "req_eca80cce13bf43f3b99b34d2f5065448",
+      "status": "completed",
+      "queue_ms": 0.07787160575389862,
+      "duration_ms": 6657.199652865529
+    },
+    {
+      "request_id": "req_9a00e187807749788813e2cf9f2d69da",
+      "status": "completed",
+      "queue_ms": 0.07359962910413742,
+      "duration_ms": 65.83464797586203
+    },
+    {
+      "request_id": "req_d20c9b01e3874b5a8bdb6b7faddc055c",
+      "status": "completed",
+      "queue_ms": 0.14045089483261108,
+      "duration_ms": 53.858283907175064
+    },
+    {
+      "request_id": "req_4eb7e2fc8cb84ceabe7655f492601fff",
+      "status": "completed",
+      "queue_ms": 0.07334072142839432,
+      "duration_ms": 53.19448933005333
+    },
+    {
+      "request_id": "req_ddfb3110c3674422bfd30f429eaee6a6",
+      "status": "completed",
+      "queue_ms": 0.07340125739574432,
+      "duration_ms": 52.96931881457567
+    },
+    {
+      "request_id": "req_61fa7b91258e4139b7443e56fac3f3bf",
+      "status": "completed",
+      "queue_ms": 0.10165013372898102,
+      "duration_ms": 52.678714506328106
+    },
+    {
+      "request_id": "req_81b86eac355d4201ba4535af1e2a9c62",
+      "status": "completed",
+      "queue_ms": 0.0731106847524643,
+      "duration_ms": 52.831326611340046
+    },
+    {
+      "request_id": "req_9b7d8663412b4ee4968d9ff8754ef809",
+      "status": "completed",
+      "queue_ms": 18.940228037536144,
+      "duration_ms": 124.42141957581043
+    },
+    {
+      "request_id": "req_1916f50fc78340b295b12e398c38a1e0",
+      "status": "completed",
+      "queue_ms": 0.10119099169969559,
+      "duration_ms": 56.15912191569805
+    },
+    {
+      "request_id": "req_6aa7fc54d8bd4a6eac22a270e3eac072",
+      "status": "completed",
+      "queue_ms": 0.0850604847073555,
+      "duration_ms": 54.59921061992645
+    },
+    {
+      "request_id": "req_697ae435868140bf9d39d077a04058be",
+      "status": "completed",
+      "queue_ms": 0.15656184405088425,
+      "duration_ms": 54.68624085187912
+    },
+    {
+      "request_id": "req_d205c865fc9145d3a91eee9275dd460f",
+      "status": "completed",
+      "queue_ms": 0.10297074913978577,
+      "duration_ms": 814.2467429861426
+    },
+    {
+      "request_id": "req_eaec393c73df4398a2d142782ac270f7",
+      "status": "completed",
+      "queue_ms": 0.077870674431324,
+      "duration_ms": 693.5944240540266
+    }
+  ]
+}

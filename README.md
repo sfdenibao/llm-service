@@ -2,7 +2,7 @@
 
 SGLang 模型服务工程：OpenAI 兼容网关、SSE、用户/API Key、实验计费账本、额度、Agent 工具调用、管理台、可重建部署与 GPU 机制实验。
 
-**已在 Daytona RTX 4090 完成真实 Qwen/SGLang 服务、两配置768次测量与三项机制实验；optimized 384/384成功且正确，四目标共32项公开阈值通过。** baseline为333/384，其51个HTTP504失败原样保留。第一次正式评测在 cuDNN 下载超时后终止，GPU 测试未执行；当前正在修复安装重试并验证全新环境启动，保留最后一次正式评测名额。[安装修复与验证](docs/install-recovery.md) · [完整实测报告](reports/gpu-2026-11-06-final/summary.md) · [测试记录](docs/test-results.md) · [性能实测](docs/performance.md) · [需求映射](docs/requirements-matrix.md) · [来源](docs/sources.md)
+**已在 Daytona RTX 4090 完成真实 Qwen/SGLang 服务、两配置768次测量与三项机制实验；optimized 384/384成功且正确，四目标共32项公开阈值通过。** baseline为333/384，其51个HTTP504失败原样保留。第一次正式评测在 cuDNN 下载超时后终止，GPU 测试未执行；安装超时与下载重试已修复，新实例从零启动323秒通过，保留最后一次正式评测名额。[安装修复与验证](docs/install-recovery.md) · [完整实测报告](reports/gpu-2026-11-06-final/summary.md) · [测试记录](docs/test-results.md) · [性能实测](docs/performance.md) · [需求映射](docs/requirements-matrix.md) · [来源](docs/sources.md)
 
 ![管理台账本](results/console-browser/ledger.png)
 
@@ -10,7 +10,7 @@ SGLang 模型服务工程：OpenAI 兼容网关、SSE、用户/API Key、实验�
 
 状态核对日期：2026-11-06（Asia/Shanghai）。历史 CPU 与浏览器结果保留；本次新增真实 GPU、机制与性能证据，并完成固定提交的 Ubuntu CPU 回归。
 
-首次练习机已结束并回收；2026-11-06 20:57（北京时间）页面确认没有运行中的机器，剩余练习额度13分钟。全部实验结果已备份。随后一次正式评测在安装阶段终止，云端已确认回收。[首次练习回收证据](results/gpu-2026-11-06/platform-stopped.png)
+两次练习机与一次评分机器均已回收。最新于2026-11-06 21:54:34（北京时间）确认没有运行中的机器，剩余练习额度3分钟。安装修复后的新机验证和全部结果已备份，没有提交第二次正式评测。[最新回收证据](results/cold-start-2026-11-06/platform-stopped.png)
 
 | 层次 | 结果 |
 | --- | --- |
@@ -19,9 +19,10 @@ SGLang 模型服务工程：OpenAI 兼容网关、SSE、用户/API Key、实验�
 | 2026-11-06 准备阶段回归 | Windows 20/20，`results/regression-2026-11-06-preflight/report.json`；`worktree_dirty=true`，测试对象含尚未提交的修改 |
 | HTTP-only 管理自测 | 5 组通过，4 类故障注入明确跳过，另由回归测试覆盖；`results/control-plane-mock-01.json` |
 | Console 浏览器 | 用户创建、额度、余额、key 签发/轮换/撤销、停用、价格、账本、审计已操作；`results/console-browser/` |
-| GitHub Actions / Ubuntu 24.04 | 提交 `837ca04`：官方公开 checker 18/18、深入回归 24/24；历史 `883276d` 的19/19保留 |
+| GitHub Actions / Ubuntu 24.04 | 提交 `5d1d2ee`：公开checker18/18、深入回归32/32，含真实断流恢复和Linux进程树超时；旧报告保留 |
+| 新实例从零启动 | `5d1d2ee` 新目录、全新venv、空pip缓存：baseline323秒，两profile各5/5、管理与Agent6/6；平台模型与wheel缓存保留 |
 | 真实 SGLang / 管理与 Agent | selftest 5/5、live管理6组通过；实际两次模型调用与工具往返，4类故障注入另由CPU覆盖 |
-| 真实服务取消与幂等启动 | 取消恢复7/7，GPU任务释放未证明；同环境 setup 1.329秒、PID保持，不等于冷启动 |
+| 真实服务取消与幂等启动 | 历史取消恢复7/7，GPU任务释放未证明；本次幂等1.378秒、PID保持；冷启动另有323秒证据 |
 | GPU 机制实验 | KV 12行、prefix 96行、attention 18行通过，见 `results/gpu-2026-11-06/` |
 | 完整性能对照 | 各8组384请求；baseline333/384，optimized384/384，optimized四目标32项公开阈值通过 |
 | 结束前复检与清理 | 恢复optimized后selftest 5/5；账本预占归零；147文件凭据精确值扫描通过；20:53:08已停止本项目进程，平台实例回收另记 |

@@ -1,0 +1,9 @@
+Installing requirements.lock: attempt 1/2, socket timeout 60s
+Starting supervised services; 805s of work budget remains
+Ready: http://127.0.0.1:34299/healthz; mode=contract-test; gateway_pid=2409
+Ready: http://127.0.0.1:34299/healthz; mode=contract-test; gateway_pid=2568
+Ready: http://127.0.0.1:34299/healthz; mode=contract-test; gateway_pid=2583
+Ready: http://127.0.0.1:34299/healthz; mode=contract-test; gateway_pid=2591
+Starting supervised services; 810s of work budget remains
+Already ready; existing processes and ledger preserved
+Ready: http://127.0.0.1:34299/healthz; mode=contract-test; gateway_pid=2618

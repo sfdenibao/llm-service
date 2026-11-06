@@ -1,0 +1,20 @@
+Installing requirements.lock: attempt 1/2, socket timeout 0.2s
+  File "/tmp/tmp7tp8zacb/isolated/lib/python3.12/site-packages/pip/_internal/network/utils.py", line 63, in response_chunks
+    for chunk in response.raw.stream(
+  File "/tmp/tmp7tp8zacb/isolated/lib/python3.12/site-packages/pip/_vendor/urllib3/response.py", line 622, in stream
+    data = self.read(amt=amt, decode_content=decode_content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/tmp7tp8zacb/isolated/lib/python3.12/site-packages/pip/_vendor/urllib3/response.py", line 560, in read
+    with self._error_catcher():
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/tmp/tmp7tp8zacb/isolated/lib/python3.12/site-packages/pip/_vendor/urllib3/response.py", line 443, in _error_catcher
+    raise ReadTimeoutError(self._pool, None, "Read timed out.")
+pip._vendor.urllib3.exceptions.ReadTimeoutError: HTTPConnectionPool(host='127.0.0.1', port=42827): Read timed out.
+Transient download failure; keeping the failed log and reusing pip cache before retry
+Installing requirements.lock: attempt 2/2, socket timeout 0.2s
+.
+----------------------------------------------------------------------
+Ran 1 test in 3.963s
+
+OK

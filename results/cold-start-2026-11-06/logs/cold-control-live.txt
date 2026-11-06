@@ -1,0 +1,1 @@
+{"passed": true, "checks": 6, "skipped": 4, "official_score": false}

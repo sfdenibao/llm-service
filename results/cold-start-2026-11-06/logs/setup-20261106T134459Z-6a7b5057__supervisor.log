@@ -1,0 +1,6 @@
+Command: /home/daytona/llm-cold-validation/.venv-gpu/bin/python -m server.supervisor
+Fetching 14 files:   0%|          | 0/14 [00:00<?, ?it/s]Fetching 14 files:  57%|█████▋    | 8/14 [00:00<00:00,  9.82it/s]Fetching 14 files:  86%|████████▌ | 12/14 [00:20<00:03,  1.67s/it]Fetching 14 files:  93%|█████████▎| 13/14 [00:25<00:01,  1.99s/it]Fetching 14 files: 100%|██████████| 14/14 [00:26<00:00,  1.93s/it]Fetching 14 files: 100%|██████████| 14/14 [00:26<00:00,  1.93s/it]
+Fetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]Fetching 10 files:  80%|████████  | 8/10 [00:00<00:00, 27.06it/s]Fetching 10 files: 100%|██████████| 10/10 [00:11<00:00,  1.17s/it]
+Ready: http://127.0.0.1:8000/healthz; mode=live; gateway_pid=2006
+
+Exit code: 0; budget_timeout=False

@@ -1,0 +1,47 @@
+Browser tab: 419834234, Title: "Parallight Lab", URL: "https://agentist.org/lab/llm-lab".
+0 AXWebArea Parallight Lab, URL: agentist.org/lab/llm-lab
+	1 container
+		2 link Description: Agentist, Value: agentist.org/lab/start
+		3 text LLM 实验室
+		4 link Description: Enterprise AI, Value: agentist.org/lab/enterprise-ai
+	5 container
+		6 heading 部署你的 模型服务, Value: 1
+			7 text 部署你的
+			8 text 模型服务
+		9 text LLM-server · 从源码到服务
+		10 container 实验导航
+			11 button 实验工作台
+			12 button 任务说明与接口
+			13 button 评测报告
+			14 button MCP插件
+		15 text 代码保存在 GitHub。
+		16 text 机器可以重建，成果不会丢。
+	17 container
+		111 text 请求已接收，请查看运行状态。
+		19 heading 实验工作台, Value: 2
+			20 text 实验工作台
+		21 text 启动实验机器，绑定 GitHub，提交评测，再将模型接入自己的 Agent。 剩余  13  分钟
+		22 container 1. 启动实验机器
+			23 heading 1. 启动实验机器, Value: 3, ID: machine-heading
+				24 text 1. 启动实验机器
+			25 heading 可以连接, Value: 4
+				26 text 可以连接
+			27 text Daytona · RTX 4090 · 独占实验
+			28 text SSH 已就绪，可连接实验
+			112 text [SSH connection redacted]
+			113 button 复制 SSH 命令
+			114 text 在自己电脑的终端粘贴运行（此页面不会自动弹出交互式终端）。命令包含本次环境的临时访问凭据，请勿公开或提交到 GitHub。
+			115 definition list
+				116 container 访问有效期
+					117 text 访问有效期
+				118 text 2026/11/6 21:56:41
+				119 container 自动结束
+					120 text 自动结束
+				121 text 2026/11/6 21:57:14
+			29 button (disabled) 启动实验机器
+			122 button 结束并销毁机器
+			30 container
+				31 text 结束前请 git push。销毁会清空磁盘；下次从你的仓库重建。每期最多启动  10  次，累计  60  分钟。启动次数与剩余分钟分别计算；平台就绪前的失败不扣次数。
+			32 button (collapsed) 原有 Lambda 环境：SSH 公钥设置（Daytona 无需填写）, Secondary Actions: Expand
+				33 text 原有 Lambda 环境：SSH 公钥设置（Daytona 无需填写）
+		34 

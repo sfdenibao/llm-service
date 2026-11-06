@@ -12,6 +12,24 @@
 
 新增测试使用真正的临时虚拟环境和本机HTTP服务器：第一次只发送128字节后停顿，触发pip读取超时；第二次发送完整wheel，验证可导入、版本、`pip check`、依赖标记和脱敏日志。同时覆盖永久失败不重试、次数上限、检查失败不写标记、共享预算以及超时清理。该测试证明受控断流后的恢复逻辑，不等于外网CDN或GPU冷启动已经通过。
 
-全新GPU验证计划使用独立新实例、固定提交的新目录、全新 `.venv-gpu` 和 `.venv-bench` 以及空pip下载缓存；保留平台提供的模型缓存和wheel目录。依次检查baseline启动、真实HTTP自测、optimized切换、管理与Agent流程、依赖标记和幂等。实际执行前状态为 **NOT_TESTED**；结果将另行记录，不以旧环境的1.329秒幂等启动代替。
+全新GPU验证已通过。2026-11-06 在新的 Daytona RTX 4090 实例拉取固定提交 `5d1d2eea583baec41b047366a2a9e84a6aaf75d3`，预检查确认新目录内 `.venv`、`.venv-gpu`、`.venv-bench`、运行进程manifest和pip缓存均不存在。唯一部署入口为 `bash setup.sh`，没有手动补装或修改云端代码。
 
-本机完整回归命令：`.venv\Scripts\python.exe scripts/run_tests.py --out results/regression-2026-11-06-install-retry-02`。32项中31项通过，1项GNU timeout进程树测试因Windows跳过，零失败/错误；Linux项等待Ubuntu CI。真实HTTP断流测试两次请求恢复成功，pip25.0.1（本机ensurepip版本），GPU锁仍为pip24.0。报告绑定旧HEAD与 `worktree_dirty=true`，不将未提交工作区结果归给旧提交。之前一轮31/31报告也保留。
+| 验证 | 实际结果 |
+| --- | --- |
+| baseline 从零安装到服务就绪 | 323秒，退出0；本次设定setup上限540秒 |
+| 下载与依赖 | cuDNN706.8 MB和Torch899.7 MB均有实际Downloading日志；native/bench的pip check与lock marker通过 |
+| baseline / optimized真实HTTP | 各5/5，含鉴权、非流式、SSE；optimized切换32秒 |
+| 管理与真实Agent | live 6/6；4类故障注入仍由CPU回归覆盖 |
+| 同版本pip24.0断流恢复 | 同机独立临时venv，两次HTTP请求；第一轮超时、第二轮安装及校验成功 |
+| 幂等启动 | 1.378秒，退出0，PID与创建时间保持 |
+| 项目进程停止 | 21:51:19停止完成，manifest为空、无gateway.pid，GPU快照1 MiB/0% |
+
+整个验证共享650秒截止时间，实际执行及项目清理约380秒。平台提供的模型缓存与wheel目录保留，因此本次证明新实例、新目录、新虚拟环境能重建，不声称全部模型和wheel都从外网下载。主依赖安装第一轮成功；网络故障恢复由同机pip24.0的受控HTTP测试单独证明，未人为中断外网cuDNN下载。没有重跑768条性能矩阵或三项机制实验，也没有提交第二次正式评测。
+
+原始记录、完整验证脚本和进程停止证据在 [cold-start-2026-11-06](../results/cold-start-2026-11-06/)，[独立复核](../reports/cold-start-2026-11-06/review.md) 以各原始JSON/日志为依据。`completion.json` 的 `cloud_machine_still_allocated=true` 保留当时语义；平台实例回收是随后单独检查，见 `platform-stopped.txt/png`。
+
+本机完整回归命令：`.venv\Scripts\python.exe scripts/run_tests.py --out results/regression-2026-11-06-install-retry-02`。32项中31项通过，1项GNU timeout进程树测试因Windows跳过，零失败/错误；该轮Linux项留待Ubuntu CI执行。真实HTTP断流测试两次请求恢复成功，pip25.0.1（本机ensurepip版本），GPU锁仍为pip24.0。报告绑定旧HEAD与 `worktree_dirty=true`，不将未提交工作区结果归给旧提交。之前一轮31/31报告也保留。
+
+固定 `5d1d2ee` 的 [Ubuntu完整回归](https://github.com/sfdenibao/llm-service/actions/runs/42227539790) 为32/32、零跳过、`worktree_dirty=false`；GNU timeout真实合成进程树测试在0.603秒后父子PID均不存在。[公开接口检查](https://github.com/sfdenibao/llm-service/actions/runs/42227539886) 为18/18。两份artifact的完整SHA和ZIP摘要均核对，原字节保存在 [CI归档](../results/github-actions-5d1d2ee/verification.json)。
+
+平台实例于21:54:34另行确认回收，页面显示剩余3分钟练习额度，正式评测历史仍只有 `aa62145` 一次。修复验证没有使用最后一次正式名额。

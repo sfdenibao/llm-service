@@ -1,0 +1,31 @@
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[2026-11-06 13:49:27] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+[2026-11-06 13:49:27] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+[2026-11-06 13:49:27] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/daytona/llm-cold-validation/.venv-gpu/lib/python3.12/site-packages/transformers/__init__.py)
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:02,  1.21it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01<00:01,  1.53it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02<00:00,  1.53it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.64it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:02<00:00,  1.56it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s]Capturing batches (bs=1 avail_mem=6.41 GB):   0%|          | 0/1 [00:00<?, ?it/s]Capturing batches (bs=1 avail_mem=6.41 GB): 100%|██████████| 1/1 [00:39<00:00, 39.84s/it]Capturing batches (bs=1 avail_mem=6.41 GB): 100%|██████████| 1/1 [00:39<00:00, 39.84s/it]
+[2026-11-06 13:50:23] SIGTERM received. signum=None frame=None. Draining requests and shutting down...
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[2026-11-06 13:50:43] Ignore import error when loading sglang.srt.models.glm_ocr: No module named 'transformers.models.glm_ocr'
+[2026-11-06 13:50:43] Ignore import error when loading sglang.srt.models.glm_ocr_nextn: No module named 'transformers.models.glm_ocr'
+[2026-11-06 13:50:43] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/home/daytona/llm-cold-validation/.venv-gpu/lib/python3.12/site-packages/transformers/__init__.py)
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:01,  2.74it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:00<00:00,  2.17it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:01<00:00,  2.16it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:01<00:00,  2.00it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:01<00:00,  2.09it/s]
+
+  0%|          | 0/7 [00:00<?, ?it/s]Capturing batches (bs=24 avail_mem=5.69 GB):   0%|          | 0/7 [00:00<?, ?it/s]Capturing batches (bs=24 avail_mem=5.69 GB):  14%|█▍        | 1/7 [00:00<00:04,  1.47it/s]Capturing batches (bs=16 avail_mem=5.63 GB):  14%|█▍        | 1/7 [00:00<00:04,  1.47it/s]Capturing batches (bs=16 avail_mem=5.63 GB):  29%|██▊       | 2/7 [00:00<00:01,  2.91it/s]Capturing batches (bs=12 avail_mem=5.61 GB):  29%|██▊       | 2/7 [00:00<00:01,  2.91it/s]Capturing batches (bs=8 avail_mem=5.61 GB):  29%|██▊       | 2/7 [00:00<00:01,  2.91it/s] Capturing batches (bs=8 avail_mem=5.61 GB):  57%|█████▋    | 4/7 [00:00<00:00,  6.10it/s]Capturing batches (bs=4 avail_mem=5.58 GB):  57%|█████▋    | 4/7 [00:00<00:00,  6.10it/s]Capturing batches (bs=2 avail_mem=5.58 GB):  57%|█████▋    | 4/7 [00:00<00:00,  6.10it/s]Capturing batches (bs=2 avail_mem=5.58 GB):  86%|████████▌ | 6/7 [00:01<00:00,  8.84it/s]Capturing batches (bs=1 avail_mem=5.56 GB):  86%|████████▌ | 6/7 [00:01<00:00,  8.84it/s]Capturing batches (bs=1 avail_mem=5.56 GB): 100%|██████████| 7/7 [00:01<00:00,  6.49it/s]
+[2026-11-06 13:51:14] Endpoint '/get_server_info' is deprecated and will be removed in a future version. Please use '/server_info' instead.
+[2026-11-06 13:51:15] SIGTERM received. signum=None frame=None. Draining requests and shutting down...

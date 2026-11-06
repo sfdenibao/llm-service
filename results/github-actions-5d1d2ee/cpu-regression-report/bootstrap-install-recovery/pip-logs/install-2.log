@@ -1,0 +1,7 @@
+Command: /tmp/tmp3mqlf78v/isolated/bin/python -m pip install --disable-pip-version-check --no-input --progress-bar off --timeout 0.2 --retries 2 -r /tmp/tmp3mqlf78v/requirements.lock
+Collecting installer-probe@ http://127.0.0.1:42967/installer_probe-0.0.1-py3-none-any.whl?token=[REDACTED] (from -r /tmp/tmp3mqlf78v/requirements.lock (line 1))
+  Downloading http://127.0.0.1:42967/installer_probe-0.0.1-py3-none-any.whl?token=[REDACTED] (132 kB)
+Installing collected packages: installer-probe
+Successfully installed installer-probe-0.0.1
+
+Exit code: 0; budget_timeout=False

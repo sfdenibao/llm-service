@@ -1,0 +1,11 @@
+{
+  "finished_at": "2026-11-06T13:51:19.095179+00:00",
+  "run_exit_code": 0,
+  "stop_exit_code": 0,
+  "owned_processes_after_stop": [],
+  "gateway_pid_exists": false,
+  "gpu_snapshot": "1 MiB, 0 %",
+  "official_evaluation": false,
+  "cloud_machine_still_allocated": true,
+  "validation_passed": true
+}

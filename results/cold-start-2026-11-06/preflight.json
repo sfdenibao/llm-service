@@ -1,0 +1,25 @@
+{
+  "started_at": "2026-11-06T13:44:58.940237+00:00",
+  "commit": "5d1d2eea583baec41b047366a2a9e84a6aaf75d3",
+  "fresh_paths_absent": {
+    ".venv": true,
+    ".venv-gpu": true,
+    ".venv-bench": true,
+    ".runtime/data/processes.json": true,
+    ".runtime/pip-cache": true
+  },
+  "gpu": "NVIDIA GeForce RTX 4090, GPU-805a01b6-821c-3401-aa0e-bf942e4d02f0, 23028 MiB, 580.178.04",
+  "python": "3.12.3",
+  "platform": "Linux-6.8.0-139-generic-x86_64-with-glibc2.39",
+  "python_headers_present_before_setup": false,
+  "hf_home": "/opt/llm-cache/huggingface",
+  "model_cache_scope": "Platform-provided HF model cache and wheel directory are retained; project, virtualenvs and pip download cache are new. This does not claim every wheel or model was downloaded from the Internet.",
+  "pip_cache_dir": "/home/daytona/llm-cold-validation/.runtime/pip-cache",
+  "pip_find_links": "/opt/llm-cache/wheels",
+  "locks": {
+    "requirements-benchmark.lock": "f1daa04821a11906103909d49e9a3049ee43e06a826ed15a257e21f1ba5a50be",
+    "requirements-native-linux-py312.lock": "c721dbde87dbafe0598694d3a5fcfdf081ed50792371b0ccd240b99352728c14",
+    "requirements-runtime.lock": "8f55c4ee26c7ed545c8e2add55fc4e98f387da2c14580d11a3feda2597795507",
+    "requirements.lock": "33457b4b37c27dfd749115b829e0dd4e55624ed16d3bc4a8d3283558e2e488d6"
+  }
+}

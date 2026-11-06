@@ -6,6 +6,9 @@
 
 | 证据（results目录下） | 结果 | 边界 |
 | --- | --- | --- |
+| github-actions-5d1d2ee/ | 公开checker18/18；Ubuntu32/32、零跳过 | 固定完整SHA、ZIP摘要核验；CPU而非正式分数 |
+| cold-start-2026-11-06/ | baseline冷启动323秒；两profile各5/5、管理6/6、同机pip24断流恢复 | 新实例和虚拟环境，平台模型与wheel缓存保留；未重跑性能矩阵或正式评测 |
+| cold-start-2026-11-06/platform-state.json | 21:54:34云端无运行机器，剩余3分钟 | 项目进程此前21:51:19已停；平台回收单独核验 |
 | preflight-2026-10-24.json | 7项资料校验 | 保留当时未实现状态 |
 | cpu-soft-01/soft-report.json | 官方公开checker 18/18 | 本机CPU，非Actions/GPU |
 | regression-01/report.json | 15/16，取消清理失败 | 失败证据原样保留 |
@@ -36,7 +39,7 @@
 
 本次基准与三项机制实验固定 `837ca04e52fe800f974cf46f44b7602c87012bb6`，对应 [CPU软评测18/18](https://github.com/sfdenibao/llm-service/actions/runs/42217691662)、[Ubuntu回归24/24](https://github.com/sfdenibao/llm-service/actions/runs/42217691920)，归档摘要与ZIP哈希校验见 `github-actions-837ca04/archive-verification.json`。真实基础/管理测试由 `live-tested-commit.txt` 标识为 `04d791e30ecbbe4064a7a4d0abf8079fce6be781`；之后 `837ca04` 增加独立HTTP取消探针，服务代码不变。环境、模型revision、每项manifest与输入均保留。
 
-真实部署先后暴露编译扩展所需 Python.h 缺失、已安装的 ninja 未进入子进程 PATH，以及 SGLang cache usage 细项可为 null 导致解析失败。补齐构建前置检查、传递 venv PATH、接受 nullable 细项后通过上述测试，修复已进入源码提交。`selftest.json` 与首次部署日志保留原失败，修复结果另存 `selftest-02.json`。最终代码没有在第二台全新机器从零重建，已有依赖/模型缓存上的成功重跑不能证明干净冷启动可复现。
+真实部署先后暴露编译扩展所需 Python.h 缺失、已安装的 ninja 未进入子进程 PATH，以及 SGLang cache usage 细项可为 null 导致解析失败。补齐构建前置检查、传递 venv PATH、接受 nullable 细项后通过上述测试，修复已进入源码提交。`selftest.json` 与首次部署日志保留原失败，修复结果另存 `selftest-02.json`。上述首次练习中的已有依赖重跑不证明冷启动；后续固定 `5d1d2ee` 已在新实例、新目录、新虚拟环境完成323秒启动，原始记录见 `cold-start-2026-11-06/`，平台模型与wheel缓存边界保留。
 
 两份 Actions 报告均绑定完整提交 `883276d0f338a83e9f7ab692e0e97b684798d055`。运行入口：[官方 CPU 软评测 #40084779090](https://github.com/sfdenibao/llm-service/actions/runs/40084779090)、[深入 CPU 回归 #40084779009](https://github.com/sfdenibao/llm-service/actions/runs/40084779009)。回归报告记录的执行时间为 2026-10-24 18:09:30–18:09:53（Asia/Shanghai）。归档的原始报告、setup 日志与 unittest 日志保持原样。
 
@@ -50,4 +53,4 @@
 
 baseline与optimized对应24份输入文件逐字节一致，seed均为1093552657。baseline的51次失败在raw中均为HTTP504、content_events=0、TTFT=null、E2E为20.033–20.168秒；metrics的timed_out=51。结合单槽与20秒排队上限，符合排队超时瓶颈；raw未保存504响应体，未将其解释为模型答错或显存不足。复核保留所有失败在分母中，细节见 [完整实测报告](../reports/gpu-2026-11-06-final/summary.md)。
 
-早期报告没有commit，原null不回填；后续提交运行应关联完整SHA。本次真实GPU、三项机制与两配置完整对照已有上表证据。首次正式评测在 cuDNN 下载超时后终止，自动0/95，GPU阶段未执行，人工5分尚未验收；全新环境重建验证正在进行，GPU内部任务/显存释放仍未证明。安装修复与新增测试见[记录](install-recovery.md)。具体性能数值与实验解释见 [性能实测](performance.md)。
+早期报告没有commit，原null不回填；后续提交运行应关联完整SHA。本次真实GPU、三项机制与两配置完整对照已有上表证据。首次正式评测在 cuDNN 下载超时后终止，自动0/95，GPU阶段未执行，人工5分尚未验收；全新环境重建已通过，GPU内部单请求任务/显存释放仍未证明。安装修复与新增测试见[记录](install-recovery.md)。具体性能数值与实验解释见 [性能实测](performance.md)。

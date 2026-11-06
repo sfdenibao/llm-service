@@ -1,0 +1,10 @@
+{
+  "verified_at": "2026-11-06T13:54:34.546Z",
+  "running_practice_machine": false,
+  "practice_minutes_displayed": 3,
+  "formal_evaluation_submitted_this_repair": false,
+  "formal_history_count": 1,
+  "formal_history_commit": "aa62145323987fb5e2e182bdc48485bf4f9f0db9",
+  "startup_limit_displayed": 10,
+  "total_minutes_limit_displayed": 60
+}

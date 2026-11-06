@@ -9,6 +9,7 @@ docs/taskbook-2026-10-24.md -text
 # Preserve downloaded evidence byte-for-byte across Windows/Linux checkouts.
 results/gpu-2026-11-06/** -text
 results/github-actions-837ca04/** -text
+results/github-actions-5d1d2ee/** -text
 results/regression-2026-11-06-install-retry*/** -text
 results/cold-start-2026-11-06/** -text
 

@@ -1,0 +1,14 @@
+[
+  {
+    "environment": ".venv-gpu",
+    "exit_code": 0,
+    "output": "No broken requirements found.",
+    "marker_matches_lock": true
+  },
+  {
+    "environment": ".venv-bench",
+    "exit_code": 0,
+    "output": "No broken requirements found.",
+    "marker_matches_lock": true
+  }
+]
